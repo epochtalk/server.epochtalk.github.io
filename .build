@@ -28,6 +28,7 @@ EpochtalkServer.html
 EpochtalkServerWeb.ConfigurationController.html
 EpochtalkServerWeb.ConfigurationView.html
 EpochtalkServerWeb.CustomErrors.InvalidPayload.html
+EpochtalkServerWeb.CustomErrors.InvalidPermission.html
 EpochtalkServerWeb.CustomErrors.MalformedPayload.html
 EpochtalkServerWeb.CustomErrors.OversizedPayload.html
 EpochtalkServerWeb.CustomErrors.html
@@ -36,6 +37,7 @@ EpochtalkServerWeb.Endpoint.html
 EpochtalkServerWeb.ErrorHelpers.html
 EpochtalkServerWeb.ErrorView.html
 EpochtalkServerWeb.GuardianErrorHandler.html
+EpochtalkServerWeb.Helpers.ACL.html
 EpochtalkServerWeb.Helpers.Pagination.html
 EpochtalkServerWeb.Helpers.Validate.html
 EpochtalkServerWeb.MentionController.html
@@ -80,7 +82,7 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-E5UFLALU.woff2
-dist/search_items-B341FBCB.js
-dist/sidebar_items-2B5768A3.js
+dist/search_items-62CF0049.js
+dist/sidebar_items-0FE97892.js
 index.html
 search.html

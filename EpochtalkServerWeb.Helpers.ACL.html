@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.28.6">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.NotificationView — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Helpers.ACL — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
@@ -95,14 +95,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.NotificationView</span> 
+  <span translate="no">EpochtalkServerWeb.Helpers.ACL</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">User</code> data, in JSON format for frontend</p>
+<p>Helper for checking authenticated user's permissions.</p>
   </section>
 
 
@@ -122,32 +122,22 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#__resource__/0" translate="no">__resource__()</a>
+          <a href="#allow!/2" translate="no">allow!(conn, permission_path)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>The resource name, as an atom, for this view</p></div>
+          <div class="summary-synopsis"><p>Checks if authenticated <code class="inline">User</code> is allowed to perform a specific action.</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#render/2" translate="no">render(template, assigns \\ %{})</a>
+          <a href="#allow!/3" translate="no">allow!(conn, permission_path, error_msg)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Renders the given template locally.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#template_not_found/2" translate="no">template_not_found(template, assigns)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
-for rendering misc responses (ex: {found: true} or {success: true})</p></div>
+          <div class="summary-synopsis"><p>Same as <code class="inline">ACL.allow!/2</code> but allows a custom error message to be raised if the
+<code class="inline">User</code> does not have the proper permissions.</p></div>
 
       </div>
 
@@ -165,50 +155,14 @@ for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="__resource__/0">
+<section class="detail" id="allow!/2">
 
   <div class="detail-header">
-    <a href="#__resource__/0" class="detail-link" title="Link to this function">
+    <a href="#allow!/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">__resource__()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>The resource name, as an atom, for this view</p>
-  </section>
-</section>
-<section class="detail" id="render/2">
-
-    <span id="render/1"></span>
-
-  <div class="detail-header">
-    <a href="#render/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">render(template, assigns \\ %{})</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Renders the given template locally.</p>
-  </section>
-</section>
-<section class="detail" id="template_not_found/2">
-
-  <div class="detail-header">
-    <a href="#template_not_found/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">template_not_found(template, assigns)</h1>
+    <h1 class="signature" translate="no">allow!(conn, permission_path)</h1>
 
 
   </div>
@@ -217,21 +171,45 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> template_not_found(<a href="https://hexdocs.pm/phoenix_view/1.1.2/Phoenix.Template.html#t:name/0">Phoenix.Template.name</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> allow!(
+  <a href="https://hexdocs.pm/plug/1.13.6/Plug.Conn.html#t:t/0">Plug.Conn.t</a>() | <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(),
+  permission_path :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()
+) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>() | :ok</pre>
 
       </div>
 
-<p>Renders whatever data it is passed when template not found. Data pass through
-for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="template_not_found/2-example" class="section-heading">
-  <a href="#template_not_found/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">example</p>
-  </a>
-  Example
-</h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.NotificationView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="8053346483-1">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8053346483-2">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="8053346483-2">}</span><span class="p" data-group-id="8053346483-1">)</span><span class="w">
-</span><span class="p" data-group-id="8053346483-3">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="8053346483-3">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.NotificationView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="8053346483-4">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8053346483-5">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8053346483-5">}</span><span class="p" data-group-id="8053346483-4">)</span><span class="w">
-</span><span class="p" data-group-id="8053346483-6">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8053346483-6">}</span></code></pre>
+<p>Checks if authenticated <code class="inline">User</code> is allowed to perform a specific action.</p><p>Compares a mask all of user's roles into a masked permission set and checks
+if that permission set contains the specified <code class="inline">permission_path</code>.</p><p>Raises <code class="inline">CustomErrors.InvalidPermission</code> exception if the <code class="inline">User</code> does not have
+the proper permissions.</p>
+  </section>
+</section>
+<section class="detail" id="allow!/3">
+
+  <div class="detail-header">
+    <a href="#allow!/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">allow!(conn, permission_path, error_msg)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> allow!(
+  <a href="https://hexdocs.pm/plug/1.13.6/Plug.Conn.html#t:t/0">Plug.Conn.t</a>() | <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(),
+  permission_path :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  error_msg :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>() | :ok</pre>
+
+      </div>
+
+<p>Same as <code class="inline">ACL.allow!/2</code> but allows a custom error message to be raised if the
+<code class="inline">User</code> does not have the proper permissions.</p>
   </section>
 </section>
 
