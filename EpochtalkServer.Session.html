@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-0FE97892.js"></script>
+    <script src="dist/sidebar_items-FAAE2F90.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -152,6 +152,17 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#get_resource/2" translate="no">get_resource(user_id, session_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get the resource for a specified user_id and session_id if available
+Otherwise, return an error</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#get_sessions/1" translate="no">get_sessions(user)</a>
 
         </div>
@@ -200,7 +211,7 @@ Functions
 
       </div>
 
-<p>Create session performs the following actions:</p><ul><li>Sets user's session id, timestamp, ttl</li><li>Logs <code class="inline">User</code> in with Guardian to get token</li><li>Saves <code class="inline">User</code> session info to redis (avatar, roles, moderating, ban info, etc)</li><li>returns {:ok, user, token and conn}</li></ul><ul><li>TODO(boka): Handle expiration of redis sessions (this is handled in guardian but not redis)</li></ul>
+<p>Create session performs the following actions:</p><ul><li>Sets user's session id, timestamp, ttl</li><li>Logs <code class="inline">User</code> in with Guardian to get token</li><li>Saves <code class="inline">User</code> session info to redis (avatar, roles, moderating, ban info, etc)</li><li>returns {:ok, user, token and conn}</li></ul>
   </section>
 </section>
 <section class="detail" id="delete_session/2">
@@ -252,6 +263,32 @@ Functions
       </div>
 
 <p>Deletes every session instance for the specified <code class="inline">User</code></p>
+  </section>
+</section>
+<section class="detail" id="get_resource/2">
+
+  <div class="detail-header">
+    <a href="#get_resource/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_resource(user_id, session_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_resource(user_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), session_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) ::
+  {:ok, resource :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}
+  | {:error, reason :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/redix/1.1.5/Redix.Error.html#t:t/0">Redix.Error.t</a>() | <a href="https://hexdocs.pm/redix/1.1.5/Redix.ConnectionError.html#t:t/0">Redix.ConnectionError.t</a>()}</pre>
+
+      </div>
+
+<p>Get the resource for a specified user_id and session_id if available
+Otherwise, return an error</p>
   </section>
 </section>
 <section class="detail" id="get_sessions/1">
