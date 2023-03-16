@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-FAAE2F90.js"></script>
+    <script src="dist/sidebar_items-08D694A2.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -145,6 +145,17 @@ exception if string does not pass validation and casting.</p></div>
 
       </div>
 
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sanitize_list/2" translate="no">sanitize_list(attrs, key)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Helper used to default a list request parameter.  If the list is valid, returns the list
+otherwise, defaults to empty list</p></div>
+
+      </div>
+
   </div>
 
   </section>
@@ -179,6 +190,7 @@ Functions
 
           <pre translate="no"><span class="attribute">@spec</span> cast(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), key :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), type :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(),
   required: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>(),
+  default: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(),
   min: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
   max: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()
 ) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
@@ -200,23 +212,23 @@ not pass validation and casting.</p><h3 id="cast/4-valid-types" class="section-h
   </a>
   Valid Options
 </h3>
-<table><thead><tr><th style="text-align: left;">option</th><th style="text-align: left;">description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">:required</code></td><td style="text-align: left;"><code class="inline">true</code> will raise an exception if casting nil</td></tr><tr><td style="text-align: left;"><code class="inline">:min</code></td><td style="text-align: left;"><code class="inline">min</code> of value being cast to <code class="inline">:integer</code></td></tr><tr><td style="text-align: left;"><code class="inline">:max</code></td><td style="text-align: left;"><code class="inline">max</code> of value being cast to <code class="inline">:integer</code></td></tr></tbody></table><h2 id="cast/4-example" class="section-heading">
+<table><thead><tr><th style="text-align: left;">option</th><th style="text-align: left;">description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">:required</code></td><td style="text-align: left;"><code class="inline">true</code> will raise an exception if casting nil</td></tr><tr><td style="text-align: left;"><code class="inline">:default</code></td><td style="text-align: left;">default value for <code class="inline">attr</code> if not provided by request</td></tr><tr><td style="text-align: left;"><code class="inline">:min</code></td><td style="text-align: left;"><code class="inline">min</code> of value being cast to <code class="inline">:integer</code></td></tr><tr><td style="text-align: left;"><code class="inline">:max</code></td><td style="text-align: left;"><code class="inline">max</code> of value being cast to <code class="inline">:integer</code></td></tr></tbody></table><h2 id="cast/4-example" class="section-heading">
   <a href="#cast/4-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">example</p>
   </a>
   Example
 </h2>
 <pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">EpochtalkServerWeb.Helpers.Validate</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4975343821-1">%{</span><span class="s">&quot;page&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;42&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p" data-group-id="4975343821-1">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="4975343821-2">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4975343821-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0689505646-1">%{</span><span class="s">&quot;page&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;42&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p" data-group-id="0689505646-1">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0689505646-2">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="0689505646-2">)</span><span class="w">
 </span><span class="mi">42</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="4975343821-3">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4975343821-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0689505646-3">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="0689505646-3">)</span><span class="w">
 </span><span class="no">nil</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="4975343821-4">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="4975343821-4">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0689505646-4">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="0689505646-4">)</span><span class="w">
 </span><span class="no">false</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="4975343821-5">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="4975343821-5">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0689505646-5">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="0689505646-5">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
 </span><span class="s">&quot;true&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="4975343821-6">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4975343821-6">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0689505646-6">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="0689505646-6">)</span><span class="w">
 </span><span class="gt">** (EpochtalkServerWeb.CustomErrors.InvalidPayload) Invalid payload, key &#39;post_count&#39; should be of type &#39;integer&#39;</span></code></pre>
   </section>
 </section>
@@ -241,6 +253,7 @@ not pass validation and casting.</p><h3 id="cast/4-valid-types" class="section-h
           <pre translate="no"><span class="attribute">@spec</span> cast_str(str :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), type :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(),
   key: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
   required: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>(),
+  default: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(),
   min: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
   max: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()
 ) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
@@ -261,23 +274,47 @@ exception if string does not pass validation and casting.</p><h3 id="cast_str/3-
   </a>
   Valid Options
 </h3>
-<table><thead><tr><th style="text-align: left;">option</th><th style="text-align: left;">description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">:key</code></td><td style="text-align: left;">reference name of the value attempting to be cast</td></tr><tr><td style="text-align: left;"><code class="inline">:required</code></td><td style="text-align: left;"><code class="inline">true</code> will raise an exception if casting nil</td></tr><tr><td style="text-align: left;"><code class="inline">:min</code></td><td style="text-align: left;"><code class="inline">min</code> of value being cast to <code class="inline">:integer</code></td></tr><tr><td style="text-align: left;"><code class="inline">:max</code></td><td style="text-align: left;"><code class="inline">max</code> of value being cast to <code class="inline">:integer</code></td></tr></tbody></table><h2 id="cast_str/3-example" class="section-heading">
+<table><thead><tr><th style="text-align: left;">option</th><th style="text-align: left;">description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">:key</code></td><td style="text-align: left;">reference name of the value attempting to be cast</td></tr><tr><td style="text-align: left;"><code class="inline">:required</code></td><td style="text-align: left;"><code class="inline">true</code> will raise an exception if casting nil</td></tr><tr><td style="text-align: left;"><code class="inline">:default</code></td><td style="text-align: left;">default value for <code class="inline">attr</code> if not provided by request</td></tr><tr><td style="text-align: left;"><code class="inline">:min</code></td><td style="text-align: left;"><code class="inline">min</code> of value being cast to <code class="inline">:integer</code></td></tr><tr><td style="text-align: left;"><code class="inline">:max</code></td><td style="text-align: left;"><code class="inline">max</code> of value being cast to <code class="inline">:integer</code></td></tr></tbody></table><h2 id="cast_str/3-example" class="section-heading">
   <a href="#cast_str/3-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">example</p>
   </a>
   Example
 </h2>
 <pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">EpochtalkServerWeb.Helpers.Validate</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="4521945695-1">(</span><span class="s">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4521945695-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8632240186-1">(</span><span class="s">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8632240186-1">)</span><span class="w">
 </span><span class="mi">15</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="4521945695-2">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4521945695-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8632240186-2">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8632240186-2">)</span><span class="w">
 </span><span class="no">nil</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="4521945695-3">(</span><span class="s">&quot;false&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="4521945695-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8632240186-3">(</span><span class="s">&quot;false&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="8632240186-3">)</span><span class="w">
 </span><span class="no">false</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="4521945695-4">(</span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="4521945695-4">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8632240186-4">(</span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="8632240186-4">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
 </span><span class="s">&quot;true&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="4521945695-5">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4521945695-5">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8632240186-5">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8632240186-5">)</span><span class="w">
 </span><span class="gt">** (EpochtalkServerWeb.CustomErrors.InvalidPayload) Invalid payload, key &#39;post_count&#39; should be of type &#39;integer&#39;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="sanitize_list/2">
+
+  <div class="detail-header">
+    <a href="#sanitize_list/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sanitize_list(attrs, key)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sanitize_list(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), key :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: List.t()</pre>
+
+      </div>
+
+<p>Helper used to default a list request parameter.  If the list is valid, returns the list
+otherwise, defaults to empty list</p>
   </section>
 </section>
 

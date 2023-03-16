@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.28.6">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.RoleView — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
@@ -95,20 +95,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb</span> 
+  <span translate="no">EpochtalkServerWeb.RoleView</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>The entrypoint for defining your web interface, such
-as controllers, views, channels and so on.</p><p>This can be used in your application as:</p><pre><code class="makeup elixir" translate="no"><span class="kn">use</span><span class="w"> </span><span class="nc">EpochtalkServerWeb</span><span class="p">,</span><span class="w"> </span><span class="ss">:controller</span><span class="w">
-</span><span class="kn">use</span><span class="w"> </span><span class="nc">EpochtalkServerWeb</span><span class="p">,</span><span class="w"> </span><span class="ss">:view</span></code></pre><p>The definitions below will be executed for every view,
-controller, etc, so keep them short and clean, focused
-on imports, uses and aliases.</p><p>Do NOT define functions inside the quoted expressions
-below. Instead, define any helper function in modules
-and import those modules here.</p>
+<p>Renders and formats <code class="inline">Role</code> data, in JSON format for frontend</p>
   </section>
 
 
@@ -128,43 +122,32 @@ and import those modules here.</p>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#__using__/1" translate="no">__using__(which)</a>
+          <a href="#__resource__/0" translate="no">__resource__()</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>When used, dispatch to the appropriate controller/view/etc.</p></div>
+          <div class="summary-synopsis"><p>The resource name, as an atom, for this view</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#channel/0" translate="no">channel()</a>
+          <a href="#render/2" translate="no">render(template, assigns \\ %{})</a>
 
         </div>
+
+          <div class="summary-synopsis"><p>Renders the given template locally.</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#controller/0" translate="no">controller()</a>
+          <a href="#template_not_found/2" translate="no">template_not_found(template, assigns)</a>
 
         </div>
 
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#router/0" translate="no">router()</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#view/0" translate="no">view()</a>
-
-        </div>
+          <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
+for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 
       </div>
 
@@ -182,91 +165,73 @@ and import those modules here.</p>
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="__using__/1">
+<section class="detail" id="__resource__/0">
 
   <div class="detail-header">
-    <a href="#__using__/1" class="detail-link" title="Link to this macro">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this macro</span>
-    </a>
-    <h1 class="signature" translate="no">__using__(which)</h1>
-
-
-      <span class="note">(macro)</span>
-
-  </div>
-
-  <section class="docstring">
-
-<p>When used, dispatch to the appropriate controller/view/etc.</p>
-  </section>
-</section>
-<section class="detail" id="channel/0">
-
-  <div class="detail-header">
-    <a href="#channel/0" class="detail-link" title="Link to this function">
+    <a href="#__resource__/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">channel()</h1>
+    <h1 class="signature" translate="no">__resource__()</h1>
 
 
   </div>
 
   <section class="docstring">
 
-
+<p>The resource name, as an atom, for this view</p>
   </section>
 </section>
-<section class="detail" id="controller/0">
+<section class="detail" id="render/2">
+
+    <span id="render/1"></span>
 
   <div class="detail-header">
-    <a href="#controller/0" class="detail-link" title="Link to this function">
+    <a href="#render/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">controller()</h1>
+    <h1 class="signature" translate="no">render(template, assigns \\ %{})</h1>
 
 
   </div>
 
   <section class="docstring">
 
-
+<p>Renders the given template locally.</p>
   </section>
 </section>
-<section class="detail" id="router/0">
+<section class="detail" id="template_not_found/2">
 
   <div class="detail-header">
-    <a href="#router/0" class="detail-link" title="Link to this function">
+    <a href="#template_not_found/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">router()</h1>
+    <h1 class="signature" translate="no">template_not_found(template, assigns)</h1>
 
 
   </div>
 
   <section class="docstring">
 
+      <div class="specs">
 
-  </section>
-</section>
-<section class="detail" id="view/0">
+          <pre translate="no"><span class="attribute">@spec</span> template_not_found(<a href="https://hexdocs.pm/phoenix_view/1.1.2/Phoenix.Template.html#t:name/0">Phoenix.Template.name</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
 
-  <div class="detail-header">
-    <a href="#view/0" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">view()</h1>
+      </div>
 
-
-  </div>
-
-  <section class="docstring">
-
-
+<p>Renders whatever data it is passed when template not found. Data pass through
+for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="template_not_found/2-example" class="section-heading">
+  <a href="#template_not_found/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.RoleView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="9108864790-1">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9108864790-2">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="9108864790-2">}</span><span class="p" data-group-id="9108864790-1">)</span><span class="w">
+</span><span class="p" data-group-id="9108864790-3">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="9108864790-3">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.RoleView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="9108864790-4">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9108864790-5">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="9108864790-5">}</span><span class="p" data-group-id="9108864790-4">)</span><span class="w">
+</span><span class="p" data-group-id="9108864790-6">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="9108864790-6">}</span></code></pre>
   </section>
 </section>
 

@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-FAAE2F90.js"></script>
+    <script src="dist/sidebar_items-08D694A2.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -256,6 +256,16 @@ if roles array is empty, sets the default role by appending it</p></div>
         </div>
 
           <div class="summary-synopsis"><p>Updates the permissions of an existing <code class="inline">Role</code> in the database</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#set_priority_restrictions/2" translate="no">set_priority_restrictions(id, priority_restrictions)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Updates the priority_restrictions of an existing <code class="inline">Role</code> in the database</p></div>
 
       </div>
 
@@ -612,6 +622,30 @@ and is expected to return the updated user's roles.</p>
       </div>
 
 <p>Updates the permissions of an existing <code class="inline">Role</code> in the database</p>
+  </section>
+</section>
+<section class="detail" id="set_priority_restrictions/2">
+
+  <div class="detail-header">
+    <a href="#set_priority_restrictions/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">set_priority_restrictions(id, priority_restrictions)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> set_priority_restrictions(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), priority_restrictions :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
+  {:ok, role :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Updates the priority_restrictions of an existing <code class="inline">Role</code> in the database</p>
   </section>
 </section>
 
