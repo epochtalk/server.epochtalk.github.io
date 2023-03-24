@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.28.6">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServer.Models.Thread — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServer.Models.BoardBan — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
@@ -95,14 +95,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServer.Models.Thread</span> 
+  <span translate="no">EpochtalkServer.Models.BoardBan</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p><code class="inline">Thread</code> model, for performing actions relating to forum threads</p>
+<p><code class="inline">BoardBan</code> model, for performing actions relating a user's profile</p>
   </section>
 
 
@@ -137,31 +137,33 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#changeset/2" translate="no">changeset(thread, attrs)</a>
+          <a href="#changeset/2" translate="no">changeset(board_ban, attrs \\ %{})</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">Thread</code> model</p></div>
+          <div class="summary-synopsis"><p>Creates a generic changeset for <code class="inline">BoardBan</code> model</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#page_by_board_id/3" translate="no">page_by_board_id(board_id, page \\ 1, opts \\ [])</a>
+          <a href="#is_banned_from_board/2" translate="no">is_banned_from_board(user, opts)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Returns paged threads by <code class="inline">Board</code> given a <code class="inline">board_id</code></p></div>
+          <div class="summary-synopsis"><p>Used to check if <code class="inline">User</code> is banned from board.
+Accepts a <code class="inline">board_id</code>, <code class="inline">post_id</code> or <code class="inline">thread_id</code> as an option.</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#recent/3" translate="no">recent(user, user_priority, opts \\ [])</a>
+          <a href="#is_not_banned_from_board/2" translate="no">is_not_banned_from_board(user, opts \\ [])</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Returns recent threads accounting for user priority and user's ignored boards</p></div>
+          <div class="summary-synopsis"><p>Used to check if <code class="inline">User</code> with specified <code class="inline">user_id</code> is not banned from board.
+Accepts a <code class="inline">board_id</code>, <code class="inline">post_id</code> or <code class="inline">thread_id</code> as an option.</p></div>
 
       </div>
 
@@ -195,20 +197,12 @@ Types
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.Thread{
+          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.BoardBan{
   __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   board: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  board_id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  created_at: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | nil,
-  id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  imported_at: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | nil,
-  locked: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
-  moderated: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
-  post_count: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  posts: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  slug: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
-  sticky: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
-  updated_at: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | nil
+  board_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  user: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  user_id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil
 }</pre>
 
       </div>
@@ -231,12 +225,14 @@ Functions
     <div class="functions-list">
 <section class="detail" id="changeset/2">
 
+    <span id="changeset/1"></span>
+
   <div class="detail-header">
     <a href="#changeset/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(thread, attrs)</h1>
+    <h1 class="signature" translate="no">changeset(board_ban, attrs \\ %{})</h1>
 
 
   </div>
@@ -245,25 +241,21 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(thread :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> changeset(board_ban :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
-<p>Create generic changeset for <code class="inline">Thread</code> model</p>
+<p>Creates a generic changeset for <code class="inline">BoardBan</code> model</p>
   </section>
 </section>
-<section class="detail" id="page_by_board_id/3">
-
-    <span id="page_by_board_id/1"></span>
-
-    <span id="page_by_board_id/2"></span>
+<section class="detail" id="is_banned_from_board/2">
 
   <div class="detail-header">
-    <a href="#page_by_board_id/3" class="detail-link" title="Link to this function">
+    <a href="#is_banned_from_board/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">page_by_board_id(board_id, page \\ 1, opts \\ [])</h1>
+    <h1 class="signature" translate="no">is_banned_from_board(user, opts)</h1>
 
 
   </div>
@@ -272,27 +264,26 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> page_by_board_id(
-  board_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
-  page :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | nil
-) :: %{normal: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()] | [], sticky: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()] | []}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> is_banned_from_board(user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(), opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
+  {:ok, banned :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}</pre>
 
       </div>
 
-<p>Returns paged threads by <code class="inline">Board</code> given a <code class="inline">board_id</code></p>
+<p>Used to check if <code class="inline">User</code> is banned from board.
+Accepts a <code class="inline">board_id</code>, <code class="inline">post_id</code> or <code class="inline">thread_id</code> as an option.</p><p>Returns <code class="inline">true</code> if the user is banned from the specified <code class="inline">Board</code> or <code class="inline">false</code>
+otherwise.</p>
   </section>
 </section>
-<section class="detail" id="recent/3">
+<section class="detail" id="is_not_banned_from_board/2">
 
-    <span id="recent/2"></span>
+    <span id="is_not_banned_from_board/1"></span>
 
   <div class="detail-header">
-    <a href="#recent/3" class="detail-link" title="Link to this function">
+    <a href="#is_not_banned_from_board/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">recent(user, user_priority, opts \\ [])</h1>
+    <h1 class="signature" translate="no">is_not_banned_from_board(user, opts \\ [])</h1>
 
 
   </div>
@@ -301,15 +292,17 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> recent(
+          <pre translate="no"><span class="attribute">@spec</span> is_not_banned_from_board(
   user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(),
-  user_priority :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
-  opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | nil
-) :: [<a href="#t:t/0">t</a>()]</pre>
+  opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()
+) ::
+  {:ok, not_banned :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}</pre>
 
       </div>
 
-<p>Returns recent threads accounting for user priority and user's ignored boards</p><p>TODO(akinsey): complete implementation for main view</p>
+<p>Used to check if <code class="inline">User</code> with specified <code class="inline">user_id</code> is not banned from board.
+Accepts a <code class="inline">board_id</code>, <code class="inline">post_id</code> or <code class="inline">thread_id</code> as an option.</p><p>Returns <code class="inline">true</code> if the user is <strong>not</strong> banned from the specified <code class="inline">Board</code> or <code class="inline">false</code>
+otherwise.</p>
   </section>
 </section>
 

@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.28.6">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.PreferenceController — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServer.Models.MetadataThread — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
@@ -95,14 +95,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.PreferenceController</span> 
+  <span translate="no">EpochtalkServer.Models.MetadataThread</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Controller For <code class="inline">Preference</code> related API requests</p>
+<p><code class="inline">MetadataThread</code> model, for performing actions relating to <code class="inline">Board</code> metadata</p>
   </section>
 
 
@@ -115,6 +115,21 @@ epochtalk_server
       Summary
     </h1>
 
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+
+        </div>
+
+      </div>
+
+  </div>
+
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
@@ -122,11 +137,21 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#preferences/2" translate="no">preferences(conn, attrs)</a>
+          <a href="#changeset/2" translate="no">changeset(metadata_thread, attrs \\ %{})</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Used to retrieve preferences of a specific <code class="inline">User</code></p></div>
+          <div class="summary-synopsis"><p>Create changeset for inserting a new <code class="inline">MetadataThread</code> model</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#insert/1" translate="no">insert(metadata_thread)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Inserts a new <code class="inline">MetadataThread</code> into the database</p></div>
 
       </div>
 
@@ -134,6 +159,48 @@ epochtalk_server
 
   </section>
 
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
+
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.MetadataThread{
+  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  thread: <a href="EpochtalkServer.Models.Thread.html#t:t/0">EpochtalkServer.Models.Thread.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  thread_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  views: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -144,21 +211,56 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="preferences/2">
+<section class="detail" id="changeset/2">
+
+    <span id="changeset/1"></span>
 
   <div class="detail-header">
-    <a href="#preferences/2" class="detail-link" title="Link to this function">
+    <a href="#changeset/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">preferences(conn, attrs)</h1>
+    <h1 class="signature" translate="no">changeset(metadata_thread, attrs \\ %{})</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to retrieve preferences of a specific <code class="inline">User</code></p>
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> changeset(
+  metadata_thread :: <a href="#t:t/0">t</a>(),
+  attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
+) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create changeset for inserting a new <code class="inline">MetadataThread</code> model</p>
+  </section>
+</section>
+<section class="detail" id="insert/1">
+
+  <div class="detail-header">
+    <a href="#insert/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">insert(metadata_thread)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> insert(metadata_thread :: <a href="#t:t/0">t</a>()) ::
+  {:ok, metadata_thread :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Inserts a new <code class="inline">MetadataThread</code> into the database</p>
   </section>
 </section>
 

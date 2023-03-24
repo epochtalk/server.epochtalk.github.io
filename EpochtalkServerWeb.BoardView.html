@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.28.6">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.PreferenceView — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.BoardView — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
@@ -95,14 +95,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.PreferenceView</span> 
+  <span translate="no">EpochtalkServerWeb.BoardView</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">Preference</code> data, in JSON format for frontend</p>
+<p>Renders and formats <code class="inline">Board</code> data, in JSON format for frontend</p>
   </section>
 
 
@@ -132,11 +132,21 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#format_board_data_for_find/4" translate="no">format_board_data_for_find(board_moderators, board_mapping, board_id, user_priority)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Board view helper method for mapping childboards and other metadata to board using board mapping and user priority</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#render/2" translate="no">render(template, assigns \\ %{})</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Renders formatted JSON response for user preferences.</p></div>
+          <div class="summary-synopsis"><p>Renders <code class="inline">Board</code> for find query.</p></div>
 
       </div>
 
@@ -146,9 +156,8 @@ epochtalk_server
 
         </div>
 
-          <div class="summary-synopsis"><p>Callback invoked when no template is found.
-By default it raises but can be customized
-to render a particular template.</p></div>
+          <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
+for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 
       </div>
 
@@ -183,6 +192,23 @@ Functions
 <p>The resource name, as an atom, for this view</p>
   </section>
 </section>
+<section class="detail" id="format_board_data_for_find/4">
+
+  <div class="detail-header">
+    <a href="#format_board_data_for_find/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">format_board_data_for_find(board_moderators, board_mapping, board_id, user_priority)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Board view helper method for mapping childboards and other metadata to board using board mapping and user priority</p>
+  </section>
+</section>
 <section class="detail" id="render/2">
 
     <span id="render/1"></span>
@@ -199,36 +225,7 @@ Functions
 
   <section class="docstring">
 
-<p>Renders formatted JSON response for user preferences.</p><h2 id="render/2-example" class="section-heading">
-  <a href="#render/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">example</p>
-  </a>
-  Example
-</h2>
-<p>  iex&gt; EpochtalkServerWeb.PreferenceView.render(&quot;preferences.json&quot;, %{preferences: nil})
-  %{</p><pre><code class="makeup elixir" translate="no"><span class="ss">posts_per_page</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
-</span><span class="ss">threads_per_page</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
-</span><span class="ss">collapsed_categories</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0218055396-1">[</span><span class="p" data-group-id="0218055396-1">]</span><span class="p">,</span><span class="w">
-</span><span class="ss">ignored_boards</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0218055396-2">[</span><span class="p" data-group-id="0218055396-2">]</span><span class="p">,</span><span class="w">
-</span><span class="ss">timezone_offset</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-</span><span class="ss">notify_replied_threads</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p">,</span><span class="w">
-</span><span class="ss">ignore_newbies</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span><span class="w">
-</span><span class="ss">patroller_view</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p">,</span><span class="w">
-</span><span class="ss">email_mentions</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p">,</span><span class="w">
-</span><span class="ss">email_messages</span><span class="p">:</span><span class="w"> </span><span class="no">true</span></code></pre><p>  }
-  iex&gt; preferences = %{
-  iex&gt;   posts_per_page: 25,
-  iex&gt;   threads_per_page: 25,
-  iex&gt;   collapsed_categories: %{&quot;cats&quot; =&gt; []},
-  iex&gt;   ignored_boards: %{&quot;boards&quot; =&gt; []},
-  iex&gt;   timezone_offset: &quot;&quot;,
-  iex&gt;   notify_replied_threads: true,
-  iex&gt;   ignore_newbies: false,
-  iex&gt;   patroller_view: false,
-  iex&gt;   email_mentions: true,
-  iex&gt;   email_messages: true
-  iex&gt; }
-  iex&gt; EpochtalkServerWeb.PreferenceView.render(&quot;preferences.json&quot;, %{preferences: preferences})</p>
+<p>Renders <code class="inline">Board</code> for find query.</p>
   </section>
 </section>
 <section class="detail" id="template_not_found/2">
@@ -251,9 +248,17 @@ Functions
 
       </div>
 
-<p>Callback invoked when no template is found.
-By default it raises but can be customized
-to render a particular template.</p>
+<p>Renders whatever data it is passed when template not found. Data pass through
+for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="template_not_found/2-example" class="section-heading">
+  <a href="#template_not_found/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.BoardView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="4635019659-1">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4635019659-2">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="4635019659-2">}</span><span class="p" data-group-id="4635019659-1">)</span><span class="w">
+</span><span class="p" data-group-id="4635019659-3">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="4635019659-3">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.BoardView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="4635019659-4">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4635019659-5">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4635019659-5">}</span><span class="p" data-group-id="4635019659-4">)</span><span class="w">
+</span><span class="p" data-group-id="4635019659-6">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4635019659-6">}</span></code></pre>
   </section>
 </section>
 

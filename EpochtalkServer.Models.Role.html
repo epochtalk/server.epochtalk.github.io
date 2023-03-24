@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-08D694A2.js"></script>
+    <script src="dist/sidebar_items-D0484962.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -188,6 +188,17 @@ epochtalk_server
       <div class="summary-row">
         <div class="summary-signature">
           <a href="#get_default/0" translate="no">get_default()</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Returns default <code class="inline">Role</code>, for base installation this is the <code class="inline">user</code> role, if <code class="inline">:epochtalk_server[:frontend_config][&quot;newbie_enabled&quot;]</code>
+configuration is set to true, then <code class="inline">newbie</code> is the default role.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_default_unauthenticated/0" translate="no">get_default_unauthenticated()</a>
 
         </div>
 
@@ -466,6 +477,30 @@ Functions
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> get_default() :: <a href="#t:t/0">t</a>() | nil</pre>
+
+      </div>
+
+<p>Returns default <code class="inline">Role</code>, for base installation this is the <code class="inline">user</code> role, if <code class="inline">:epochtalk_server[:frontend_config][&quot;newbie_enabled&quot;]</code>
+configuration is set to true, then <code class="inline">newbie</code> is the default role.</p>
+  </section>
+</section>
+<section class="detail" id="get_default_unauthenticated/0">
+
+  <div class="detail-header">
+    <a href="#get_default_unauthenticated/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_default_unauthenticated()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_default_unauthenticated() :: <a href="#t:t/0">t</a>() | nil</pre>
 
       </div>
 

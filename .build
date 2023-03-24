@@ -5,6 +5,7 @@ EpochtalkServer.Mailer.html
 EpochtalkServer.Models.Ban.html
 EpochtalkServer.Models.BannedAddress.html
 EpochtalkServer.Models.Board.html
+EpochtalkServer.Models.BoardBan.html
 EpochtalkServer.Models.BoardMapping.html
 EpochtalkServer.Models.BoardModerator.html
 EpochtalkServer.Models.Category.html
@@ -12,6 +13,7 @@ EpochtalkServer.Models.Configuration.html
 EpochtalkServer.Models.Invitation.html
 EpochtalkServer.Models.Mention.html
 EpochtalkServer.Models.MetadataBoard.html
+EpochtalkServer.Models.MetadataThread.html
 EpochtalkServer.Models.Notification.html
 EpochtalkServer.Models.Permission.html
 EpochtalkServer.Models.Post.html
@@ -25,6 +27,8 @@ EpochtalkServer.Models.User.html
 EpochtalkServer.Repo.html
 EpochtalkServer.Session.html
 EpochtalkServer.html
+EpochtalkServerWeb.BoardController.html
+EpochtalkServerWeb.BoardView.html
 EpochtalkServerWeb.ConfigurationController.html
 EpochtalkServerWeb.ConfigurationView.html
 EpochtalkServerWeb.CustomErrors.InvalidPayload.html
@@ -53,6 +57,8 @@ EpochtalkServerWeb.RoleView.html
 EpochtalkServerWeb.Router.Helpers.html
 EpochtalkServerWeb.Router.html
 EpochtalkServerWeb.Telemetry.html
+EpochtalkServerWeb.ThreadController.html
+EpochtalkServerWeb.ThreadView.html
 EpochtalkServerWeb.UserChannel.html
 EpochtalkServerWeb.UserController.html
 EpochtalkServerWeb.UserSocket.html
@@ -84,7 +90,7 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-E5UFLALU.woff2
-dist/search_items-40AD306C.js
-dist/sidebar_items-08D694A2.js
+dist/search_items-18754614.js
+dist/sidebar_items-D0484962.js
 index.html
 search.html

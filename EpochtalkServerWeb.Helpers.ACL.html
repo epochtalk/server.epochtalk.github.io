@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-08D694A2.js"></script>
+    <script src="dist/sidebar_items-D0484962.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -141,6 +141,16 @@ epochtalk_server
 
       </div>
 
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_user_priority/1" translate="no">get_user_priority(user)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Helper which returns the active User's priority.</p></div>
+
+      </div>
+
   </div>
 
   </section>
@@ -210,6 +220,33 @@ the proper permissions.</p>
 
 <p>Same as <code class="inline">ACL.allow!/2</code> but allows a custom error message to be raised if the
 <code class="inline">User</code> does not have the proper permissions.</p>
+  </section>
+</section>
+<section class="detail" id="get_user_priority/1">
+
+  <div class="detail-header">
+    <a href="#get_user_priority/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_user_priority(user)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_user_priority(<a href="https://hexdocs.pm/plug/1.13.6/Plug.Conn.html#t:t/0">Plug.Conn.t</a>() | <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()</pre>
+
+      </div>
+
+<p>Helper which returns the active User's priority.</p><p>Will return priorty of role with highest permissions if the user is authenticated, otherwise anonymous priority
+is returned if <code class="inline">frontend_config.login_required</code> is false otherwise private role priority is returned. If
+user is banned the Banned role priority is returned.</p><p>TODO(akinsey): review chain of authenticated user's roles. See if banned and user roles are being defaulted
+prior to calling this function or if this function should handle defaulting the user's roles</p>
   </section>
 </section>
 
