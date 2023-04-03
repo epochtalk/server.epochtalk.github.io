@@ -675,7 +675,10 @@ and is expected to return the updated user's roles.</p>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> set_priority_restrictions(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), priority_restrictions :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
+          <pre translate="no"><span class="attribute">@spec</span> set_priority_restrictions(
+  id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
+  priority_restrictions :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | nil
+) ::
   {:ok, role :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
