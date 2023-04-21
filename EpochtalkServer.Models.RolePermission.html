@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-AFF2EEB8.js"></script>
+    <script src="dist/sidebar_items-4D371737.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -170,6 +170,8 @@ epochtalk_server
           <a href="#modify_by_role/1" translate="no">modify_by_role(new_role)</a>
 
         </div>
+
+          <div class="summary-synopsis"><p>For admin api use.</p></div>
 
       </div>
 
@@ -339,7 +341,16 @@ Functions
 
   <section class="docstring">
 
+      <div class="specs">
 
+          <pre translate="no"><span class="attribute">@spec</span> modify_by_role(role :: <a href="EpochtalkServer.Models.Role.html#t:t/0">EpochtalkServer.Models.Role.t</a>()) :: {:ok, :success}</pre>
+
+      </div>
+
+<p>For admin api use.</p><p>Updates the <code class="inline">modified</code> value of <code class="inline">RolePermission</code>s for a <code class="inline">Role</code>
+and updates the <code class="inline">Role</code>'s permissions and priority restrictions</p><p>If a permission is not included in <code class="inline">new_permissions</code>, it will be set to
+<code class="inline">false</code>.  <code class="inline">new_permissions</code> may be an empty list - in which case, all
+permissions will be set to <code class="inline">false</code>.</p><p>Any permissions in <code class="inline">new_permissions</code> which are not valid will be ignored.</p>
   </section>
 </section>
 <section class="detail" id="permissions_map_by_role_id/1">
