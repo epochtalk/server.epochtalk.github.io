@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.28.6">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServer.Models.Permission — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServer.Models.PollAnswer — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
@@ -95,14 +95,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServer.Models.Permission</span> 
+  <span translate="no">EpochtalkServer.Models.PollAnswer</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p><code class="inline">Permission</code> model, for performing actions relating to <code class="inline">Role</code> permissions, used for seeding</p>
+<p><code class="inline">PollAnswer</code> model, for performing actions relating to <code class="inline">Poll</code> answers</p>
   </section>
 
 
@@ -137,31 +137,31 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#all/0" translate="no">all()</a>
+          <a href="#changeset/2" translate="no">changeset(poll_answer, attrs \\ %{})</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Returns every <code class="inline">Permission</code> record in the database</p></div>
+          <div class="summary-synopsis"><p>Generic changeset for <code class="inline">PollAnswer</code> model</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#by_path/1" translate="no">by_path(path)</a>
+          <a href="#create/1" translate="no">create(poll_answer_attrs)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Returns a specific <code class="inline">Permission</code> provided it's path</p></div>
+          <div class="summary-synopsis"><p>Creates a new <code class="inline">PollAnswer</code> in the database</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#changeset/2" translate="no">changeset(permission, attrs \\ %{})</a>
+          <a href="#create_changeset/2" translate="no">create_changeset(poll_answer, attrs \\ %{})</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>Creates a generic changeset for <code class="inline">Permission</code> model</p></div>
+          <div class="summary-synopsis"><p>Create changeset for <code class="inline">PollAnswer</code> model</p></div>
 
       </div>
 
@@ -195,9 +195,13 @@ Types
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.Permission{
+          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.PollAnswer{
   __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  path: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil
+  answer: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  poll: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  poll_id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  poll_responses: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
 }</pre>
 
       </div>
@@ -218,52 +222,6 @@ Types
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="all/0">
-
-  <div class="detail-header">
-    <a href="#all/0" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">all()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> all() :: [<a href="#t:t/0">t</a>()] | []</pre>
-
-      </div>
-
-<p>Returns every <code class="inline">Permission</code> record in the database</p>
-  </section>
-</section>
-<section class="detail" id="by_path/1">
-
-  <div class="detail-header">
-    <a href="#by_path/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">by_path(path)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> by_path(path :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>() | nil</pre>
-
-      </div>
-
-<p>Returns a specific <code class="inline">Permission</code> provided it's path</p>
-  </section>
-</section>
 <section class="detail" id="changeset/2">
 
     <span id="changeset/1"></span>
@@ -273,7 +231,7 @@ Functions
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(permission, attrs \\ %{})</h1>
+    <h1 class="signature" translate="no">changeset(poll_answer, attrs \\ %{})</h1>
 
 
   </div>
@@ -282,11 +240,65 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(permission :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> changeset(
+  poll_answer :: <a href="#t:t/0">t</a>(),
+  attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
+) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
-<p>Creates a generic changeset for <code class="inline">Permission</code> model</p>
+<p>Generic changeset for <code class="inline">PollAnswer</code> model</p>
+  </section>
+</section>
+<section class="detail" id="create/1">
+
+  <div class="detail-header">
+    <a href="#create/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create(poll_answer_attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates a new <code class="inline">PollAnswer</code> in the database</p>
+  </section>
+</section>
+<section class="detail" id="create_changeset/2">
+
+    <span id="create_changeset/1"></span>
+
+  <div class="detail-header">
+    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_changeset(poll_answer, attrs \\ %{})</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(
+  poll_answer :: <a href="#t:t/0">t</a>(),
+  attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
+) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create changeset for <code class="inline">PollAnswer</code> model</p>
   </section>
 </section>
 

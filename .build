@@ -16,6 +16,9 @@ EpochtalkServer.Models.MetadataBoard.html
 EpochtalkServer.Models.MetadataThread.html
 EpochtalkServer.Models.Notification.html
 EpochtalkServer.Models.Permission.html
+EpochtalkServer.Models.Poll.html
+EpochtalkServer.Models.PollAnswer.html
+EpochtalkServer.Models.PollResponse.html
 EpochtalkServer.Models.Post.html
 EpochtalkServer.Models.Preference.html
 EpochtalkServer.Models.Profile.html
@@ -26,6 +29,7 @@ EpochtalkServer.Models.Thread.html
 EpochtalkServer.Models.User.html
 EpochtalkServer.Repo.html
 EpochtalkServer.Session.html
+EpochtalkServer.Validators.NaiveDateTime.html
 EpochtalkServer.html
 EpochtalkServerWeb.BoardController.html
 EpochtalkServerWeb.BoardView.html
@@ -90,7 +94,7 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-E5UFLALU.woff2
-dist/search_items-3FE517F5.js
-dist/sidebar_items-818E1A8E.js
+dist/search_items-CA7D38AE.js
+dist/sidebar_items-6AB98677.js
 index.html
 search.html

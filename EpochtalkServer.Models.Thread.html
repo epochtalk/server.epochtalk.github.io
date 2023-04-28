@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-818E1A8E.js"></script>
+    <script src="dist/sidebar_items-6AB98677.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -147,6 +147,36 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#create/2" translate="no">create(thread_attrs, user_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Creates a new <code class="inline">Thread</code> in the database</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_changeset/2" translate="no">create_changeset(thread, attrs)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create changeset for creation of <code class="inline">Thread</code> model</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#increment_post_count/1" translate="no">increment_post_count(id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Increments the <code class="inline">post_count</code> field given a <code class="inline">Thread</code> id</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#page_by_board_id/3" translate="no">page_by_board_id(board_id, page \\ 1, opts \\ [])</a>
 
         </div>
@@ -162,6 +192,16 @@ epochtalk_server
         </div>
 
           <div class="summary-synopsis"><p>Returns recent threads accounting for user priority and user's ignored boards</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#set_timestamps/1" translate="no">set_timestamps(id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Sets the <code class="inline">created_at</code> and <code class="inline">updated_at</code> of a new <code class="inline">Thread</code> by querying it's posts.</p></div>
 
       </div>
 
@@ -252,6 +292,76 @@ Functions
 <p>Create generic changeset for <code class="inline">Thread</code> model</p>
   </section>
 </section>
+<section class="detail" id="create/2">
+
+  <div class="detail-header">
+    <a href="#create/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create(thread_attrs, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create(thread_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
+  {:ok, thread :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates a new <code class="inline">Thread</code> in the database</p>
+  </section>
+</section>
+<section class="detail" id="create_changeset/2">
+
+  <div class="detail-header">
+    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_changeset(thread, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(thread :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create changeset for creation of <code class="inline">Thread</code> model</p>
+  </section>
+</section>
+<section class="detail" id="increment_post_count/1">
+
+  <div class="detail-header">
+    <a href="#increment_post_count/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">increment_post_count(id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> increment_post_count(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil}</pre>
+
+      </div>
+
+<p>Increments the <code class="inline">post_count</code> field given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
 <section class="detail" id="page_by_board_id/3">
 
     <span id="page_by_board_id/1"></span>
@@ -310,6 +420,29 @@ Functions
       </div>
 
 <p>Returns recent threads accounting for user priority and user's ignored boards</p><p>TODO(akinsey): complete implementation for main view</p>
+  </section>
+</section>
+<section class="detail" id="set_timestamps/1">
+
+  <div class="detail-header">
+    <a href="#set_timestamps/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">set_timestamps(id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> set_timestamps(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil}</pre>
+
+      </div>
+
+<p>Sets the <code class="inline">created_at</code> and <code class="inline">updated_at</code> of a new <code class="inline">Thread</code> by querying it's posts.</p>
   </section>
 </section>
 

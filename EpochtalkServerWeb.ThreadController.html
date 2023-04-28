@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-818E1A8E.js"></script>
+    <script src="dist/sidebar_items-6AB98677.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -132,6 +132,16 @@ epochtalk_server
 
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#create/2" translate="no">create(conn, attrs)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Used to create threads</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#recent/2" translate="no">recent(conn, attrs)</a>
 
         </div>
@@ -169,6 +179,23 @@ Functions
   <section class="docstring">
 
 <p>Used to retrieve threads by board</p>
+  </section>
+</section>
+<section class="detail" id="create/2">
+
+  <div class="detail-header">
+    <a href="#create/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Used to create threads</p><p>TODO(akinsey): Post pre processing, image processing, hooks. Things to consider:</p><ul><li>does html sanitizer need to run on the front end too</li><li>how do we run the same parser/sanitizer on the elixir back end as the node frontend</li><li>processing mentions</li></ul>
   </section>
 </section>
 <section class="detail" id="recent/2">

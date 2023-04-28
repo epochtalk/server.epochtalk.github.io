@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-818E1A8E.js"></script>
+    <script src="dist/sidebar_items-6AB98677.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -145,6 +145,37 @@ epochtalk_server
 
       </div>
 
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create/1" translate="no">create(post)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Creates a new <code class="inline">Post</code> in the database</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_changeset/2" translate="no">create_changeset(post, attrs)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create changeset for <code class="inline">Post</code> model</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#set_position_using_thread/2" translate="no">set_position_using_thread(id, thread_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Sets the <code class="inline">post_position</code> of a new <code class="inline">Post</code>, by querying the <code class="inline">post_count</code> of the
+parent <code class="inline">Thread</code> and adding one</p></div>
+
+      </div>
+
   </div>
 
   </section>
@@ -231,6 +262,80 @@ Functions
       </div>
 
 <p>Create generic changeset for <code class="inline">Post</code> model</p>
+  </section>
+</section>
+<section class="detail" id="create/1">
+
+  <div class="detail-header">
+    <a href="#create/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create(post)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates a new <code class="inline">Post</code> in the database</p>
+  </section>
+</section>
+<section class="detail" id="create_changeset/2">
+
+  <div class="detail-header">
+    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_changeset(post, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(post :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create changeset for <code class="inline">Post</code> model</p>
+  </section>
+</section>
+<section class="detail" id="set_position_using_thread/2">
+
+  <div class="detail-header">
+    <a href="#set_position_using_thread/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">set_position_using_thread(id, thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> set_position_using_thread(
+  id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
+) ::
+  {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil}</pre>
+
+      </div>
+
+<p>Sets the <code class="inline">post_position</code> of a new <code class="inline">Post</code>, by querying the <code class="inline">post_count</code> of the
+parent <code class="inline">Thread</code> and adding one</p>
   </section>
 </section>
 

@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-818E1A8E.js"></script>
+    <script src="dist/sidebar_items-6AB98677.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -141,7 +141,37 @@ epochtalk_server
 
         </div>
 
-          <div class="summary-synopsis"><p>Creates a generic changeset for <code class="inline">Profile</code> model</p></div>
+          <div class="summary-synopsis"><p>Creates a changeset for <code class="inline">Profile</code> model</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create/2" translate="no">create(user_id, attrs \\ %{})</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Creates <code class="inline">Profile</code> record for a specific <code class="inline">User</code></p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#increment_post_count/1" translate="no">increment_post_count(user_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Increments the <code class="inline">post_count</code> field given a <code class="inline">User</code> id</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#upsert/2" translate="no">upsert(user_id, attrs \\ %{})</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Upserts <code class="inline">Profile</code> record for a specific <code class="inline">User</code></p></div>
 
       </div>
 
@@ -229,7 +259,82 @@ Functions
 
       </div>
 
-<p>Creates a generic changeset for <code class="inline">Profile</code> model</p>
+<p>Creates a changeset for <code class="inline">Profile</code> model</p>
+  </section>
+</section>
+<section class="detail" id="create/2">
+
+    <span id="create/1"></span>
+
+  <div class="detail-header">
+    <a href="#create/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create(user_id, attrs \\ %{})</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) ::
+  {:ok, profile :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates <code class="inline">Profile</code> record for a specific <code class="inline">User</code></p>
+  </section>
+</section>
+<section class="detail" id="increment_post_count/1">
+
+  <div class="detail-header">
+    <a href="#increment_post_count/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">increment_post_count(user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> increment_post_count(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil}</pre>
+
+      </div>
+
+<p>Increments the <code class="inline">post_count</code> field given a <code class="inline">User</code> id</p>
+  </section>
+</section>
+<section class="detail" id="upsert/2">
+
+    <span id="upsert/1"></span>
+
+  <div class="detail-header">
+    <a href="#upsert/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">upsert(user_id, attrs \\ %{})</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> upsert(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) ::
+  {:ok, profile :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Upserts <code class="inline">Profile</code> record for a specific <code class="inline">User</code></p>
   </section>
 </section>
 
