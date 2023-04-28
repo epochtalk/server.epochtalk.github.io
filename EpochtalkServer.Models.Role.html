@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-4D371737.js"></script>
+    <script src="dist/sidebar_items-818E1A8E.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -277,6 +277,27 @@ if roles array is empty, sets the default role by appending it</p></div>
         </div>
 
           <div class="summary-synopsis"><p>Updates the priority_restrictions of an existing <code class="inline">Role</code> in the database</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update/1" translate="no">update(attrs)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Updates an existing <code class="inline">Role</code> in the database</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_changeset/2" translate="no">update_changeset(role, attrs \\ %{})</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create a changeset for updating a <code class="inline">Role</code>
+permissions and priority restrictions are not included in this changeset</p></div>
 
       </div>
 
@@ -652,7 +673,7 @@ and is expected to return the updated user's roles.</p>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> set_permissions(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), permissions_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  {:ok, role :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, role :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Schema.html#t:t/0">Ecto.Schema.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -679,11 +700,61 @@ and is expected to return the updated user's roles.</p>
   id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
   priority_restrictions :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | nil
 ) ::
-  {:ok, role :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, role :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Schema.html#t:t/0">Ecto.Schema.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
 <p>Updates the priority_restrictions of an existing <code class="inline">Role</code> in the database</p>
+  </section>
+</section>
+<section class="detail" id="update/1">
+
+  <div class="detail-header">
+    <a href="#update/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update(attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  {:ok, role :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Schema.html#t:t/0">Ecto.Schema.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Updates an existing <code class="inline">Role</code> in the database</p>
+  </section>
+</section>
+<section class="detail" id="update_changeset/2">
+
+    <span id="update_changeset/1"></span>
+
+  <div class="detail-header">
+    <a href="#update_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_changeset(role, attrs \\ %{})</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_changeset(role :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create a changeset for updating a <code class="inline">Role</code>
+permissions and priority restrictions are not included in this changeset</p>
   </section>
 </section>
 
