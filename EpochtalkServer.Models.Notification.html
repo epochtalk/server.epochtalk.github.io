@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServer.Models.Notification — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -114,71 +115,69 @@ epochtalk_server
       </a>
       Summary
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
 
-  <div class="summary-types summary">
-    <h2>
-      <a href="#types">Types</a>
-    </h2>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#t:t/0" translate="no">t()</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:t/0" translate="no">t()</a>
 
       </div>
 
-  </div>
+    </div>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
+</div>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#changeset/2" translate="no">changeset(notification, attrs)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">Notification</code> model</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#changeset/2" translate="no">changeset(notification, attrs)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#counts_by_user_id/2" translate="no">counts_by_user_id(user_id, list)</a>
+        <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">Notification</code> model</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Returns <code class="inline">Notification</code> counts for a specific <code class="inline">User</code> by <code class="inline">id</code>, from the database. Used
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#counts_by_user_id/2" translate="no">counts_by_user_id(user_id, list)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns <code class="inline">Notification</code> counts for a specific <code class="inline">User</code> by <code class="inline">id</code>, from the database. Used
 to display new message/mention notifications.</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#dismiss/1" translate="no">dismiss(id)</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#dismiss/1" translate="no">dismiss(id)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Dismisses specific <code class="inline">Notification</code> by <code class="inline">id</code>. Used
+        <div class="summary-synopsis"><p>Dismisses specific <code class="inline">Notification</code> by <code class="inline">id</code>. Used
 to display clear a specific message/mention <code class="inline">Notification</code>.</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#dismiss_type_by_user_id/2" translate="no">dismiss_type_by_user_id(user_id, type)</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#dismiss_type_by_user_id/2" translate="no">dismiss_type_by_user_id(user_id, type)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Dismisses <code class="inline">Notification</code> counts for a specific <code class="inline">User</code> by <code class="inline">id</code>. Used
+        <div class="summary-synopsis"><p>Dismisses <code class="inline">Notification</code> counts for a specific <code class="inline">User</code> by <code class="inline">id</code>. Used
 to display clear message/mention notifications.</p></div>
 
-      </div>
+    </div>
 
-  </div>
+</div>
 
   </section>
 
@@ -255,7 +254,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(notification :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> changeset(notification :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -341,10 +340,23 @@ to display clear message/mention notifications.</p>
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 

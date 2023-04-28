@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServerWeb.RoleView — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -114,44 +115,43 @@ epochtalk_server
       </a>
       Summary
     </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#__resource__/0" translate="no">__resource__()</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>The resource name, as an atom, for this view</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#__resource__/0" translate="no">__resource__()</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#render/2" translate="no">render(template, assigns \\ %{})</a>
+        <div class="summary-synopsis"><p>The resource name, as an atom, for this view</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Renders the given template locally.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#render/2" translate="no">render(template, assigns \\ %{})</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#template_not_found/2" translate="no">template_not_found(template, assigns)</a>
+        <div class="summary-synopsis"><p>Renders the given template locally.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#template_not_found/2" translate="no">template_not_found(template, assigns)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
 for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 
-      </div>
+    </div>
 
-  </div>
+</div>
 
   </section>
 
@@ -217,7 +217,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> template_not_found(<a href="https://hexdocs.pm/phoenix_view/1.1.2/Phoenix.Template.html#t:name/0">Phoenix.Template.name</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> template_not_found(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
 
       </div>
 
@@ -228,10 +228,10 @@ for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="t
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.RoleView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="9365245085-1">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9365245085-2">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="9365245085-2">}</span><span class="p" data-group-id="9365245085-1">)</span><span class="w">
-</span><span class="p" data-group-id="9365245085-3">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="9365245085-3">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.RoleView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="9365245085-4">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9365245085-5">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="9365245085-5">}</span><span class="p" data-group-id="9365245085-4">)</span><span class="w">
-</span><span class="p" data-group-id="9365245085-6">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="9365245085-6">}</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.RoleView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="7521643513-1">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7521643513-2">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="7521643513-2">}</span><span class="p" data-group-id="7521643513-1">)</span><span class="w">
+</span><span class="p" data-group-id="7521643513-3">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="7521643513-3">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.RoleView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="7521643513-4">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7521643513-5">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="7521643513-5">}</span><span class="p" data-group-id="7521643513-4">)</span><span class="w">
+</span><span class="p" data-group-id="7521643513-6">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="7521643513-6">}</span></code></pre>
   </section>
 </section>
 
@@ -239,10 +239,23 @@ for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="t
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 

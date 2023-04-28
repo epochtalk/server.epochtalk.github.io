@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServer.Auth.Guardian.Plug — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -110,125 +111,124 @@ epochtalk_server
       </a>
       Summary
     </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#authenticated?/2" translate="no">authenticated?(conn, opts \\ [])</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#authenticated?/2" translate="no">authenticated?(conn, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#clear_remember_me/2" translate="no">clear_remember_me(conn, opts \\ [])</a>
+    </div>
 
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#current_claims/2" translate="no">current_claims(conn, opts \\ [])</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#clear_remember_me/2" translate="no">clear_remember_me(conn, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#current_resource/2" translate="no">current_resource(conn, opts \\ [])</a>
+    </div>
 
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#current_token/2" translate="no">current_token(conn, opts \\ [])</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#current_claims/2" translate="no">current_claims(conn, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#implementation/0" translate="no">implementation()</a>
+    </div>
 
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#put_current_claims/3" translate="no">put_current_claims(conn, claims, opts \\ [])</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#current_resource/2" translate="no">current_resource(conn, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#put_current_resource/3" translate="no">put_current_resource(conn, resource, opts \\ [])</a>
+    </div>
 
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#put_current_token/3" translate="no">put_current_token(conn, token, opts \\ [])</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#current_token/2" translate="no">current_token(conn, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#put_session_token/3" translate="no">put_session_token(conn, token, opts \\ [])</a>
+    </div>
 
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#remember_me/4" translate="no">remember_me(conn, resource, claims \\ %{}, opts \\ [])</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#implementation/0" translate="no">implementation()</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#remember_me_from_token/4" translate="no">remember_me_from_token(conn, token, claims \\ %{}, opts \\ [])</a>
+    </div>
 
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#sign_in/4" translate="no">sign_in(conn, resource, claims \\ %{}, opts \\ [])</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#put_current_claims/3" translate="no">put_current_claims(conn, claims, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#sign_out/2" translate="no">sign_out(conn, opts \\ [])</a>
+    </div>
 
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#put_current_resource/3" translate="no">put_current_resource(conn, resource, opts \\ [])</a>
 
       </div>
 
-  </div>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#put_current_token/3" translate="no">put_current_token(conn, token, opts \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#put_session_token/3" translate="no">put_session_token(conn, token, opts \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#remember_me/4" translate="no">remember_me(conn, resource, claims \\ %{}, opts \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#remember_me_from_token/4" translate="no">remember_me_from_token(conn, token, claims \\ %{}, opts \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#sign_in/4" translate="no">sign_in(conn, resource, claims \\ %{}, opts \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#sign_out/2" translate="no">sign_out(conn, opts \\ [])</a>
+
+      </div>
+
+    </div>
+
+</div>
 
   </section>
 
@@ -478,11 +478,11 @@ Functions
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> remember_me_from_token(
-  <a href="https://hexdocs.pm/plug/1.13.6/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(),
-  <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
-  <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(),
-  <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()
-) :: <a href="https://hexdocs.pm/plug/1.13.6/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()</pre>
+  <a href="https://hexdocs.pm/plug/1.14.2/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(),
+  <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
+  <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(),
+  <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()
+) :: <a href="https://hexdocs.pm/plug/1.14.2/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()</pre>
 
       </div>
 
@@ -534,10 +534,23 @@ Functions
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 

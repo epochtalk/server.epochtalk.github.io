@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServerWeb.Helpers.Validate — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -114,38 +115,37 @@ epochtalk_server
       </a>
       Summary
     </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#cast/4" translate="no">cast(attrs, key, type, opts \\ [])</a>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#cast/4" translate="no">cast(attrs, key, type, opts \\ [])</a>
+      </div>
 
-        </div>
-
-          <div class="summary-synopsis"><p>Helper used to validate and cast request parameters directly out of the incoming
+        <div class="summary-synopsis"><p>Helper used to validate and cast request parameters directly out of the incoming
 paylod map (usually a controller function's <code class="inline">attrs</code> parameter) to the specified type.
 Will raise an <a href="EpochtalkServerWeb.CustomErrors.InvalidPayload.html"><code class="inline">EpochtalkServerWeb.CustomErrors.InvalidPayload</code></a> exception if map value does
 not pass validation and casting.</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#cast_str/3" translate="no">cast_str(str, type, opts \\ [])</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#cast_str/3" translate="no">cast_str(str, type, opts \\ [])</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Helper used to validate and cast request parameters. Takes in a <code class="inline">String.t()</code> and casts it
+        <div class="summary-synopsis"><p>Helper used to validate and cast request parameters. Takes in a <code class="inline">String.t()</code> and casts it
 to the specified type. Will raise an <a href="EpochtalkServerWeb.CustomErrors.InvalidPayload.html"><code class="inline">EpochtalkServerWeb.CustomErrors.InvalidPayload</code></a>
 exception if string does not pass validation and casting.</p></div>
 
-      </div>
+    </div>
 
-  </div>
+</div>
 
   </section>
 
@@ -208,16 +208,16 @@ not pass validation and casting.</p><h3 id="cast/4-valid-types" class="section-h
   Example
 </h2>
 <pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">EpochtalkServerWeb.Helpers.Validate</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2334611534-1">%{</span><span class="s">&quot;page&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;42&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p" data-group-id="2334611534-1">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="2334611534-2">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2334611534-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0022207813-1">%{</span><span class="s">&quot;page&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;42&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p" data-group-id="0022207813-1">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0022207813-2">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="0022207813-2">)</span><span class="w">
 </span><span class="mi">42</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="2334611534-3">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2334611534-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0022207813-3">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="0022207813-3">)</span><span class="w">
 </span><span class="no">nil</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="2334611534-4">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="2334611534-4">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0022207813-4">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="0022207813-4">)</span><span class="w">
 </span><span class="no">false</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="2334611534-5">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="2334611534-5">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0022207813-5">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extended&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="0022207813-5">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
 </span><span class="s">&quot;true&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="2334611534-6">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2334611534-6">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast</span><span class="p" data-group-id="0022207813-6">(</span><span class="n">attrs</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="0022207813-6">)</span><span class="w">
 </span><span class="gt">** (EpochtalkServerWeb.CustomErrors.InvalidPayload) Invalid payload, key &#39;post_count&#39; should be of type &#39;integer&#39;</span></code></pre>
   </section>
 </section>
@@ -270,15 +270,15 @@ exception if string does not pass validation and casting.</p><h3 id="cast_str/3-
   Example
 </h2>
 <pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">EpochtalkServerWeb.Helpers.Validate</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="0065545282-1">(</span><span class="s">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="0065545282-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8853794723-1">(</span><span class="s">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8853794723-1">)</span><span class="w">
 </span><span class="mi">15</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="0065545282-2">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="0065545282-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8853794723-2">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">min</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8853794723-2">)</span><span class="w">
 </span><span class="no">nil</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="0065545282-3">(</span><span class="s">&quot;false&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="0065545282-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8853794723-3">(</span><span class="s">&quot;false&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p" data-group-id="8853794723-3">)</span><span class="w">
 </span><span class="no">false</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="0065545282-4">(</span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="0065545282-4">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8853794723-4">(</span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:unsupported</span><span class="p" data-group-id="8853794723-4">)</span><span class="w"> </span><span class="c1"># returns input if type not supported</span><span class="w">
 </span><span class="s">&quot;true&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="0065545282-5">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="0065545282-5">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Validate</span><span class="o">.</span><span class="n">cast_str</span><span class="p" data-group-id="8853794723-5">(</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="ss">:integer</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;post_count&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8853794723-5">)</span><span class="w">
 </span><span class="gt">** (EpochtalkServerWeb.CustomErrors.InvalidPayload) Invalid payload, key &#39;post_count&#39; should be of type &#39;integer&#39;</span></code></pre>
   </section>
 </section>
@@ -287,10 +287,23 @@ exception if string does not pass validation and casting.</p><h3 id="cast_str/3-
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 

@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServerWeb.Presence — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -115,119 +116,118 @@ by the <code class="inline">user:public</code> channel to check if a <code class
       </a>
       Summary
     </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#child_spec/1" translate="no">child_spec(opts)</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#child_spec/1" translate="no">child_spec(opts)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#fetch/2" translate="no">fetch(topic, presences)</a>
+    </div>
 
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:fetch/2"><code class="inline">Phoenix.Presence.fetch/2</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#fetch/2" translate="no">fetch(topic, presences)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#fetchers_pids/0" translate="no">fetchers_pids()</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:fetch/2"><code class="inline">Phoenix.Presence.fetch/2</code></a>.</p></div>
 
-        </div>
+    </div>
 
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#get_by_key/2" translate="no">get_by_key(topic, key)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:get_by_key/2"><code class="inline">Phoenix.Presence.get_by_key/2</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#fetchers_pids/0" translate="no">fetchers_pids()</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#list/1" translate="no">list(topic)</a>
+    </div>
 
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:list/1"><code class="inline">Phoenix.Presence.list/1</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_by_key/2" translate="no">get_by_key(topic, key)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#track/3" translate="no">track(socket, key, meta)</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:get_by_key/2"><code class="inline">Phoenix.Presence.get_by_key/2</code></a>.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:track/3"><code class="inline">Phoenix.Presence.track/3</code></a>.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#track/4" translate="no">track(pid, topic, key, meta)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:track/4"><code class="inline">Phoenix.Presence.track/4</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#list/1" translate="no">list(topic)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#untrack/2" translate="no">untrack(socket, key)</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:list/1"><code class="inline">Phoenix.Presence.list/1</code></a>.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:untrack/2"><code class="inline">Phoenix.Presence.untrack/2</code></a>.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#untrack/3" translate="no">untrack(pid, topic, key)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:untrack/3"><code class="inline">Phoenix.Presence.untrack/3</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#track/3" translate="no">track(socket, key, meta)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#update/3" translate="no">update(socket, key, meta)</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:track/3"><code class="inline">Phoenix.Presence.track/3</code></a>.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:update/3"><code class="inline">Phoenix.Presence.update/3</code></a>.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#update/4" translate="no">update(pid, topic, key, meta)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:update/4"><code class="inline">Phoenix.Presence.update/4</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#track/4" translate="no">track(pid, topic, key, meta)</a>
 
       </div>
 
-  </div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:track/4"><code class="inline">Phoenix.Presence.track/4</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#untrack/2" translate="no">untrack(socket, key)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:untrack/2"><code class="inline">Phoenix.Presence.untrack/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#untrack/3" translate="no">untrack(pid, topic, key)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:untrack/3"><code class="inline">Phoenix.Presence.untrack/3</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update/3" translate="no">update(socket, key, meta)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:update/3"><code class="inline">Phoenix.Presence.update/3</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update/4" translate="no">update(pid, topic, key, meta)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:update/4"><code class="inline">Phoenix.Presence.update/4</code></a>.</p></div>
+
+    </div>
+
+</div>
 
   </section>
 
@@ -272,7 +272,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:fetch/2"><code class="inline">Phoenix.Presence.fetch/2</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:fetch/2"><code class="inline">Phoenix.Presence.fetch/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="fetchers_pids/0">
@@ -306,7 +306,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:get_by_key/2"><code class="inline">Phoenix.Presence.get_by_key/2</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:get_by_key/2"><code class="inline">Phoenix.Presence.get_by_key/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="list/1">
@@ -323,7 +323,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:list/1"><code class="inline">Phoenix.Presence.list/1</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:list/1"><code class="inline">Phoenix.Presence.list/1</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="track/3">
@@ -340,7 +340,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:track/3"><code class="inline">Phoenix.Presence.track/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:track/3"><code class="inline">Phoenix.Presence.track/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="track/4">
@@ -357,7 +357,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:track/4"><code class="inline">Phoenix.Presence.track/4</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:track/4"><code class="inline">Phoenix.Presence.track/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="untrack/2">
@@ -374,7 +374,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:untrack/2"><code class="inline">Phoenix.Presence.untrack/2</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:untrack/2"><code class="inline">Phoenix.Presence.untrack/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="untrack/3">
@@ -391,7 +391,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:untrack/3"><code class="inline">Phoenix.Presence.untrack/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:untrack/3"><code class="inline">Phoenix.Presence.untrack/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="update/3">
@@ -408,7 +408,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:update/3"><code class="inline">Phoenix.Presence.update/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:update/3"><code class="inline">Phoenix.Presence.update/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="update/4">
@@ -425,7 +425,7 @@ Functions
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Presence.html#c:update/4"><code class="inline">Phoenix.Presence.update/4</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Presence.html#c:update/4"><code class="inline">Phoenix.Presence.update/4</code></a>.</p>
   </section>
 </section>
 
@@ -433,10 +433,23 @@ Functions
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 

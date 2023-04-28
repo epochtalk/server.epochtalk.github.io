@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServerWeb.UserChannel — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -138,89 +139,88 @@ a message triggers the client to manually make an api request for the updated da
       </a>
       Summary
     </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#child_spec/1" translate="no">child_spec(init_arg)</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#child_spec/1" translate="no">child_spec(init_arg)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#is_online/2" translate="no">is_online(socket, user_id)</a>
+    </div>
 
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#is_online/2" translate="no">is_online(socket, user_id)</a>
 
-          <div class="summary-synopsis"><p>Handles message <code class="inline">is_online</code>, checks <code class="inline">user:public</code> channel to see if
+      </div>
+
+        <div class="summary-synopsis"><p>Handles message <code class="inline">is_online</code>, checks <code class="inline">user:public</code> channel to see if
 <code class="inline">User</code> with <code class="inline">user_id</code> is connected using Presence. Returns <code class="inline">user_id</code>
 and <code class="inline">online</code>, a boolean indicating if the <code class="inline">User</code> is connected.</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#join_public_channel/1" translate="no">join_public_channel(socket)</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#join_public_channel/1" translate="no">join_public_channel(socket)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Handles joining of <code class="inline">user:public</code> channel. Message is broadcast on this channel when
+        <div class="summary-synopsis"><p>Handles joining of <code class="inline">user:public</code> channel. Message is broadcast on this channel when
 a <code class="inline">MOTD</code> is updated, this tells the client to fetch the MOTD.</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#join_role_channel/1" translate="no">join_role_channel(socket)</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#join_role_channel/1" translate="no">join_role_channel(socket)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Handles joining of <code class="inline">user:role</code> channel. Messages are broadcast on this channel when
+        <div class="summary-synopsis"><p>Handles joining of <code class="inline">user:role</code> channel. Messages are broadcast on this channel when
 a roles are updated, which tell the client to reauthenticate inorder to fetch new roles.
 Messages contain the <code class="inline">lookup</code> of the updated role, the client will check the user's roles for the
 role <code class="inline">lookup</code> and reauthenticate if necessary.</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#join_user_channel/2" translate="no">join_user_channel(socket, user_id)</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#join_user_channel/2" translate="no">join_user_channel(socket, user_id)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Handles joining of <code class="inline">user:&lt;user_id&gt;</code> channel, enforces that user is authenticated.
+        <div class="summary-synopsis"><p>Handles joining of <code class="inline">user:&lt;user_id&gt;</code> channel, enforces that user is authenticated.
 This channel is used to broadcast events such as reauthenticate or logout to a
 specific <code class="inline">User</code> with matching <code class="inline">user_id</code>.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#start_link/1" translate="no">start_link(triplet)</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start_link/1" translate="no">start_link(triplet)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#track_user_online/1" translate="no">track_user_online(socket)</a>
+    </div>
 
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#track_user_online/1" translate="no">track_user_online(socket)</a>
 
-          <div class="summary-synopsis"><p>Tracks a <code class="inline">User</code> that joins a channel using <code class="inline">Presence</code>. Currently
+      </div>
+
+        <div class="summary-synopsis"><p>Tracks a <code class="inline">User</code> that joins a channel using <code class="inline">Presence</code>. Currently
 used to track a <code class="inline">User</code> that joins the <code class="inline">user:public</code> channel. Used by forum
 order to keep track of online users.</p></div>
 
-      </div>
+    </div>
 
-  </div>
+</div>
 
   </section>
 
@@ -267,9 +267,9 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> is_online(socket :: <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
+          <pre translate="no"><span class="attribute">@spec</span> is_online(socket :: <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
   {:reply, {:ok, %{id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), online: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}},
-   socket :: <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()}</pre>
+   socket :: <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()}</pre>
 
       </div>
 
@@ -294,7 +294,7 @@ and <code class="inline">online</code>, a boolean indicating if the <code class=
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> join_public_channel(socket :: <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()) :: {:ok, <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> join_public_channel(socket :: <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()) :: {:ok, <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()}</pre>
 
       </div>
 
@@ -318,8 +318,8 @@ a <code class="inline">MOTD</code> is updated, this tells the client to fetch th
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> join_role_channel(socket :: <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()) ::
-  {:ok, <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()} | {:error, data :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> join_role_channel(socket :: <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()} | {:error, data :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}</pre>
 
       </div>
 
@@ -345,8 +345,8 @@ role <code class="inline">lookup</code> and reauthenticate if necessary.</p>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> join_user_channel(socket :: <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>(), user_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) ::
-  {:ok, <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()} | {:error, data :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> join_user_channel(socket :: <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>(), user_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()} | {:error, data :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}</pre>
 
       </div>
 
@@ -388,8 +388,8 @@ specific <code class="inline">User</code> with matching <code class="inline">use
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> track_user_online(socket :: <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()) ::
-  {:noreply, <a href="https://hexdocs.pm/phoenix/1.6.14/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> track_user_online(socket :: <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()) ::
+  {:noreply, <a href="https://hexdocs.pm/phoenix/1.7.2/Phoenix.Socket.html#t:t/0">Phoenix.Socket.t</a>()}</pre>
 
       </div>
 
@@ -403,10 +403,23 @@ order to keep track of online users.</p>
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 

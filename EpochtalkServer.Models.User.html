@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServer.Models.User — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -114,134 +115,132 @@ epochtalk_server
       </a>
       Summary
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
 
-  <div class="summary-types summary">
-    <h2>
-      <a href="#types">Types</a>
-    </h2>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#t:t/0" translate="no">t()</a>
-
-        </div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:t/0" translate="no">t()</a>
 
       </div>
 
-  </div>
+    </div>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
+</div>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#by_id/1" translate="no">by_id(id)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Gets a <code class="inline">User</code> from the database by <code class="inline">id</code></p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#by_id/1" translate="no">by_id(id)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#by_username/1" translate="no">by_username(username)</a>
+        <div class="summary-synopsis"><p>Gets a <code class="inline">User</code> from the database by <code class="inline">id</code></p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Gets a <code class="inline">User</code> by <code class="inline">username</code>, from the database, with all of it's associations preloaded.
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#by_username/1" translate="no">by_username(username)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Gets a <code class="inline">User</code> by <code class="inline">username</code>, from the database, with all of it's associations preloaded.
 Appends the <code class="inline">user</code> <code class="inline">Role</code> to <code class="inline">user.roles</code> if no roles present. Strips all roles but
 <code class="inline">banned</code> from <code class="inline">user.roles</code> if user is banned.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#clear_malicious_score_by_id/1" translate="no">clear_malicious_score_by_id(id)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Clears the malicious score of a <code class="inline">User</code> by <code class="inline">id</code>, from the database</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#clear_malicious_score_by_id/1" translate="no">clear_malicious_score_by_id(id)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#create/1" translate="no">create(attrs)</a>
+        <div class="summary-synopsis"><p>Clears the malicious score of a <code class="inline">User</code> by <code class="inline">id</code>, from the database</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Creates a new <code class="inline">User</code> in the database, used for registration</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#create/2" translate="no">create(attrs, admin)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Creates a new <code class="inline">User</code> in the database and assigns the <code class="inline">superAdministrator</code> <code class="inline">Role</code>, used for seeding</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create/1" translate="no">create(attrs)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#handle_malicious_user/2" translate="no">handle_malicious_user(user, ip)</a>
+        <div class="summary-synopsis"><p>Creates a new <code class="inline">User</code> in the database, used for registration</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Checks if the provided <code class="inline">User</code> is malicious using the provided <code class="inline">ip</code>. If the <code class="inline">User</code>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create/2" translate="no">create(attrs, admin)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a new <code class="inline">User</code> in the database and assigns the <code class="inline">superAdministrator</code> <code class="inline">Role</code>, used for seeding</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#handle_malicious_user/2" translate="no">handle_malicious_user(user, ip)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if the provided <code class="inline">User</code> is malicious using the provided <code class="inline">ip</code>. If the <code class="inline">User</code>
 is found to be malicious after checking <code class="inline">BannedAddress</code> records, the user's
 <code class="inline">malicious_score</code> is updated and is assigned the <code class="inline">banned</code> <code class="inline">Role</code>, in the database
 and in place. Otherwise the user is just returned with no change.</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#registration_changeset/2" translate="no">registration_changeset(user, attrs)</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#registration_changeset/2" translate="no">registration_changeset(user, attrs)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Creates a registration changeset for <code class="inline">User</code> model, returns an error changeset
+        <div class="summary-synopsis"><p>Creates a registration changeset for <code class="inline">User</code> model, returns an error changeset
 if validation of username, email and password do not pass.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#valid_password?/2" translate="no">valid_password?(user, password)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Validates with Argon2 that a <code class="inline">User</code> <code class="inline">passhash</code> matches the supplied <code class="inline">password</code></p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#valid_password?/2" translate="no">valid_password?(user, password)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#with_email_exists?/1" translate="no">with_email_exists?(email)</a>
+        <div class="summary-synopsis"><p>Validates with Argon2 that a <code class="inline">User</code> <code class="inline">passhash</code> matches the supplied <code class="inline">password</code></p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Checks if <code class="inline">User</code> with <code class="inline">email</code> exists in the database</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#with_username_exists?/1" translate="no">with_username_exists?(username)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Checks if <code class="inline">User</code> with <code class="inline">username</code> exists in the database</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#with_email_exists?/1" translate="no">with_email_exists?(email)</a>
 
       </div>
 
-  </div>
+        <div class="summary-synopsis"><p>Checks if <code class="inline">User</code> with <code class="inline">email</code> exists in the database</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#with_username_exists?/1" translate="no">with_username_exists?(username)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if <code class="inline">User</code> with <code class="inline">username</code> exists in the database</p></div>
+
+    </div>
+
+</div>
 
   </section>
 
@@ -401,7 +400,7 @@ Appends the <code class="inline">user</code> <code class="inline">Role</code> to
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> create(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, user :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, user :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -425,7 +424,7 @@ Appends the <code class="inline">user</code> <code class="inline">Role</code> to
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> create(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), admin :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
-  {:ok, user :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, user :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -475,7 +474,7 @@ and in place. Otherwise the user is just returned with no change.</p>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> registration_changeset(user :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.9.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> registration_changeset(user :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -557,10 +556,23 @@ if validation of username, email and password do not pass.</p>
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 

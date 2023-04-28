@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.28.6">
+    <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
     <title>EpochtalkServer.Auth.Guardian — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-5CLCQQME.css" />
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-6AB98677.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-65DB297D.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-PLW5RNNI.js"></script>
+    <script async src="dist/html-JDI3AVDD.js"></script>
 
 
   </head>
@@ -51,7 +52,7 @@
     </button>
     <label class="search-label">
       <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
     </label>
   </form>
 
@@ -66,9 +67,9 @@
       <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
       </a>
-      <strong class="sidebar-projectVersion" translate="no">
+      <div class="sidebar-projectVersion" translate="no">
         v0.1.0
-      </strong>
+      </div>
     </div>
     <ul class="sidebar-listNav">
       <li><a id="extras-list-link" href="#full-list">Pages</a></li>
@@ -80,7 +81,7 @@ epochtalk_server
   </div>
 
   <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
+  <ul id="full-list"></ul>
 </section>
 
 <section class="content">
@@ -89,7 +90,7 @@ epochtalk_server
     <div id="content" class="content-inner">
 
 <h1>
-<button class="settings display-settings">
+<button class="icon-action display-settings">
   <i class="ri-settings-3-line"></i>
   <span class="sr-only">Settings</span>
 </button>
@@ -106,13 +107,13 @@ epochtalk_server
 that is <code class="inline">token</code> based.
 Tokens should be:</p><ul><li>tamper proof</li><li>include a payload (claims)
 JWT tokens (the default) fit this description.
-When using Guardian, you'll need an implementation module.<pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="w"> </span><span class="k" data-group-id="3889359545-1">do</span><span class="w">
+When using Guardian, you'll need an implementation module.<pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="w"> </span><span class="k" data-group-id="0458294290-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Guardian</span><span class="p">,</span><span class="w"> </span><span class="ss">otp_app</span><span class="p">:</span><span class="w"> </span><span class="ss">:my_app</span><span class="w">
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">subject_for_token</span><span class="p" data-group-id="3889359545-2">(</span><span class="n">resource</span><span class="p">,</span><span class="w"> </span><span class="c">_claims</span><span class="p" data-group-id="3889359545-2">)</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3889359545-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">to_string</span><span class="p" data-group-id="3889359545-4">(</span><span class="n">resource</span><span class="o">.</span><span class="n">id</span><span class="p" data-group-id="3889359545-4">)</span><span class="p" data-group-id="3889359545-3">}</span><span class="w">
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">resource_from_claims</span><span class="p" data-group-id="3889359545-5">(</span><span class="n">claims</span><span class="p" data-group-id="3889359545-5">)</span><span class="w"> </span><span class="k" data-group-id="3889359545-6">do</span><span class="w">
-    </span><span class="n">find_me_a_resource</span><span class="p" data-group-id="3889359545-7">(</span><span class="n">claims</span><span class="p" data-group-id="3889359545-8">[</span><span class="s">&quot;sub&quot;</span><span class="p" data-group-id="3889359545-8">]</span><span class="p" data-group-id="3889359545-7">)</span><span class="w"> </span><span class="c1"># {:ok, resource} or {:error, reason}</span><span class="w">
-  </span><span class="k" data-group-id="3889359545-6">end</span><span class="w">
-</span><span class="k" data-group-id="3889359545-1">end</span></code></pre>This module is what you will use to interact with tokens in your application.
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">subject_for_token</span><span class="p" data-group-id="0458294290-2">(</span><span class="n">resource</span><span class="p">,</span><span class="w"> </span><span class="c">_claims</span><span class="p" data-group-id="0458294290-2">)</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0458294290-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">to_string</span><span class="p" data-group-id="0458294290-4">(</span><span class="n">resource</span><span class="o">.</span><span class="n">id</span><span class="p" data-group-id="0458294290-4">)</span><span class="p" data-group-id="0458294290-3">}</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">resource_from_claims</span><span class="p" data-group-id="0458294290-5">(</span><span class="n">claims</span><span class="p" data-group-id="0458294290-5">)</span><span class="w"> </span><span class="k" data-group-id="0458294290-6">do</span><span class="w">
+    </span><span class="n">find_me_a_resource</span><span class="p" data-group-id="0458294290-7">(</span><span class="n">claims</span><span class="p" data-group-id="0458294290-8">[</span><span class="s">&quot;sub&quot;</span><span class="p" data-group-id="0458294290-8">]</span><span class="p" data-group-id="0458294290-7">)</span><span class="w"> </span><span class="c1"># {:ok, resource} or {:error, reason}</span><span class="w">
+  </span><span class="k" data-group-id="0458294290-6">end</span><span class="w">
+</span><span class="k" data-group-id="0458294290-1">end</span></code></pre>This module is what you will use to interact with tokens in your application.
 When you <code class="inline">use</code> Guardian, the <code class="inline">:otp_app</code> option is required.
 Any other option provided will be merged with the configuration in the config
 files.
@@ -155,7 +156,7 @@ Return - a map including the <code class="inline">:claims</code> key.</p><h3 id=
 <p>Without argument <code class="inline">config</code> will return the full configuration Keyword list.
 When given a <code class="inline">key</code> and optionally a default, <code class="inline">config</code> will fetch a resolved value
 contained in the key.
-See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Config.html#resolve_value/1"><code class="inline">Guardian.Config.resolve_value/1</code></a></p><h3 id="module-encode_and_sign-resource-claims-opts" class="section-heading">
+See <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Config.html#resolve_value/1"><code class="inline">Guardian.Config.resolve_value/1</code></a></p><h3 id="module-encode_and_sign-resource-claims-opts" class="section-heading">
   <a href="#module-encode_and_sign-resource-claims-opts" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">encode_and_sign-resource-claims-opts</p>
   </a>
@@ -164,13 +165,13 @@ See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Config.html#resolve_valu
 <p>Creates a signed token.
 Arguments:</p><ul><li><code class="inline">resource</code> - The resource to represent in the token (i.e. the user)</li><li><code class="inline">claims</code> - Any custom claims that you want to use in your token</li><li><code class="inline">opts</code> - Options for the token module and callbacks
 For more information on options see the documentation for your token module.<pre><code class="makeup elixir" translate="no"><span class="c1"># Provide a token using the defaults including the default_token_type</span><span class="w">
-</span><span class="p" data-group-id="3318084474-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">full_claims</span><span class="p" data-group-id="3318084474-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">encode_and_sign</span><span class="p" data-group-id="3318084474-2">(</span><span class="n">user</span><span class="p" data-group-id="3318084474-2">)</span><span class="w">
+</span><span class="p" data-group-id="6874581219-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">full_claims</span><span class="p" data-group-id="6874581219-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">encode_and_sign</span><span class="p" data-group-id="6874581219-2">(</span><span class="n">user</span><span class="p" data-group-id="6874581219-2">)</span><span class="w">
 </span><span class="c1"># Provide a token including custom claims</span><span class="w">
-</span><span class="p" data-group-id="3318084474-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">full_claims</span><span class="p" data-group-id="3318084474-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">encode_and_sign</span><span class="p" data-group-id="3318084474-4">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3318084474-5">%{</span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="3318084474-5">}</span><span class="p" data-group-id="3318084474-4">)</span><span class="w">
+</span><span class="p" data-group-id="6874581219-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">full_claims</span><span class="p" data-group-id="6874581219-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">encode_and_sign</span><span class="p" data-group-id="6874581219-4">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6874581219-5">%{</span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="6874581219-5">}</span><span class="p" data-group-id="6874581219-4">)</span><span class="w">
 </span><span class="c1"># Provide a token including custom claims and a different token type/ttl</span><span class="w">
-</span><span class="p" data-group-id="3318084474-6">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">full_claims</span><span class="p" data-group-id="3318084474-6">}</span><span class="w"> </span><span class="o">=</span><span class="w">
-  </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">encode_and_sign</span><span class="p" data-group-id="3318084474-7">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3318084474-8">%{</span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="3318084474-8">}</span><span class="p">,</span><span class="w"> </span><span class="ss">token_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;refresh&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">ttl</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3318084474-9">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">:weeks</span><span class="p" data-group-id="3318084474-9">}</span><span class="p" data-group-id="3318084474-7">)</span></code></pre>The <code class="inline">encode_and_sign</code> function calls a number of callbacks on
-your implementation module. See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#encode_and_sign/4"><code class="inline">Guardian.encode_and_sign/4</code></a></li></ul><h3 id="module-decode_and_verify-token-claims_to_check-opts" class="section-heading">
+</span><span class="p" data-group-id="6874581219-6">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">full_claims</span><span class="p" data-group-id="6874581219-6">}</span><span class="w"> </span><span class="o">=</span><span class="w">
+  </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">encode_and_sign</span><span class="p" data-group-id="6874581219-7">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6874581219-8">%{</span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="6874581219-8">}</span><span class="p">,</span><span class="w"> </span><span class="ss">token_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;refresh&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">ttl</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6874581219-9">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">:weeks</span><span class="p" data-group-id="6874581219-9">}</span><span class="p" data-group-id="6874581219-7">)</span></code></pre>The <code class="inline">encode_and_sign</code> function calls a number of callbacks on
+your implementation module. See <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#encode_and_sign/4"><code class="inline">Guardian.encode_and_sign/4</code></a></li></ul><h3 id="module-decode_and_verify-token-claims_to_check-opts" class="section-heading">
   <a href="#module-decode_and_verify-token-claims_to_check-opts" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">decode_and_verify-token-claims_to_check-opts</p>
   </a>
@@ -181,14 +182,14 @@ Arguments:</p><ul><li><code class="inline">token</code> - The token to decode</l
 any of the claims do not literally match verification fails.</li><li><code class="inline">opts</code> - The options to pass to the token module and callbacks
 Callbacks:
 <code class="inline">decode_and_verify</code> calls a number of callbacks on your implementation module,
-See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#decode_and_verify/4"><code class="inline">Guardian.decode_and_verify/4</code></a><pre><code class="makeup elixir" translate="no"><span class="c1"># Decode and verify using the defaults</span><span class="w">
-</span><span class="p" data-group-id="0330652794-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="0330652794-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">decode_and_verify</span><span class="p" data-group-id="0330652794-2">(</span><span class="n">token</span><span class="p" data-group-id="0330652794-2">)</span><span class="w">
+See <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#decode_and_verify/4"><code class="inline">Guardian.decode_and_verify/4</code></a><pre><code class="makeup elixir" translate="no"><span class="c1"># Decode and verify using the defaults</span><span class="w">
+</span><span class="p" data-group-id="5926039269-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="5926039269-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">decode_and_verify</span><span class="p" data-group-id="5926039269-2">(</span><span class="n">token</span><span class="p" data-group-id="5926039269-2">)</span><span class="w">
 </span><span class="c1"># Decode and verify with literal claims check.</span><span class="w">
 </span><span class="c1"># If the claims in the token do not match those given verification will fail</span><span class="w">
-</span><span class="p" data-group-id="0330652794-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="0330652794-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">decode_and_verify</span><span class="p" data-group-id="0330652794-4">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0330652794-5">%{</span><span class="ss">match</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="0330652794-5">}</span><span class="p" data-group-id="0330652794-4">)</span><span class="w">
+</span><span class="p" data-group-id="5926039269-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="5926039269-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">decode_and_verify</span><span class="p" data-group-id="5926039269-4">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5926039269-5">%{</span><span class="ss">match</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="5926039269-5">}</span><span class="p" data-group-id="5926039269-4">)</span><span class="w">
 </span><span class="c1"># Decode and verify with literal claims check and options.</span><span class="w">
 </span><span class="c1"># Options are passed to your token module and callbacks</span><span class="w">
-</span><span class="p" data-group-id="0330652794-6">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="0330652794-6">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">decode_and_verify</span><span class="p" data-group-id="0330652794-7">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0330652794-8">%{</span><span class="ss">match</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="0330652794-8">}</span><span class="p">,</span><span class="w"> </span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;secret&quot;</span><span class="p" data-group-id="0330652794-7">)</span></code></pre></li></ul><h3 id="module-revoke-token-opts" class="section-heading">
+</span><span class="p" data-group-id="5926039269-6">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="5926039269-6">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">decode_and_verify</span><span class="p" data-group-id="5926039269-7">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5926039269-8">%{</span><span class="ss">match</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claim&quot;</span><span class="p" data-group-id="5926039269-8">}</span><span class="p">,</span><span class="w"> </span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;secret&quot;</span><span class="p" data-group-id="5926039269-7">)</span></code></pre></li></ul><h3 id="module-revoke-token-opts" class="section-heading">
   <a href="#module-revoke-token-opts" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">revoke-token-opts</p>
   </a>
@@ -196,7 +197,7 @@ See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#decode_and_verify/4
 </h3>
 <p>Revoke a token.
 <em>Note:</em> this is entirely dependent on your token module and implementation
-callbacks.</p><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="2496253201-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="2496253201-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">revoke</span><span class="p" data-group-id="2496253201-2">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;option&quot;</span><span class="p" data-group-id="2496253201-2">)</span></code></pre><h3 id="module-refresh-token-opts" class="section-heading">
+callbacks.</p><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="2285730383-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">claims</span><span class="p" data-group-id="2285730383-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">revoke</span><span class="p" data-group-id="2285730383-2">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="ss">some</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;option&quot;</span><span class="p" data-group-id="2285730383-2">)</span></code></pre><h3 id="module-refresh-token-opts" class="section-heading">
   <a href="#module-refresh-token-opts" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">refresh-token-opts</p>
   </a>
@@ -207,8 +208,8 @@ essentially the same claims but with a different expiry.
 Tokens are verified before performing the refresh to ensure
 only valid tokens may be refreshed.
 Arguments:</p><ul><li><code class="inline">token</code> - The old token to refresh</li><li><code class="inline">opts</code> - Options to pass to the Implementation Module and callbacks
-Options:</li><li><code class="inline">:ttl</code> - The new ttl. If not specified the default will be used.<pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="0620121845-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0620121845-2">{</span><span class="n">old_token</span><span class="p">,</span><span class="w"> </span><span class="n">old_claims</span><span class="p" data-group-id="0620121845-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0620121845-3">{</span><span class="n">new_token</span><span class="p">,</span><span class="w"> </span><span class="n">new_claims</span><span class="p" data-group-id="0620121845-3">}</span><span class="p" data-group-id="0620121845-1">}</span><span class="w"> </span><span class="o">=</span><span class="w">
-  </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">refresh</span><span class="p" data-group-id="0620121845-4">(</span><span class="n">old_token</span><span class="p">,</span><span class="w"> </span><span class="ss">ttl</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0620121845-5">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">:hour</span><span class="p" data-group-id="0620121845-5">}</span><span class="p" data-group-id="0620121845-4">)</span></code></pre>See <code class="inline">Guardian.refresh</code></li></ul><h3 id="module-exchange-old_token-from_type-to_type-options" class="section-heading">
+Options:</li><li><code class="inline">:ttl</code> - The new ttl. If not specified the default will be used.<pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="5406849841-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5406849841-2">{</span><span class="n">old_token</span><span class="p">,</span><span class="w"> </span><span class="n">old_claims</span><span class="p" data-group-id="5406849841-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5406849841-3">{</span><span class="n">new_token</span><span class="p">,</span><span class="w"> </span><span class="n">new_claims</span><span class="p" data-group-id="5406849841-3">}</span><span class="p" data-group-id="5406849841-1">}</span><span class="w"> </span><span class="o">=</span><span class="w">
+  </span><span class="nc">MyApp.Guardian</span><span class="o">.</span><span class="n">refresh</span><span class="p" data-group-id="5406849841-4">(</span><span class="n">old_token</span><span class="p">,</span><span class="w"> </span><span class="ss">ttl</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5406849841-5">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">:hour</span><span class="p" data-group-id="5406849841-5">}</span><span class="p" data-group-id="5406849841-4">)</span></code></pre>See <code class="inline">Guardian.refresh</code></li></ul><h3 id="module-exchange-old_token-from_type-to_type-options" class="section-heading">
   <a href="#module-exchange-old_token-from_type-to_type-options" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">exchange-old_token-from_type-to_type-options</p>
   </a>
@@ -233,241 +234,240 @@ See <code class="inline">Guardian.exchange</code></li></ul><p><strong>Note:</str
       </a>
       Summary
     </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
 
-  <div class="summary-functions summary">
-    <h2>
-      <a href="#functions">Functions</a>
-    </h2>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#after_encode_and_sign/4" translate="no">after_encode_and_sign(resource, claims, token, arg4)</a>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#after_encode_and_sign/4" translate="no">after_encode_and_sign(resource, claims, token, arg4)</a>
+      </div>
 
-        </div>
-
-          <div class="summary-synopsis"><p>An optional callback invoked after the token has been generated
+        <div class="summary-synopsis"><p>An optional callback invoked after the token has been generated
 and signed.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#after_sign_in/5" translate="no">after_sign_in(conn, r, t, c, o)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:after_sign_in/5"><code class="inline">Guardian.after_sign_in/5</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#after_sign_in/5" translate="no">after_sign_in(conn, r, t, c, o)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#before_sign_out/3" translate="no">before_sign_out(conn, location, opts)</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:after_sign_in/5"><code class="inline">Guardian.after_sign_in/5</code></a>.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:before_sign_out/3"><code class="inline">Guardian.before_sign_out/3</code></a>.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#build_claims/3" translate="no">build_claims(c, _, _)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:build_claims/3"><code class="inline">Guardian.build_claims/3</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#before_sign_out/3" translate="no">before_sign_out(conn, location, opts)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#config/0" translate="no">config()</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:before_sign_out/3"><code class="inline">Guardian.before_sign_out/3</code></a>.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Fetches the configuration for this module.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#config/2" translate="no">config(key, default \\ nil)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Returns a resolved value of the configuration found at a key.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_claims/3" translate="no">build_claims(c, _, _)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#decode_and_verify/3" translate="no">decode_and_verify(token, claims_to_check \\ %{}, opts \\ [])</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:build_claims/3"><code class="inline">Guardian.build_claims/3</code></a>.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Decodes and verifies a token using the configuration on the implementation
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#config/0" translate="no">config()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Fetches the configuration for this module.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#config/2" translate="no">config(key, default \\ nil)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns a resolved value of the configuration found at a key.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#decode_and_verify/3" translate="no">decode_and_verify(token, claims_to_check \\ %{}, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Decodes and verifies a token using the configuration on the implementation
 module.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#default_token_type/0" translate="no">default_token_type()</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>The default type of token for this module.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#default_token_type/0" translate="no">default_token_type()</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#encode_and_sign/3" translate="no">encode_and_sign(resource, claims \\ %{}, opts \\ [])</a>
+        <div class="summary-synopsis"><p>The default type of token for this module.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Encodes the claims.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#exchange/4" translate="no">exchange(token, from_type, to_type, opts \\ [])</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Exchanges a token of one type for another.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#encode_and_sign/3" translate="no">encode_and_sign(resource, claims \\ %{}, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#on_exchange/3" translate="no">on_exchange(old_stuff, new_stuff, options)</a>
+        <div class="summary-synopsis"><p>Encodes the claims.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:on_exchange/3"><code class="inline">Guardian.on_exchange/3</code></a>.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#on_refresh/3" translate="no">on_refresh(old_stuff, new_stuff, options)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>An optional callback invoked when a token is refreshed.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#exchange/4" translate="no">exchange(token, from_type, to_type, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#on_revoke/3" translate="no">on_revoke(claims, token, options)</a>
+        <div class="summary-synopsis"><p>Exchanges a token of one type for another.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>An optional callback invoked when a token is revoked.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#on_verify/3" translate="no">on_verify(claims, token, options)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>An optional callback invoked after the claims have been validated.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#on_exchange/3" translate="no">on_exchange(old_stuff, new_stuff, options)</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#peek/1" translate="no">peek(token)</a>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:on_exchange/3"><code class="inline">Guardian.on_exchange/3</code></a>.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Provides the content of the token but without verification
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#on_refresh/3" translate="no">on_refresh(old_stuff, new_stuff, options)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>An optional callback invoked when a token is refreshed.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#on_revoke/3" translate="no">on_revoke(claims, token, options)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>An optional callback invoked when a token is revoked.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#on_verify/3" translate="no">on_verify(claims, token, options)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>An optional callback invoked after the claims have been validated.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#peek/1" translate="no">peek(token)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Provides the content of the token but without verification
 of either the claims or the signature.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#refresh/2" translate="no">refresh(old_token, opts \\ [])</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Refresh a token.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#refresh/2" translate="no">refresh(old_token, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#resource_from_claims/1" translate="no">resource_from_claims(claims)</a>
+        <div class="summary-synopsis"><p>Refresh a token.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Fetches the resource that is represented by claims.
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#resource_from_claims/1" translate="no">resource_from_claims(claims)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Fetches the resource that is represented by claims.
 For JWT this would normally be found in the <code class="inline">sub</code> field.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#resource_from_token/3" translate="no">resource_from_token(token, claims_to_check \\ %{}, opts \\ [])</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Fetch the resource and claims directly from a token.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#resource_from_token/3" translate="no">resource_from_token(token, claims_to_check \\ %{}, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#revoke/2" translate="no">revoke(token, opts \\ [])</a>
+        <div class="summary-synopsis"><p>Fetch the resource and claims directly from a token.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>Revoke a token.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#revoke/2" translate="no">revoke(token, opts \\ [])</a>
 
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#sliding_cookie/3" translate="no">sliding_cookie(current_claims, current_resource, opts \\ [])</a>
+        <div class="summary-synopsis"><p>Revoke a token.</p></div>
 
-        </div>
+    </div>
 
-          <div class="summary-synopsis"><p>If Guardian.Plug.SlidingCookie is used, this callback will be invoked to
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#sliding_cookie/3" translate="no">sliding_cookie(current_claims, current_resource, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>If Guardian.Plug.SlidingCookie is used, this callback will be invoked to
 return the new claims, or an error (which will mean the cookie will not
 be refreshed).</p></div>
 
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#subject_for_token/2" translate="no">subject_for_token(arg1, arg2)</a>
+
       </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#subject_for_token/2" translate="no">subject_for_token(arg1, arg2)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Fetches the subject for a token for the provided resource and claims
+        <div class="summary-synopsis"><p>Fetches the subject for a token for the provided resource and claims
 The subject should be a short identifier that can be used to identify
 the resource.</p></div>
 
-      </div>
+    </div>
 
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#verify_claims/2" translate="no">verify_claims(claims, options)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:verify_claims/2"><code class="inline">Guardian.verify_claims/2</code></a>.</p></div>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#verify_claims/2" translate="no">verify_claims(claims, options)</a>
 
       </div>
 
-  </div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:verify_claims/2"><code class="inline">Guardian.verify_claims/2</code></a>.</p></div>
+
+    </div>
+
+</div>
 
   </section>
 
@@ -513,7 +513,7 @@ and signed.</p>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:after_sign_in/5"><code class="inline">Guardian.after_sign_in/5</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:after_sign_in/5"><code class="inline">Guardian.after_sign_in/5</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="before_sign_out/3">
@@ -530,7 +530,7 @@ and signed.</p>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:before_sign_out/3"><code class="inline">Guardian.before_sign_out/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:before_sign_out/3"><code class="inline">Guardian.before_sign_out/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="build_claims/3">
@@ -547,7 +547,7 @@ and signed.</p>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:build_claims/3"><code class="inline">Guardian.build_claims/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:build_claims/3"><code class="inline">Guardian.build_claims/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="config/0">
@@ -595,7 +595,7 @@ and signed.</p>
 
       </div>
 
-<p>Returns a resolved value of the configuration found at a key.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Config.html#resolve_value/1"><code class="inline">Guardian.Config.resolve_value/1</code></a>.</p>
+<p>Returns a resolved value of the configuration found at a key.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Config.html#resolve_value/1"><code class="inline">Guardian.Config.resolve_value/1</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="decode_and_verify/3">
@@ -619,16 +619,16 @@ and signed.</p>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> decode_and_verify(
-  <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
-  <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(),
-  <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()
+  <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
+  <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(),
+  <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()
 ) ::
-  {:ok, <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+  {:ok, <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
 
 <p>Decodes and verifies a token using the configuration on the implementation
-module.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#decode_and_verify/4"><code class="inline">Guardian.decode_and_verify/4</code></a>.</p>
+module.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#decode_and_verify/4"><code class="inline">Guardian.decode_and_verify/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="default_token_type/0">
@@ -674,12 +674,12 @@ module.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#decod
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> encode_and_sign(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()) ::
-  {:ok, <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> encode_and_sign(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
 
-<p>Encodes the claims.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#encode_and_sign/4"><code class="inline">Guardian.encode_and_sign/4</code></a> for more information.</p>
+<p>Encodes the claims.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#encode_and_sign/4"><code class="inline">Guardian.encode_and_sign/4</code></a> for more information.</p>
   </section>
 </section>
 <section class="detail" id="exchange/4">
@@ -701,13 +701,13 @@ module.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#decod
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> exchange(
-  token :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
+  token :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
   from_type :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), ...],
   to_type :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
-  options :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()
+  options :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()
 ) ::
-  {:ok, {<a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()},
-   {<a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()}}
+  {:ok, {<a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()},
+   {<a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()}}
   | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
@@ -729,7 +729,7 @@ module.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#decod
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:on_exchange/3"><code class="inline">Guardian.on_exchange/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:on_exchange/3"><code class="inline">Guardian.on_exchange/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="on_refresh/3">
@@ -804,7 +804,7 @@ module.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#decod
       </div>
 
 <p>Provides the content of the token but without verification
-of either the claims or the signature.</p><p>Claims will be present at the <code class="inline">:claims</code> key.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#peek/2"><code class="inline">Guardian.peek/2</code></a> for more information.</p>
+of either the claims or the signature.</p><p>Claims will be present at the <code class="inline">:claims</code> key.</p><p>See <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#peek/2"><code class="inline">Guardian.peek/2</code></a> for more information.</p>
   </section>
 </section>
 <section class="detail" id="refresh/2">
@@ -825,9 +825,9 @@ of either the claims or the signature.</p><p>Claims will be present at the <code
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> refresh(<a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()) ::
-  {:ok, {<a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()},
-   {<a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()}}
+          <pre translate="no"><span class="attribute">@spec</span> refresh(<a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()) ::
+  {:ok, {<a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()},
+   {<a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()}}
   | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
@@ -874,10 +874,10 @@ For JWT this would normally be found in the <code class="inline">sub</code> fiel
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> resource_from_token(
-  token :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
-  claims_to_check :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>() | nil,
-  opts :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()
-) :: {:ok, <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:resource/0">Guardian.Token.resource</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+  token :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(),
+  claims_to_check :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>() | nil,
+  opts :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()
+) :: {:ok, <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:resource/0">Guardian.Token.resource</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
 
@@ -902,8 +902,8 @@ For JWT this would normally be found in the <code class="inline">sub</code> fiel
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> revoke(<a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()) ::
-  {:ok, <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> revoke(<a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:token/0">Guardian.Token.token</a>(), <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
 
@@ -929,10 +929,10 @@ For JWT this would normally be found in the <code class="inline">sub</code> fiel
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> sliding_cookie(
-  current_claims :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(),
-  current_resource :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:resource/0">Guardian.Token.resource</a>(),
-  options :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#t:options/0">Guardian.options</a>()
-) :: {:ok, new_claims :: <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+  current_claims :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>(),
+  current_resource :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:resource/0">Guardian.Token.resource</a>(),
+  options :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#t:options/0">Guardian.options</a>()
+) :: {:ok, new_claims :: <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.Token.html#t:claims/0">Guardian.Token.claims</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
 
@@ -974,7 +974,7 @@ the resource.</p>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.0/Guardian.html#c:verify_claims/2"><code class="inline">Guardian.verify_claims/2</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/guardian/2.3.1/Guardian.html#c:verify_claims/2"><code class="inline">Guardian.verify_claims/2</code></a>.</p>
   </section>
 </section>
 
@@ -982,10 +982,23 @@ the resource.</p>
   </section>
 
       <footer class="footer">
-
         <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.6) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
