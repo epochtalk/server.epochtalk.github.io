@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.MentionController — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Helpers.QueryHelper — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.MentionController</span> 
+  <span translate="no">EpochtalkServerWeb.Helpers.QueryHelper</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Controller For <code class="inline">Mention</code> related API requests</p>
+<p>Helper for creating dynamic queries</p>
   </section>
 
 
@@ -122,11 +122,25 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#page/2" translate="no">page(conn, attrs)</a>
+        <a href="#build_and/3" translate="no">build_and(conditions, field, value)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to page <code class="inline">Mention</code> models for a specific <code class="inline">User</code></p></div>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_or/3" translate="no">build_or(conditions, field, value)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#sort/2" translate="no">sort(query, input)</a>
+
+      </div>
 
     </div>
 
@@ -144,21 +158,73 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="page/2">
+<section class="detail" id="build_and/3">
 
   <div class="detail-header">
-    <a href="#page/2" class="detail-link" title="Link to this function">
+    <a href="#build_and/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">page(conn, attrs)</h1>
+    <h1 class="signature" translate="no">build_and(conditions, field, value)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to page <code class="inline">Mention</code> models for a specific <code class="inline">User</code></p>
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> build_and(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), nil | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="build_or/3">
+
+  <div class="detail-header">
+    <a href="#build_or/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_or(conditions, field, value)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> build_or(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), nil | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="sort/2">
+
+  <div class="detail-header">
+    <a href="#sort/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sort(query, input)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sort(<a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Query.html#t:t/0">Ecto.Query.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Query.html#t:t/0">Ecto.Query.t</a>()</pre>
+
+      </div>
+
+
   </section>
 </section>
 

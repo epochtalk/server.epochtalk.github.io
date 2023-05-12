@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServer.Models.RoleUser — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServer.Models.ModerationLog — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServer.Models.RoleUser</span> 
+  <span translate="no">EpochtalkServer.Models.ModerationLog</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p><code class="inline">RoleUser</code> model, for performing actions relating a setting a <code class="inline">Role</code> for a <code class="inline">User</code></p>
+<p><code class="inline">ModerationLog</code> model, for performing actions relating to the moderation log</p>
   </section>
 
 
@@ -136,41 +136,31 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(role_user, attrs \\ %{})</a>
+        <a href="#create/1" translate="no">create(attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates a generic changeset for <code class="inline">RoleUser</code> model</p></div>
+        <div class="summary-synopsis"><p>Creates a new <code class="inline">ModerationLog</code> in the database</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#delete_user_role/2" translate="no">delete_user_role(role_id, user_id)</a>
+        <a href="#create_changeset/2" translate="no">create_changeset(moderation_log, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Removes specified <code class="inline">Role</code> from specified <code class="inline">User</code></p></div>
+        <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">ModerationLog</code> model</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#set_admin/1" translate="no">set_admin(user_id)</a>
+        <a href="#page/3" translate="no">page(attrs, page \\ 1, opts \\ [])</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Assigns a specific <code class="inline">User</code> to have the <code class="inline">superAdministrator</code> <code class="inline">Role</code></p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#set_user_role/2" translate="no">set_user_role(role_id, user_id)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Assigns a specific <code class="inline">User</code> to have the specified <code class="inline">Role</code></p></div>
+        <div class="summary-synopsis"><p>Page <code class="inline">ModerationLog</code> models</p></div>
 
     </div>
 
@@ -204,12 +194,18 @@ Types
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.RoleUser{
+          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.ModerationLog{
   __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  role: <a href="EpochtalkServer.Models.Role.html#t:t/0">EpochtalkServer.Models.Role.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  role_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  user: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  user_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+  action_api_method: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  action_api_url: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  action_display_text: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  action_display_url: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  action_obj: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil,
+  action_taken_at: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | nil,
+  action_type: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  mod_id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  mod_ip: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  mod_username: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil
 }</pre>
 
       </div>
@@ -230,16 +226,14 @@ Types
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="changeset/2">
-
-    <span id="changeset/1"></span>
+<section class="detail" id="create/1">
 
   <div class="detail-header">
-    <a href="#changeset/2" class="detail-link" title="Link to this function">
+    <a href="#create/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(role_user, attrs \\ %{})</h1>
+    <h1 class="signature" translate="no">create(attrs)</h1>
 
 
   </div>
@@ -248,21 +242,22 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(role_user :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  {:ok, moderation_log :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
-<p>Creates a generic changeset for <code class="inline">RoleUser</code> model</p>
+<p>Creates a new <code class="inline">ModerationLog</code> in the database</p>
   </section>
 </section>
-<section class="detail" id="delete_user_role/2">
+<section class="detail" id="create_changeset/2">
 
   <div class="detail-header">
-    <a href="#delete_user_role/2" class="detail-link" title="Link to this function">
+    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">delete_user_role(role_id, user_id)</h1>
+    <h1 class="signature" translate="no">create_changeset(moderation_log, attrs)</h1>
 
 
   </div>
@@ -271,24 +266,26 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> delete_user_role(
-  role_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
-  user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()
-) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()]}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(moderation_log :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) ::
+  <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
-<p>Removes specified <code class="inline">Role</code> from specified <code class="inline">User</code></p>
+<p>Create generic changeset for <code class="inline">ModerationLog</code> model</p>
   </section>
 </section>
-<section class="detail" id="set_admin/1">
+<section class="detail" id="page/3">
+
+    <span id="page/1"></span>
+
+    <span id="page/2"></span>
 
   <div class="detail-header">
-    <a href="#set_admin/1" class="detail-link" title="Link to this function">
+    <a href="#page/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">set_admin(user_id)</h1>
+    <h1 class="signature" translate="no">page(attrs, page \\ 1, opts \\ [])</h1>
 
 
   </div>
@@ -297,38 +294,12 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> set_admin(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) ::
-  {:ok, role_user :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> page(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), page :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), [{:per_page, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()}]) ::
+  {:ok, moderation_logs :: [<a href="#t:t/0">t</a>()] | [], pagination_data :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}</pre>
 
       </div>
 
-<p>Assigns a specific <code class="inline">User</code> to have the <code class="inline">superAdministrator</code> <code class="inline">Role</code></p>
-  </section>
-</section>
-<section class="detail" id="set_user_role/2">
-
-  <div class="detail-header">
-    <a href="#set_user_role/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">set_user_role(role_id, user_id)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> set_user_role(
-  role_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
-  user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()
-) :: {:ok, role_user :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
-
-      </div>
-
-<p>Assigns a specific <code class="inline">User</code> to have the specified <code class="inline">Role</code></p>
+<p>Page <code class="inline">ModerationLog</code> models</p>
   </section>
 </section>
 
