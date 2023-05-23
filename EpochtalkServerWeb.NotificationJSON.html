@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.NotificationView — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.NotificationJSON — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-E4AA3789.js"></script>
+    <script src="dist/sidebar_items-B293D218.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,7 +96,7 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.NotificationView</span> 
+  <span translate="no">EpochtalkServerWeb.NotificationJSON</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
@@ -122,32 +122,21 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#__resource__/0" translate="no">__resource__()</a>
+        <a href="#counts/1" translate="no">counts(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>The resource name, as an atom, for this view</p></div>
+        <div class="summary-synopsis"><p>Renders <code class="inline">Notification</code> counts data in JSON</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#render/2" translate="no">render(template, assigns \\ %{})</a>
+        <a href="#dismiss/1" translate="no">dismiss(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders the given template locally.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#template_not_found/2" translate="no">template_not_found(template, assigns)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
-for rendering misc responses (ex: {found: true} or {success: true})</p></div>
+        <div class="summary-synopsis"><p>Renders <code class="inline">Notification</code> dismiss data in JSON</p></div>
 
     </div>
 
@@ -165,73 +154,38 @@ for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="__resource__/0">
+<section class="detail" id="counts/1">
 
   <div class="detail-header">
-    <a href="#__resource__/0" class="detail-link" title="Link to this function">
+    <a href="#counts/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">__resource__()</h1>
+    <h1 class="signature" translate="no">counts(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>The resource name, as an atom, for this view</p>
+<p>Renders <code class="inline">Notification</code> counts data in JSON</p>
   </section>
 </section>
-<section class="detail" id="render/2">
-
-    <span id="render/1"></span>
+<section class="detail" id="dismiss/1">
 
   <div class="detail-header">
-    <a href="#render/2" class="detail-link" title="Link to this function">
+    <a href="#dismiss/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">render(template, assigns \\ %{})</h1>
+    <h1 class="signature" translate="no">dismiss(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders the given template locally.</p>
-  </section>
-</section>
-<section class="detail" id="template_not_found/2">
-
-  <div class="detail-header">
-    <a href="#template_not_found/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">template_not_found(template, assigns)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> template_not_found(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
-
-      </div>
-
-<p>Renders whatever data it is passed when template not found. Data pass through
-for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="template_not_found/2-example" class="section-heading">
-  <a href="#template_not_found/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">example</p>
-  </a>
-  Example
-</h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.NotificationView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="8376387472-1">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8376387472-2">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="8376387472-2">}</span><span class="p" data-group-id="8376387472-1">)</span><span class="w">
-</span><span class="p" data-group-id="8376387472-3">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="8376387472-3">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.NotificationView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="8376387472-4">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8376387472-5">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8376387472-5">}</span><span class="p" data-group-id="8376387472-4">)</span><span class="w">
-</span><span class="p" data-group-id="8376387472-6">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8376387472-6">}</span></code></pre>
+<p>Renders <code class="inline">Notification</code> dismiss data in JSON</p>
   </section>
 </section>
 

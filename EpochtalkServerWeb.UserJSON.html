@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.BoardView — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.UserJSON — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-E4AA3789.js"></script>
+    <script src="dist/sidebar_items-B293D218.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.BoardView</span> 
+  <span translate="no">EpochtalkServerWeb.UserJSON</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">Board</code> data, in JSON format for frontend</p>
+<p>Renders and formats <code class="inline">User</code> data, in JSON format for frontend</p>
   </section>
 
 
@@ -122,42 +122,34 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#__resource__/0" translate="no">__resource__()</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>The resource name, as an atom, for this view</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#format_board_data_for_find/4" translate="no">format_board_data_for_find(board_moderators, board_mapping, board_id, user_priority)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Board view helper method for mapping childboards and other metadata to board using board mapping and user priority</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#render/2" translate="no">render(template, assigns \\ %{})</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Renders <code class="inline">Board</code> for find query.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#template_not_found/2" translate="no">template_not_found(template, assigns)</a>
+        <a href="#data/1" translate="no">data(map)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
 for rendering misc responses (ex: {found: true} or {success: true})</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#register_with_verify/1" translate="no">register_with_verify(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders formatted JSON response for registration confirmation.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#user/1" translate="no">user(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders formatted user JSON. Takes in a <code class="inline">User</code> with all associations preloaded
+and outputs formatted user json used for auth. Masks all user's roles to generate
+correct permissions set.</p></div>
 
     </div>
 
@@ -175,90 +167,76 @@ for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="__resource__/0">
+<section class="detail" id="data/1">
 
   <div class="detail-header">
-    <a href="#__resource__/0" class="detail-link" title="Link to this function">
+    <a href="#data/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">__resource__()</h1>
+    <h1 class="signature" translate="no">data(map)</h1>
 
 
   </div>
 
   <section class="docstring">
-
-<p>The resource name, as an atom, for this view</p>
-  </section>
-</section>
-<section class="detail" id="format_board_data_for_find/4">
-
-  <div class="detail-header">
-    <a href="#format_board_data_for_find/4" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">format_board_data_for_find(board_moderators, board_mapping, board_id, user_priority)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Board view helper method for mapping childboards and other metadata to board using board mapping and user priority</p>
-  </section>
-</section>
-<section class="detail" id="render/2">
-
-    <span id="render/1"></span>
-
-  <div class="detail-header">
-    <a href="#render/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">render(template, assigns \\ %{})</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Renders <code class="inline">Board</code> for find query.</p>
-  </section>
-</section>
-<section class="detail" id="template_not_found/2">
-
-  <div class="detail-header">
-    <a href="#template_not_found/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">template_not_found(template, assigns)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> template_not_found(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
-
-      </div>
 
 <p>Renders whatever data it is passed when template not found. Data pass through
-for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="template_not_found/2-example" class="section-heading">
-  <a href="#template_not_found/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="data/1-example" class="section-heading">
+  <a href="#data/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">example</p>
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.BoardView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="9520350526-1">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9520350526-2">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="9520350526-2">}</span><span class="p" data-group-id="9520350526-1">)</span><span class="w">
-</span><span class="p" data-group-id="9520350526-3">%{</span><span class="ss">anything</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="9520350526-3">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.BoardView</span><span class="o">.</span><span class="n">render</span><span class="p" data-group-id="9520350526-4">(</span><span class="s">&quot;DoesNotExist.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9520350526-5">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="9520350526-5">}</span><span class="p" data-group-id="9520350526-4">)</span><span class="w">
-</span><span class="p" data-group-id="9520350526-6">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="9520350526-6">}</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="3115614038-1">(</span><span class="p" data-group-id="3115614038-2">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3115614038-3">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-3">}</span><span class="p" data-group-id="3115614038-2">}</span><span class="p" data-group-id="3115614038-1">)</span><span class="w">
+</span><span class="p" data-group-id="3115614038-4">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-4">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="3115614038-5">(</span><span class="p" data-group-id="3115614038-6">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3115614038-7">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-7">}</span><span class="p" data-group-id="3115614038-6">}</span><span class="p" data-group-id="3115614038-5">)</span><span class="w">
+</span><span class="p" data-group-id="3115614038-8">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-8">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="register_with_verify/1">
+
+  <div class="detail-header">
+    <a href="#register_with_verify/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">register_with_verify(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders formatted JSON response for registration confirmation.</p><h2 id="register_with_verify/1-example" class="section-heading">
+  <a href="#register_with_verify/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<p>  iex&gt; EpochtalkServerWeb.UserJSON.register_with_verify(%{user: %User{ username: &quot;Test&quot; }})
+  %{</p><pre><code class="makeup elixir" translate="no"><span class="ss">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Test&quot;</span><span class="p">,</span><span class="w">
+</span><span class="ss">confirm_token</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p">,</span><span class="w">
+</span><span class="ss">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Successfully registered, please confirm account to login.&quot;</span></code></pre><p>  }</p>
+  </section>
+</section>
+<section class="detail" id="user/1">
+
+  <div class="detail-header">
+    <a href="#user/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">user(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders formatted user JSON. Takes in a <code class="inline">User</code> with all associations preloaded
+and outputs formatted user json used for auth. Masks all user's roles to generate
+correct permissions set.</p>
   </section>
 </section>
 
