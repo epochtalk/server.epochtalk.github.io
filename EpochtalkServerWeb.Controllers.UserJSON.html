@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.ThreadController — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Controllers.UserJSON — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-B293D218.js"></script>
+    <script src="dist/sidebar_items-8421F18D.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.ThreadController</span> 
+  <span translate="no">EpochtalkServerWeb.Controllers.UserJSON</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Controller For <code class="inline">Thread</code> related API requests</p>
+<p>Renders and formats <code class="inline">User</code> data, in JSON format for frontend</p>
   </section>
 
 
@@ -122,31 +122,34 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#by_board/2" translate="no">by_board(conn, attrs)</a>
+        <a href="#data/1" translate="no">data(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to retrieve threads by board</p></div>
+        <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
+for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#create/2" translate="no">create(conn, attrs)</a>
+        <a href="#register_with_verify/1" translate="no">register_with_verify(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to create threads</p></div>
+        <div class="summary-synopsis"><p>Renders formatted JSON response for registration confirmation.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#recent/2" translate="no">recent(conn, attrs)</a>
+        <a href="#user/1" translate="no">user(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to retrieve recent threads</p></div>
+        <div class="summary-synopsis"><p>Renders formatted user JSON. Takes in a <code class="inline">User</code> with all associations preloaded
+and outputs formatted user json used for auth. Masks all user's roles to generate
+correct permissions set.</p></div>
 
     </div>
 
@@ -164,55 +167,76 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="by_board/2">
+<section class="detail" id="data/1">
 
   <div class="detail-header">
-    <a href="#by_board/2" class="detail-link" title="Link to this function">
+    <a href="#data/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">by_board(conn, attrs)</h1>
+    <h1 class="signature" translate="no">data(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to retrieve threads by board</p>
+<p>Renders whatever data it is passed when template not found. Data pass through
+for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="data/1-example" class="section-heading">
+  <a href="#data/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.Controllers.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="2267114200-1">(</span><span class="p" data-group-id="2267114200-2">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2267114200-3">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2267114200-3">}</span><span class="p" data-group-id="2267114200-2">}</span><span class="p" data-group-id="2267114200-1">)</span><span class="w">
+</span><span class="p" data-group-id="2267114200-4">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2267114200-4">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.Controllers.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="2267114200-5">(</span><span class="p" data-group-id="2267114200-6">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2267114200-7">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2267114200-7">}</span><span class="p" data-group-id="2267114200-6">}</span><span class="p" data-group-id="2267114200-5">)</span><span class="w">
+</span><span class="p" data-group-id="2267114200-8">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2267114200-8">}</span></code></pre>
   </section>
 </section>
-<section class="detail" id="create/2">
+<section class="detail" id="register_with_verify/1">
 
   <div class="detail-header">
-    <a href="#create/2" class="detail-link" title="Link to this function">
+    <a href="#register_with_verify/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">create(conn, attrs)</h1>
+    <h1 class="signature" translate="no">register_with_verify(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to create threads</p><p>TODO(akinsey): Post pre processing, image processing, hooks. Things to consider:</p><ul><li>does html sanitizer need to run on the front end too</li><li>how do we run the same parser/sanitizer on the elixir back end as the node frontend</li><li>processing mentions</li></ul>
+<p>Renders formatted JSON response for registration confirmation.</p><h2 id="register_with_verify/1-example" class="section-heading">
+  <a href="#register_with_verify/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<p>  iex&gt; EpochtalkServerWeb.Controllers.UserJSON.register_with_verify(%{user: %User{ username: &quot;Test&quot; }})
+  %{</p><pre><code class="makeup elixir" translate="no"><span class="ss">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Test&quot;</span><span class="p">,</span><span class="w">
+</span><span class="ss">confirm_token</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p">,</span><span class="w">
+</span><span class="ss">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Successfully registered, please confirm account to login.&quot;</span></code></pre><p>  }</p>
   </section>
 </section>
-<section class="detail" id="recent/2">
+<section class="detail" id="user/1">
 
   <div class="detail-header">
-    <a href="#recent/2" class="detail-link" title="Link to this function">
+    <a href="#user/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">recent(conn, attrs)</h1>
+    <h1 class="signature" translate="no">user(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to retrieve recent threads</p><p>TODO(akinsey): come back to this after implementing thread and post create</p>
+<p>Renders formatted user JSON. Takes in a <code class="inline">User</code> with all associations preloaded
+and outputs formatted user json used for auth. Masks all user's roles to generate
+correct permissions set.</p>
   </section>
 </section>
 

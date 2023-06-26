@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.BoardJSON — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Controllers.RoleJSON — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-B293D218.js"></script>
+    <script src="dist/sidebar_items-8421F18D.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.BoardJSON</span> 
+  <span translate="no">EpochtalkServerWeb.Controllers.RoleJSON</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">BoardController</code> data, in JSON format for frontend</p>
+<p>Renders and formats <code class="inline">Role</code> data, in JSON format for frontend</p>
   </section>
 
 
@@ -122,41 +122,21 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#by_category/1" translate="no">by_category(map)</a>
+        <a href="#all/1" translate="no">all(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders <code class="inline">Board</code> data by <code class="inline">Category</code>.</p></div>
+        <div class="summary-synopsis"><p>Renders <code class="inline">Role</code> all result data in JSON</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#find/1" translate="no">find(map)</a>
+        <a href="#update/1" translate="no">update(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders <code class="inline">Board</code> for find query.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#format_board_data_for_find/4" translate="no">format_board_data_for_find(board_moderators, board_mapping, board_id, user_priority)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Board view helper method for mapping childboards and other metadata to board using board mapping and user priority</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#slug_to_id/1" translate="no">slug_to_id(map)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Renders <code class="inline">Board</code> id for slug to id route.</p></div>
+        <div class="summary-synopsis"><p>Renders <code class="inline">Role</code> update result data in JSON</p></div>
 
     </div>
 
@@ -174,72 +154,38 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="by_category/1">
+<section class="detail" id="all/1">
 
   <div class="detail-header">
-    <a href="#by_category/1" class="detail-link" title="Link to this function">
+    <a href="#all/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">by_category(map)</h1>
+    <h1 class="signature" translate="no">all(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders <code class="inline">Board</code> data by <code class="inline">Category</code>.</p>
+<p>Renders <code class="inline">Role</code> all result data in JSON</p>
   </section>
 </section>
-<section class="detail" id="find/1">
+<section class="detail" id="update/1">
 
   <div class="detail-header">
-    <a href="#find/1" class="detail-link" title="Link to this function">
+    <a href="#update/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">find(map)</h1>
+    <h1 class="signature" translate="no">update(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders <code class="inline">Board</code> for find query.</p>
-  </section>
-</section>
-<section class="detail" id="format_board_data_for_find/4">
-
-  <div class="detail-header">
-    <a href="#format_board_data_for_find/4" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">format_board_data_for_find(board_moderators, board_mapping, board_id, user_priority)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Board view helper method for mapping childboards and other metadata to board using board mapping and user priority</p>
-  </section>
-</section>
-<section class="detail" id="slug_to_id/1">
-
-  <div class="detail-header">
-    <a href="#slug_to_id/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">slug_to_id(map)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Renders <code class="inline">Board</code> id for slug to id route.</p>
+<p>Renders <code class="inline">Role</code> update result data in JSON</p>
   </section>
 </section>
 

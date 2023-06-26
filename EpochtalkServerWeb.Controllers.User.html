@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.BoardController — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Controllers.User — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-B293D218.js"></script>
+    <script src="dist/sidebar_items-8421F18D.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.BoardController</span> 
+  <span translate="no">EpochtalkServerWeb.Controllers.User</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Controller For <code class="inline">Board</code> related API requests</p>
+<p>Controller For <code class="inline">User</code> related API requests</p>
   </section>
 
 
@@ -122,31 +122,72 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#by_category/2" translate="no">by_category(conn, attrs)</a>
+        <a href="#authenticate/2" translate="no">authenticate(conn, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to retrieve categorized boards</p></div>
+        <div class="summary-synopsis"><p>Authenticates currently logged in <code class="inline">User</code></p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#find/2" translate="no">find(conn, attrs)</a>
+        <a href="#confirm/2" translate="no">confirm(conn, arg2)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to find a specific board</p></div>
+        <div class="summary-synopsis"><p>Confirms a newly registered <code class="inline">User</code>. Used when <code class="inline">:epochtalk_server[:frontend_config][&quot;verify_registration&quot;]</code>
+configuration is set to <code class="inline">true</code></p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#slug_to_id/2" translate="no">slug_to_id(conn, attrs)</a>
+        <a href="#email/2" translate="no">email(conn, map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to convert <code class="inline">Board</code> slug to id</p></div>
+        <div class="summary-synopsis"><p>Used to check if an email has already been taken</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#login/2" translate="no">login(conn, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Logs in an existing <code class="inline">User</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#logout/2" translate="no">logout(conn, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Logs out the logged in <code class="inline">User</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#register/2" translate="no">register(conn, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Registers a new <code class="inline">User</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#username/2" translate="no">username(conn, map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Used to check if a username has already been taken</p></div>
 
     </div>
 
@@ -164,55 +205,124 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="by_category/2">
+<section class="detail" id="authenticate/2">
 
   <div class="detail-header">
-    <a href="#by_category/2" class="detail-link" title="Link to this function">
+    <a href="#authenticate/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">by_category(conn, attrs)</h1>
+    <h1 class="signature" translate="no">authenticate(conn, attrs)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to retrieve categorized boards</p>
+<p>Authenticates currently logged in <code class="inline">User</code></p>
   </section>
 </section>
-<section class="detail" id="find/2">
+<section class="detail" id="confirm/2">
 
   <div class="detail-header">
-    <a href="#find/2" class="detail-link" title="Link to this function">
+    <a href="#confirm/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">find(conn, attrs)</h1>
+    <h1 class="signature" translate="no">confirm(conn, arg2)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to find a specific board</p>
+<p>Confirms a newly registered <code class="inline">User</code>. Used when <code class="inline">:epochtalk_server[:frontend_config][&quot;verify_registration&quot;]</code>
+configuration is set to <code class="inline">true</code></p>
   </section>
 </section>
-<section class="detail" id="slug_to_id/2">
+<section class="detail" id="email/2">
 
   <div class="detail-header">
-    <a href="#slug_to_id/2" class="detail-link" title="Link to this function">
+    <a href="#email/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">slug_to_id(conn, attrs)</h1>
+    <h1 class="signature" translate="no">email(conn, map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to convert <code class="inline">Board</code> slug to id</p>
+<p>Used to check if an email has already been taken</p>
+  </section>
+</section>
+<section class="detail" id="login/2">
+
+  <div class="detail-header">
+    <a href="#login/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">login(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Logs in an existing <code class="inline">User</code></p>
+  </section>
+</section>
+<section class="detail" id="logout/2">
+
+  <div class="detail-header">
+    <a href="#logout/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">logout(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Logs out the logged in <code class="inline">User</code></p>
+  </section>
+</section>
+<section class="detail" id="register/2">
+
+  <div class="detail-header">
+    <a href="#register/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">register(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Registers a new <code class="inline">User</code></p>
+  </section>
+</section>
+<section class="detail" id="username/2">
+
+  <div class="detail-header">
+    <a href="#username/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">username(conn, map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Used to check if a username has already been taken</p>
   </section>
 </section>
 

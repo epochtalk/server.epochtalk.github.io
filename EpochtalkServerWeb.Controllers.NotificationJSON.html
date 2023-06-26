@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.PreferenceController — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Controllers.NotificationJSON — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-B293D218.js"></script>
+    <script src="dist/sidebar_items-8421F18D.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.PreferenceController</span> 
+  <span translate="no">EpochtalkServerWeb.Controllers.NotificationJSON</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Controller For <code class="inline">Preference</code> related API requests</p>
+<p>Renders and formats <code class="inline">User</code> data, in JSON format for frontend</p>
   </section>
 
 
@@ -122,11 +122,21 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#preferences/2" translate="no">preferences(conn, attrs)</a>
+        <a href="#counts/1" translate="no">counts(map)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to retrieve preferences of a specific <code class="inline">User</code></p></div>
+        <div class="summary-synopsis"><p>Renders <code class="inline">Notification</code> counts data in JSON</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#dismiss/1" translate="no">dismiss(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders <code class="inline">Notification</code> dismiss data in JSON</p></div>
 
     </div>
 
@@ -144,21 +154,38 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="preferences/2">
+<section class="detail" id="counts/1">
 
   <div class="detail-header">
-    <a href="#preferences/2" class="detail-link" title="Link to this function">
+    <a href="#counts/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">preferences(conn, attrs)</h1>
+    <h1 class="signature" translate="no">counts(map)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to retrieve preferences of a specific <code class="inline">User</code></p>
+<p>Renders <code class="inline">Notification</code> counts data in JSON</p>
+  </section>
+</section>
+<section class="detail" id="dismiss/1">
+
+  <div class="detail-header">
+    <a href="#dismiss/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">dismiss(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders <code class="inline">Notification</code> dismiss data in JSON</p>
   </section>
 </section>
 

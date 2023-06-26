@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.UserJSON — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Controllers.Board — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-B293D218.js"></script>
+    <script src="dist/sidebar_items-8421F18D.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.UserJSON</span> 
+  <span translate="no">EpochtalkServerWeb.Controllers.Board</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">User</code> data, in JSON format for frontend</p>
+<p>Controller For <code class="inline">Board</code> related API requests</p>
   </section>
 
 
@@ -122,34 +122,31 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#data/1" translate="no">data(map)</a>
+        <a href="#by_category/2" translate="no">by_category(conn, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders whatever data it is passed when template not found. Data pass through
-for rendering misc responses (ex: {found: true} or {success: true})</p></div>
+        <div class="summary-synopsis"><p>Used to retrieve categorized boards</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#register_with_verify/1" translate="no">register_with_verify(map)</a>
+        <a href="#find/2" translate="no">find(conn, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders formatted JSON response for registration confirmation.</p></div>
+        <div class="summary-synopsis"><p>Used to find a specific board</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#user/1" translate="no">user(map)</a>
+        <a href="#slug_to_id/2" translate="no">slug_to_id(conn, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders formatted user JSON. Takes in a <code class="inline">User</code> with all associations preloaded
-and outputs formatted user json used for auth. Masks all user's roles to generate
-correct permissions set.</p></div>
+        <div class="summary-synopsis"><p>Used to convert <code class="inline">Board</code> slug to id</p></div>
 
     </div>
 
@@ -167,76 +164,55 @@ correct permissions set.</p></div>
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="data/1">
+<section class="detail" id="by_category/2">
 
   <div class="detail-header">
-    <a href="#data/1" class="detail-link" title="Link to this function">
+    <a href="#by_category/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">data(map)</h1>
+    <h1 class="signature" translate="no">by_category(conn, attrs)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders whatever data it is passed when template not found. Data pass through
-for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="data/1-example" class="section-heading">
-  <a href="#data/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">example</p>
-  </a>
-  Example
-</h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="3115614038-1">(</span><span class="p" data-group-id="3115614038-2">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3115614038-3">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-3">}</span><span class="p" data-group-id="3115614038-2">}</span><span class="p" data-group-id="3115614038-1">)</span><span class="w">
-</span><span class="p" data-group-id="3115614038-4">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-4">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="3115614038-5">(</span><span class="p" data-group-id="3115614038-6">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3115614038-7">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-7">}</span><span class="p" data-group-id="3115614038-6">}</span><span class="p" data-group-id="3115614038-5">)</span><span class="w">
-</span><span class="p" data-group-id="3115614038-8">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3115614038-8">}</span></code></pre>
+<p>Used to retrieve categorized boards</p>
   </section>
 </section>
-<section class="detail" id="register_with_verify/1">
+<section class="detail" id="find/2">
 
   <div class="detail-header">
-    <a href="#register_with_verify/1" class="detail-link" title="Link to this function">
+    <a href="#find/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">register_with_verify(map)</h1>
+    <h1 class="signature" translate="no">find(conn, attrs)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders formatted JSON response for registration confirmation.</p><h2 id="register_with_verify/1-example" class="section-heading">
-  <a href="#register_with_verify/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">example</p>
-  </a>
-  Example
-</h2>
-<p>  iex&gt; EpochtalkServerWeb.UserJSON.register_with_verify(%{user: %User{ username: &quot;Test&quot; }})
-  %{</p><pre><code class="makeup elixir" translate="no"><span class="ss">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Test&quot;</span><span class="p">,</span><span class="w">
-</span><span class="ss">confirm_token</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p">,</span><span class="w">
-</span><span class="ss">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Successfully registered, please confirm account to login.&quot;</span></code></pre><p>  }</p>
+<p>Used to find a specific board</p>
   </section>
 </section>
-<section class="detail" id="user/1">
+<section class="detail" id="slug_to_id/2">
 
   <div class="detail-header">
-    <a href="#user/1" class="detail-link" title="Link to this function">
+    <a href="#slug_to_id/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">user(map)</h1>
+    <h1 class="signature" translate="no">slug_to_id(conn, attrs)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders formatted user JSON. Takes in a <code class="inline">User</code> with all associations preloaded
-and outputs formatted user json used for auth. Masks all user's roles to generate
-correct permissions set.</p>
+<p>Used to convert <code class="inline">Board</code> slug to id</p>
   </section>
 </section>
 
