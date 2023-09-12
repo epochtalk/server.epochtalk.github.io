@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -166,11 +166,51 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#email_mentions?/1" translate="no">email_mentions?(user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if specific <code class="inline">User</code> has <code class="inline">email_mentions</code> <code class="inline">Preference</code> set</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#notify_replied_threads?/1" translate="no">notify_replied_threads?(user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if specific <code class="inline">User</code> has <code class="inline">notify_replied_threads</code> <code class="inline">Preference</code> set</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#toggle_email_mentions/2" translate="no">toggle_email_mentions(user_id, enabled)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Enables Email Notifications (<code class="inline">email_mentions</code>) for <code class="inline">Mention</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#toggle_notify_replied_threads/2" translate="no">toggle_notify_replied_threads(user_id, enabled)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Enables Email Notifications (<code class="inline">notify_replied_threads</code>) for <code class="inline">ThreadSubscription</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#update_changeset/2" translate="no">update_changeset(preference, attrs \\ %{})</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates a create changeset for <code class="inline">Preference</code> model</p></div>
+        <div class="summary-synopsis"><p>Creates an update changeset for <code class="inline">Preference</code> model</p></div>
 
     </div>
 
@@ -324,6 +364,100 @@ Functions
 <p>Creates a create changeset for <code class="inline">Preference</code> model</p>
   </section>
 </section>
+<section class="detail" id="email_mentions?/1">
+
+  <div class="detail-header">
+    <a href="#email_mentions?/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">email_mentions?(user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> email_mentions?(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if specific <code class="inline">User</code> has <code class="inline">email_mentions</code> <code class="inline">Preference</code> set</p>
+  </section>
+</section>
+<section class="detail" id="notify_replied_threads?/1">
+
+  <div class="detail-header">
+    <a href="#notify_replied_threads?/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">notify_replied_threads?(user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> notify_replied_threads?(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if specific <code class="inline">User</code> has <code class="inline">notify_replied_threads</code> <code class="inline">Preference</code> set</p>
+  </section>
+</section>
+<section class="detail" id="toggle_email_mentions/2">
+
+  <div class="detail-header">
+    <a href="#toggle_email_mentions/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">toggle_email_mentions(user_id, enabled)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> toggle_email_mentions(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), enabled :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Enables Email Notifications (<code class="inline">email_mentions</code>) for <code class="inline">Mention</code></p>
+  </section>
+</section>
+<section class="detail" id="toggle_notify_replied_threads/2">
+
+  <div class="detail-header">
+    <a href="#toggle_notify_replied_threads/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">toggle_notify_replied_threads(user_id, enabled)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> toggle_notify_replied_threads(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), enabled :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Enables Email Notifications (<code class="inline">notify_replied_threads</code>) for <code class="inline">ThreadSubscription</code></p>
+  </section>
+</section>
 <section class="detail" id="update_changeset/2">
 
     <span id="update_changeset/1"></span>
@@ -346,7 +480,7 @@ Functions
 
       </div>
 
-<p>Creates a create changeset for <code class="inline">Preference</code> model</p>
+<p>Creates an update changeset for <code class="inline">Preference</code> model</p>
   </section>
 </section>
 <section class="detail" id="upsert/2">

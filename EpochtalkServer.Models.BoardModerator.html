@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -136,9 +136,21 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#add_moderators_by_username/2" translate="no">add_moderators_by_username(board_id, usernames)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Adds list of users to the list of moderators for a specific <code class="inline">Board</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#all/0" translate="no">all()</a>
 
       </div>
+
+        <div class="summary-synopsis"><p>Query all <code class="inline">BoardModerator</code> models</p></div>
 
     </div>
 
@@ -149,6 +161,56 @@ epochtalk_server
       </div>
 
         <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">BoardModerator</code> model</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_user_moderated_boards/1" translate="no">get_user_moderated_boards(user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns list containing zero or more <code class="inline">board_id</code> corresponding to a <code class="inline">Board</code> that the specified <code class="inline">User</code> moderates</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#remove_moderators_by_username/2" translate="no">remove_moderators_by_username(board_id, usernames)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Removes list of users from the list of moderators for a specific <code class="inline">Board</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#user_is_moderator/2" translate="no">user_is_moderator(board_id, user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Check if a specific <code class="inline">User</code> is moderater of a <code class="inline">Board</code> using a <code class="inline">Board</code> ID</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#user_is_moderator_with_post_id/2" translate="no">user_is_moderator_with_post_id(post_id, user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Check if a specific <code class="inline">User</code> is moderater of a <code class="inline">Board</code> using a <code class="inline">Post</code> ID</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#user_is_moderator_with_thread_id/2" translate="no">user_is_moderator_with_thread_id(thread_id, user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Check if a specific <code class="inline">User</code> is moderater of a <code class="inline">Board</code> using a <code class="inline">Thread</code> ID</p></div>
 
     </div>
 
@@ -208,6 +270,32 @@ Types
 Functions
     </h1>
     <div class="functions-list">
+<section class="detail" id="add_moderators_by_username/2">
+
+  <div class="detail-header">
+    <a href="#add_moderators_by_username/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">add_moderators_by_username(board_id, usernames)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> add_moderators_by_username(
+  board_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  usernames :: [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()]
+) :: {:ok, added_moderators :: [<a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>()] | []}</pre>
+
+      </div>
+
+<p>Adds list of users to the list of moderators for a specific <code class="inline">Board</code></p>
+  </section>
+</section>
 <section class="detail" id="all/0">
 
   <div class="detail-header">
@@ -222,7 +310,13 @@ Functions
 
   <section class="docstring">
 
+      <div class="specs">
 
+          <pre translate="no"><span class="attribute">@spec</span> all() :: [<a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()] | nil</pre>
+
+      </div>
+
+<p>Query all <code class="inline">BoardModerator</code> models</p>
   </section>
 </section>
 <section class="detail" id="changeset/2">
@@ -251,6 +345,134 @@ Functions
       </div>
 
 <p>Create generic changeset for <code class="inline">BoardModerator</code> model</p>
+  </section>
+</section>
+<section class="detail" id="get_user_moderated_boards/1">
+
+  <div class="detail-header">
+    <a href="#get_user_moderated_boards/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_user_moderated_boards(user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_user_moderated_boards(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: [<a href="#t:t/0">t</a>()] | []</pre>
+
+      </div>
+
+<p>Returns list containing zero or more <code class="inline">board_id</code> corresponding to a <code class="inline">Board</code> that the specified <code class="inline">User</code> moderates</p>
+  </section>
+</section>
+<section class="detail" id="remove_moderators_by_username/2">
+
+  <div class="detail-header">
+    <a href="#remove_moderators_by_username/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">remove_moderators_by_username(board_id, usernames)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> remove_moderators_by_username(
+  board_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  usernames :: [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()]
+) :: {:ok, removed_moderators :: [<a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>()] | []}</pre>
+
+      </div>
+
+<p>Removes list of users from the list of moderators for a specific <code class="inline">Board</code></p>
+  </section>
+</section>
+<section class="detail" id="user_is_moderator/2">
+
+  <div class="detail-header">
+    <a href="#user_is_moderator/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">user_is_moderator(board_id, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> user_is_moderator(
+  board_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Check if a specific <code class="inline">User</code> is moderater of a <code class="inline">Board</code> using a <code class="inline">Board</code> ID</p>
+  </section>
+</section>
+<section class="detail" id="user_is_moderator_with_post_id/2">
+
+  <div class="detail-header">
+    <a href="#user_is_moderator_with_post_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">user_is_moderator_with_post_id(post_id, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> user_is_moderator_with_post_id(
+  post_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Check if a specific <code class="inline">User</code> is moderater of a <code class="inline">Board</code> using a <code class="inline">Post</code> ID</p>
+  </section>
+</section>
+<section class="detail" id="user_is_moderator_with_thread_id/2">
+
+  <div class="detail-header">
+    <a href="#user_is_moderator_with_thread_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">user_is_moderator_with_thread_id(thread_id, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> user_is_moderator_with_thread_id(
+  thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
+) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Check if a specific <code class="inline">User</code> is moderater of a <code class="inline">Board</code> using a <code class="inline">Thread</code> ID</p>
   </section>
 </section>
 

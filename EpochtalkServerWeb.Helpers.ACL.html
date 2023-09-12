@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -151,6 +151,17 @@ epochtalk_server
 
     </div>
 
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#has_permission/2" translate="no">has_permission(conn, permission_path)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if supplied <code class="inline">User</code> or authenticated <code class="inline">Plug.Conn.t()</code> has the
+a role with the supplied <code class="inline">Permission</code> path.</p></div>
+
+    </div>
+
 </div>
 
   </section>
@@ -245,8 +256,34 @@ the proper permissions.</p>
 
 <p>Helper which returns the active User's priority.</p><p>Will return priorty of role with highest permissions if the user is authenticated, otherwise anonymous priority
 is returned if <code class="inline">frontend_config.login_required</code> is false otherwise private role priority is returned. If
-user is banned the Banned role priority is returned.</p><p>TODO(akinsey): review chain of authenticated user's roles. See if banned and user roles are being defaulted
-prior to calling this function or if this function should handle defaulting the user's roles</p>
+user is banned the Banned role priority is returned.</p>
+  </section>
+</section>
+<section class="detail" id="has_permission/2">
+
+  <div class="detail-header">
+    <a href="#has_permission/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">has_permission(conn, permission_path)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> has_permission(
+  <a href="https://hexdocs.pm/plug/1.14.2/Plug.Conn.html#t:t/0">Plug.Conn.t</a>() | <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(),
+  permission_path :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if supplied <code class="inline">User</code> or authenticated <code class="inline">Plug.Conn.t()</code> has the
+a role with the supplied <code class="inline">Permission</code> path.</p>
   </section>
 </section>
 

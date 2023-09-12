@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -176,6 +176,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#find_by_id/1" translate="no">find_by_id(id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Find a <code class="inline">Board</code> by it's <code class="inline">id</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#get_read_access_by_id/2" translate="no">get_read_access_by_id(id, user_priority)</a>
 
       </div>
@@ -188,11 +198,34 @@ read access to the <code class="inline">Board</code> either.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#get_read_access_by_thread_id/2" translate="no">get_read_access_by_thread_id(thread_id, user_priority)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Determines if the provided <code class="inline">user_priority</code> has read access to the <code class="inline">Board</code> that contains the thread
+with the specified <code class="inline">thread_id</code>. If the user doesn't have read access to the parent of the specified
+<code class="inline">Board</code>, the user does not have read access to the <code class="inline">Board</code> either.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#get_write_access_by_id/2" translate="no">get_write_access_by_id(id, user_priority)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Determines if the provided <code class="inline">user_priority</code> has write access to the board with the specified <code class="inline">id</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_write_access_by_thread_id/2" translate="no">get_write_access_by_thread_id(thread_id, user_priority)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Determines if the provided <code class="inline">user_priority</code> has write access to the board that contains the thread
+the specified <code class="inline">thread_id</code></p></div>
 
     </div>
 
@@ -369,6 +402,30 @@ Functions
 <p>Create changeset for creation of <code class="inline">Board</code> model</p>
   </section>
 </section>
+<section class="detail" id="find_by_id/1">
+
+  <div class="detail-header">
+    <a href="#find_by_id/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">find_by_id(id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_by_id(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
+  {:ok, <a href="#t:t/0">t</a>()} | {:error, :board_does_not_exist}</pre>
+
+      </div>
+
+<p>Find a <code class="inline">Board</code> by it's <code class="inline">id</code></p>
+  </section>
+</section>
 <section class="detail" id="get_read_access_by_id/2">
 
   <div class="detail-header">
@@ -395,7 +452,37 @@ Functions
 
 <p>Determines if the provided <code class="inline">user_priority</code> has read access to the <code class="inline">Board</code> with the specified <code class="inline">id</code>.
 If the user doesn't have read access to the parent of the specified <code class="inline">Board</code>, the user does not have
-read access to the <code class="inline">Board</code> either.</p><p>TODO(akinsey): Should this check against banned user_priority?</p>
+read access to the <code class="inline">Board</code> either.</p><p>DEVELOPER NOTE(akinsey): This method replaces Boards.getBoardInBoardMapping function from the node
+server. The previous naming convention was confusing as this is just checking read access to the board</p>
+  </section>
+</section>
+<section class="detail" id="get_read_access_by_thread_id/2">
+
+  <div class="detail-header">
+    <a href="#get_read_access_by_thread_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_read_access_by_thread_id(thread_id, user_priority)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_read_access_by_thread_id(
+  thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  user_priority :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
+) :: {:ok, can_read :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()} | {:error, :board_does_not_exist}</pre>
+
+      </div>
+
+<p>Determines if the provided <code class="inline">user_priority</code> has read access to the <code class="inline">Board</code> that contains the thread
+with the specified <code class="inline">thread_id</code>. If the user doesn't have read access to the parent of the specified
+<code class="inline">Board</code>, the user does not have read access to the <code class="inline">Board</code> either.</p><p>DEVELOPER NOTE(akinsey): This method replaces Threads.getThreadsBoardInBoardMapping function from the node
+server. The previous naming convention was confusing as this is just checking read access to the board</p>
   </section>
 </section>
 <section class="detail" id="get_write_access_by_id/2">
@@ -422,7 +509,34 @@ read access to the <code class="inline">Board</code> either.</p><p>TODO(akinsey)
 
       </div>
 
-<p>Determines if the provided <code class="inline">user_priority</code> has write access to the board with the specified <code class="inline">id</code></p><p>TODO(akinsey): Should this check against banned user_priority?</p>
+<p>Determines if the provided <code class="inline">user_priority</code> has write access to the board with the specified <code class="inline">id</code></p>
+  </section>
+</section>
+<section class="detail" id="get_write_access_by_thread_id/2">
+
+  <div class="detail-header">
+    <a href="#get_write_access_by_thread_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_write_access_by_thread_id(thread_id, user_priority)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_write_access_by_thread_id(
+  thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  user_priority :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
+) :: {:ok, can_write :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()} | {:error, :board_does_not_exist}</pre>
+
+      </div>
+
+<p>Determines if the provided <code class="inline">user_priority</code> has write access to the board that contains the thread
+the specified <code class="inline">thread_id</code></p>
   </section>
 </section>
 <section class="detail" id="slug_to_id/1">

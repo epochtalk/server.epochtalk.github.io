@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -136,11 +136,41 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(mention, attrs)</a>
+        <a href="#create/1" translate="no">create(mention_attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">Mention</code> model</p></div>
+        <div class="summary-synopsis"><p>Create a <code class="inline">Mention</code> if the mentioned <code class="inline">User</code> has permission to view <code class="inline">Board</code> they are being mentioned in.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_changeset/2" translate="no">create_changeset(mention, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Create changeset for <code class="inline">Mention</code> model</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete/1" translate="no">delete(id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Delete specific <code class="inline">Mention</code> by <code class="inline">id</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete_by_user_id/1" translate="no">delete_by_user_id(user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Delete all <code class="inline">Mention</code> for a specific <code class="inline">User</code></p></div>
 
     </div>
 
@@ -218,14 +248,14 @@ Types
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="changeset/2">
+<section class="detail" id="create/1">
 
   <div class="detail-header">
-    <a href="#changeset/2" class="detail-link" title="Link to this function">
+    <a href="#create/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(mention, attrs)</h1>
+    <h1 class="signature" translate="no">create(mention_attrs)</h1>
 
 
   </div>
@@ -234,11 +264,81 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(mention :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create(mention_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  {:ok, mention :: <a href="#t:t/0">t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
-<p>Create generic changeset for <code class="inline">Mention</code> model</p>
+<p>Create a <code class="inline">Mention</code> if the mentioned <code class="inline">User</code> has permission to view <code class="inline">Board</code> they are being mentioned in.</p>
+  </section>
+</section>
+<section class="detail" id="create_changeset/2">
+
+  <div class="detail-header">
+    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_changeset(mention, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(mention :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create changeset for <code class="inline">Mention</code> model</p>
+  </section>
+</section>
+<section class="detail" id="delete/1">
+
+  <div class="detail-header">
+    <a href="#delete/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete(id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: {:ok, deleted :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}</pre>
+
+      </div>
+
+<p>Delete specific <code class="inline">Mention</code> by <code class="inline">id</code></p>
+  </section>
+</section>
+<section class="detail" id="delete_by_user_id/1">
+
+  <div class="detail-header">
+    <a href="#delete_by_user_id/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_by_user_id(user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_by_user_id(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: {:ok, deleted :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}</pre>
+
+      </div>
+
+<p>Delete all <code class="inline">Mention</code> for a specific <code class="inline">User</code></p>
   </section>
 </section>
 <section class="detail" id="page_by_user_id/3">

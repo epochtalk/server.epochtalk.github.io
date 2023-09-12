@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -213,6 +213,7 @@ Types
   parent: <a href="EpochtalkServer.Models.Board.html#t:t/0">EpochtalkServer.Models.Board.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   parent_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   stats: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  sticky_thread_count: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   thread: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   view_order: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil
 }</pre>
@@ -257,8 +258,7 @@ Functions
 
       </div>
 
-<p>Returns BoardMapping with loaded boards and relevant metadata</p><p>TODO(akinsey): writing this assuming other models will update metadata board table properly.
-Old implementation was querying metadata boards then filling in holes in the data after the fact.</p>
+<p>Returns BoardMapping with loaded boards and relevant metadata</p>
   </section>
 </section>
 <section class="detail" id="changeset/2">

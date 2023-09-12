@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -106,10 +106,7 @@ epochtalk_server
 <p>Handles <code class="inline">User</code> websocket channels. These channels are used to broadcast events to
 the client. With the current design, API route can broadcast messages when an
 action is performed, this notifies the client to perform an action, such as requesting data
-from the server.</p><p><em>TODO(akinsey):</em> This is a direct port of the old epochtalk websocket architecture,
-there is room for improvement. For certain messages (ex: announcement) relevant data
-can be sent over the channel via the broadcast message payload. Currently, receiving
-a message triggers the client to manually make an api request for the updated data.</p><h3 id="module-supported-user-channels" class="section-heading">
+from the server.</p><h3 id="module-supported-user-channels" class="section-heading">
   <a href="#module-supported-user-channels" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">supported-user-channels</p>
   </a>

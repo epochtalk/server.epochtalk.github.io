@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-A6F8B9C7.js"></script>
+    <script src="dist/sidebar_items-86B973A4.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -146,6 +146,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#increment_view_count/1" translate="no">increment_view_count(thread_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Increments a thread's view count by incrementing <code class="inline">views</code> field in associated <code class="inline">MetadataThread</code> model</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#insert/1" translate="no">insert(metadata_thread)</a>
 
       </div>
@@ -236,6 +246,29 @@ Functions
       </div>
 
 <p>Create changeset for inserting a new <code class="inline">MetadataThread</code> model</p>
+  </section>
+</section>
+<section class="detail" id="increment_view_count/1">
+
+  <div class="detail-header">
+    <a href="#increment_view_count/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">increment_view_count(thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> increment_view_count(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil}</pre>
+
+      </div>
+
+<p>Increments a thread's view count by incrementing <code class="inline">views</code> field in associated <code class="inline">MetadataThread</code> model</p>
   </section>
 </section>
 <section class="detail" id="insert/1">
