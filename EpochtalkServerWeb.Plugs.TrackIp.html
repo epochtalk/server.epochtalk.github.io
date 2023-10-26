@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.Controllers.ModerationLogJSON — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Plugs.TrackIp — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.Controllers.ModerationLogJSON</span> 
+  <span translate="no">EpochtalkServerWeb.Plugs.TrackIp</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">ModerationLog</code> data, in JSON format for frontend</p>
+<p>Plug that tracks user IP address for PUT POST or PATCH operations</p>
   </section>
 
 
@@ -122,11 +122,31 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#page/1" translate="no">page(map)</a>
+        <a href="#call/2" translate="no">call(conn, opts)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders paginated <code class="inline">ModerationLog</code> entries.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/plug/1.14.2/Plug.html#c:call/2"><code class="inline">Plug.call/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#init/1" translate="no">init(opts)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/plug/1.14.2/Plug.html#c:init/1"><code class="inline">Plug.init/1</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#track_ip_post_request/2" translate="no">track_ip_post_request(conn, opts)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Stores <code class="inline">User</code> IP when <code class="inline">User</code> is performing actions that modify data in the database</p></div>
 
     </div>
 
@@ -144,21 +164,55 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="page/1">
+<section class="detail" id="call/2">
 
   <div class="detail-header">
-    <a href="#page/1" class="detail-link" title="Link to this function">
+    <a href="#call/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">page(map)</h1>
+    <h1 class="signature" translate="no">call(conn, opts)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders paginated <code class="inline">ModerationLog</code> entries.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/plug/1.14.2/Plug.html#c:call/2"><code class="inline">Plug.call/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="init/1">
+
+  <div class="detail-header">
+    <a href="#init/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">init(opts)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="https://hexdocs.pm/plug/1.14.2/Plug.html#c:init/1"><code class="inline">Plug.init/1</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="track_ip_post_request/2">
+
+  <div class="detail-header">
+    <a href="#track_ip_post_request/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">track_ip_post_request(conn, opts)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Stores <code class="inline">User</code> IP when <code class="inline">User</code> is performing actions that modify data in the database</p>
   </section>
 </section>
 

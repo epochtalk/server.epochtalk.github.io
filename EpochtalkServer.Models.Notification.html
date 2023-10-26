@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-86B973A4.js"></script>
+    <script src="dist/sidebar_items-358DE374.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -136,22 +136,32 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(notification, attrs)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">Notification</code> model</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
         <a href="#counts_by_user_id/2" translate="no">counts_by_user_id(user_id, list)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Returns <code class="inline">Notification</code> counts for a specific <code class="inline">User</code> by <code class="inline">id</code>, from the database. Used
 to display new message/mention notifications.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create/1" translate="no">create(notification_attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Used to create a new <code class="inline">Notification</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_changeset/2" translate="no">create_changeset(notification, notification_attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Create changeset for <code class="inline">Notification</code> model</p></div>
 
     </div>
 
@@ -238,29 +248,6 @@ Types
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="changeset/2">
-
-  <div class="detail-header">
-    <a href="#changeset/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">changeset(notification, attrs)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> changeset(notification :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
-
-      </div>
-
-<p>Create generic changeset for <code class="inline">Notification</code> model</p>
-  </section>
-</section>
 <section class="detail" id="counts_by_user_id/2">
 
   <div class="detail-header">
@@ -284,6 +271,54 @@ Functions
 
 <p>Returns <code class="inline">Notification</code> counts for a specific <code class="inline">User</code> by <code class="inline">id</code>, from the database. Used
 to display new message/mention notifications.</p>
+  </section>
+</section>
+<section class="detail" id="create/1">
+
+  <div class="detail-header">
+    <a href="#create/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create(notification_attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create(notification_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  {:ok, notification :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Used to create a new <code class="inline">Notification</code></p>
+  </section>
+</section>
+<section class="detail" id="create_changeset/2">
+
+  <div class="detail-header">
+    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_changeset(notification, notification_attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(notification :: <a href="#t:t/0">t</a>(), notification_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) ::
+  <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create changeset for <code class="inline">Notification</code> model</p>
   </section>
 </section>
 <section class="detail" id="dismiss/1">

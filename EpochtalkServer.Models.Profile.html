@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-86B973A4.js"></script>
+    <script src="dist/sidebar_items-358DE374.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -166,6 +166,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#maybe_update_last_active/1" translate="no">maybe_update_last_active(user)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates the last active date of a <code class="inline">User</code> if minutes have past since last update</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#upsert/2" translate="no">upsert(user_id, attrs \\ %{})</a>
 
       </div>
@@ -308,6 +318,32 @@ Functions
       </div>
 
 <p>Increments the <code class="inline">post_count</code> field given a <code class="inline">User</code> id</p>
+  </section>
+</section>
+<section class="detail" id="maybe_update_last_active/1">
+
+  <div class="detail-header">
+    <a href="#maybe_update_last_active/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">maybe_update_last_active(user)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> maybe_update_last_active(user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) ::
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}
+  | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}
+  | {:error, <a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Multi.html#t:name/0">Ecto.Multi.name</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), %{required(<a href="https://hexdocs.pm/ecto/3.10.1/Ecto.Multi.html#t:name/0">Ecto.Multi.name</a>()) =&gt; <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}}</pre>
+
+      </div>
+
+<p>Updates the last active date of a <code class="inline">User</code> if minutes have past since last update</p>
   </section>
 </section>
 <section class="detail" id="upsert/2">

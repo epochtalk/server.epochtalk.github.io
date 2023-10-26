@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-86B973A4.js"></script>
+    <script src="dist/sidebar_items-358DE374.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -136,6 +136,18 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#correct_text_search_vector/1" translate="no">correct_text_search_vector(post_attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Fixes text search vector, since usernames are being converted to user ids before
+<code class="inline">Post</code> is created, the created <code class="inline">Post</code> will have the ids in the tsv field. To correct
+this we recreate the tsv field using the original <code class="inline">Post</code> body.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#create/1" translate="no">create(mention_attrs)</a>
 
       </div>
@@ -176,11 +188,43 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#handle_user_mention_creation/3" translate="no">handle_user_mention_creation(user, post_attrs, post)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Handles logic tied to the creation of <code class="inline">Mention</code>. Performs the following actions</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#page_by_user_id/3" translate="no">page_by_user_id(user_id, page \\ 1, opts \\ [])</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Page <code class="inline">Mention</code> models by for a specific <code class="inline">User</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#user_id_to_username/1" translate="no">user_id_to_username(post)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Iterates through list of <code class="inline">Post</code>, converts mentioned <code class="inline">User</code> id to a <code class="inline">User</code> usernames within the body of posts.
+Used when retreiving posts from the database</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#username_to_user_id/2" translate="no">username_to_user_id(user, post_attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Within <code class="inline">Post</code>, converts mentioned <code class="inline">User</code> usernames to a <code class="inline">User</code> ids within the body of posts.
+Used before storing <code class="inline">Post</code> in the database</p></div>
 
     </div>
 
@@ -248,6 +292,32 @@ Types
 Functions
     </h1>
     <div class="functions-list">
+<section class="detail" id="correct_text_search_vector/1">
+
+  <div class="detail-header">
+    <a href="#correct_text_search_vector/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">correct_text_search_vector(post_attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> correct_text_search_vector(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  :ok | {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil}</pre>
+
+      </div>
+
+<p>Fixes text search vector, since usernames are being converted to user ids before
+<code class="inline">Post</code> is created, the created <code class="inline">Post</code> will have the ids in the tsv field. To correct
+this we recreate the tsv field using the original <code class="inline">Post</code> body.</p>
+  </section>
+</section>
 <section class="detail" id="create/1">
 
   <div class="detail-header">
@@ -341,6 +411,33 @@ Functions
 <p>Delete all <code class="inline">Mention</code> for a specific <code class="inline">User</code></p>
   </section>
 </section>
+<section class="detail" id="handle_user_mention_creation/3">
+
+  <div class="detail-header">
+    <a href="#handle_user_mention_creation/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">handle_user_mention_creation(user, post_attrs, post)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> handle_user_mention_creation(
+  user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
+  post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
+  post :: <a href="EpochtalkServer.Models.Post.html#t:t/0">EpochtalkServer.Models.Post.t</a>()
+) :: :ok</pre>
+
+      </div>
+
+<p>Handles logic tied to the creation of <code class="inline">Mention</code>. Performs the following actions:</p><ul><li>Checks that <code class="inline">User</code> has permission to create <code class="inline">Mention</code></li><li>Iterates though each mentioned <code class="inline">User</code><ul><li>Checks that mentioned <code class="inline">User</code> is not ignoring the authenticated <code class="inline">User</code></li><li>Creates mentions</li><li>Sends websocket notification</li><li>Checks mention email settings<ul><li>Sends email to mentioned user if applicable</li></ul></li></ul></li></ul>
+  </section>
+</section>
 <section class="detail" id="page_by_user_id/3">
 
     <span id="page_by_user_id/1"></span>
@@ -375,6 +472,55 @@ Functions
   Valid Options
 </h3>
 <table><thead><tr><th style="text-align: left;">name</th><th style="text-align: left;">type</th><th style="text-align: left;">details</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">:per_page</code></td><td style="text-align: left;"><code class="inline">non_neg_integer</code></td><td style="text-align: left;">records per page to return</td></tr><tr><td style="text-align: left;"><code class="inline">:extended</code></td><td style="text-align: left;"><code class="inline">boolean</code></td><td style="text-align: left;">returns board and post details with mention if true</td></tr></tbody></table>
+  </section>
+</section>
+<section class="detail" id="user_id_to_username/1">
+
+  <div class="detail-header">
+    <a href="#user_id_to_username/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">user_id_to_username(post)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> user_id_to_username(posts :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()]) :: updated_posts :: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()]</pre>
+
+      </div>
+
+<p>Iterates through list of <code class="inline">Post</code>, converts mentioned <code class="inline">User</code> id to a <code class="inline">User</code> usernames within the body of posts.
+Used when retreiving posts from the database</p>
+  </section>
+</section>
+<section class="detail" id="username_to_user_id/2">
+
+  <div class="detail-header">
+    <a href="#username_to_user_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">username_to_user_id(user, post_attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> username_to_user_id(user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  updated_post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+
+      </div>
+
+<p>Within <code class="inline">Post</code>, converts mentioned <code class="inline">User</code> usernames to a <code class="inline">User</code> ids within the body of posts.
+Used before storing <code class="inline">Post</code> in the database</p>
   </section>
 </section>
 

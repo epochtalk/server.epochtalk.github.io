@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.Controllers.ModerationLogJSON — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServer.Regex — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.Controllers.ModerationLogJSON</span> 
+  <span translate="no">EpochtalkServer.Regex</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">ModerationLog</code> data, in JSON format for frontend</p>
+<p>Consolidated source for hard-coded regex patterns</p>
   </section>
 
 
@@ -122,11 +122,12 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#page/1" translate="no">page(map)</a>
+        <a href="#pattern/1" translate="no">pattern(pattern)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders paginated <code class="inline">ModerationLog</code> entries.</p></div>
+        <div class="summary-synopsis"><p>Given a pattern specification atom
+Returns regex pattern or nil if pattern does not exist</p></div>
 
     </div>
 
@@ -144,21 +145,28 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="page/1">
+<section class="detail" id="pattern/1">
 
   <div class="detail-header">
-    <a href="#page/1" class="detail-link" title="Link to this function">
+    <a href="#pattern/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">page(map)</h1>
+    <h1 class="signature" translate="no">pattern(pattern)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders paginated <code class="inline">ModerationLog</code> entries.</p>
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> pattern(pattern :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>()) :: <a href="https://hexdocs.pm/elixir/Regex.html#t:t/0">Regex.t</a>() | nil</pre>
+
+      </div>
+
+<p>Given a pattern specification atom
+Returns regex pattern or nil if pattern does not exist</p>
   </section>
 </section>
 
