@@ -341,11 +341,12 @@ Otherwise, return an error</p>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> update(user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
-  {:ok, user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>()}</pre>
+  {:ok, user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>()}
+  | {:error, reason :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/postgrex/0.17.1/Postgrex.Error.html#t:t/0">Postgrex.Error.t</a>()}</pre>
 
       </div>
 
-<p>Update session performs the following actions for active session:</p><ul><li>Saves <code class="inline">User</code> session info to redis (avatar, roles, moderating, ban info, etc)</li><li>returns {:ok, user}</li></ul><p>DOES NOT change:</p><ul><li>User's session id, timestamp, ttl</li><li>Guardian token</li></ul>
+<p>Update session performs the following actions for active session:</p><ul><li>Saves <code class="inline">User</code> session info to redis (avatar, roles, moderating, ban info, etc)</li><li>returns {:ok, user} on success</li><li>returns {:error, reason} on failure</li></ul><p>DOES NOT change:</p><ul><li>User's session id, timestamp, ttl</li><li>Guardian token</li></ul>
   </section>
 </section>
 
