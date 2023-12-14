@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.Controllers.ThreadJSON — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Helpers.Parse — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.Controllers.ThreadJSON</span> 
+  <span translate="no">EpochtalkServerWeb.Helpers.Parse</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">Thread</code> data, in JSON format for frontend</p>
+<p>Helper for parsing <code class="inline">User</code> input from the front end client</p>
   </section>
 
 
@@ -122,51 +122,11 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#by_board/1" translate="no">by_board(map)</a>
+        <a href="#markdown_within_body/1" translate="no">markdown_within_body(attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders <code class="inline">Thread</code> for by_board query.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#create/1" translate="no">create(map)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Renders <code class="inline">Thread</code> for create.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#format_user_data/1" translate="no">format_user_data(thread)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Used to format <code class="inline">Thread</code> user data from db into the format the frontend expects</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#recent/1" translate="no">recent(map)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Renders recent <code class="inline">Thread</code> data.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#slug_to_id/1" translate="no">slug_to_id(map)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Renders <code class="inline">Thread</code> id for slug to id route.</p></div>
+        <div class="summary-synopsis"><p>Used to parse markdown within <code class="inline">Thread</code> or <code class="inline">Post</code> body, assumes</p></div>
 
     </div>
 
@@ -184,89 +144,27 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="by_board/1">
+<section class="detail" id="markdown_within_body/1">
 
   <div class="detail-header">
-    <a href="#by_board/1" class="detail-link" title="Link to this function">
+    <a href="#markdown_within_body/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">by_board(map)</h1>
+    <h1 class="signature" translate="no">markdown_within_body(attrs)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders <code class="inline">Thread</code> for by_board query.</p>
-  </section>
-</section>
-<section class="detail" id="create/1">
+      <div class="specs">
 
-  <div class="detail-header">
-    <a href="#create/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">create(map)</h1>
+          <pre translate="no"><span class="attribute">@spec</span> markdown_within_body(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
 
+      </div>
 
-  </div>
-
-  <section class="docstring">
-
-<p>Renders <code class="inline">Thread</code> for create.</p>
-  </section>
-</section>
-<section class="detail" id="format_user_data/1">
-
-  <div class="detail-header">
-    <a href="#format_user_data/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">format_user_data(thread)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Used to format <code class="inline">Thread</code> user data from db into the format the frontend expects</p>
-  </section>
-</section>
-<section class="detail" id="recent/1">
-
-  <div class="detail-header">
-    <a href="#recent/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">recent(map)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Renders recent <code class="inline">Thread</code> data.</p>
-  </section>
-</section>
-<section class="detail" id="slug_to_id/1">
-
-  <div class="detail-header">
-    <a href="#slug_to_id/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">slug_to_id(map)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-<p>Renders <code class="inline">Thread</code> id for slug to id route.</p>
+<p>Used to parse markdown within <code class="inline">Thread</code> or <code class="inline">Post</code> body, assumes</p>
   </section>
 </section>
 

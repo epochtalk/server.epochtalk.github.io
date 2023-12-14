@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-BD0758F9.js"></script>
+    <script src="dist/sidebar_items-8FBE16F7.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -122,32 +122,32 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#html_from_body/2" translate="no">html_from_body(body, attrs)</a>
+        <a href="#html_and_entities_from_body/1" translate="no">html_and_entities_from_body(attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to sanitize all html except basic formatting html from <code class="inline">Thread</code> or <code class="inline">Post</code> body
+        <div class="summary-synopsis"><p>Used to sanitize html and entities from <code class="inline">Thread</code> or <code class="inline">Post</code> body, store sanitized body in <code class="inline">body_html</code>
   ## Example</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#html_from_subject/2" translate="no">html_from_subject(subject, attrs)</a>
+        <a href="#html_and_entities_from_subject/1" translate="no">html_and_entities_from_subject(attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to sanitize html from <code class="inline">Message</code> subject</p></div>
+        <div class="summary-synopsis"><p>Used to sanitize html and entities from <code class="inline">Message</code> subject</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#html_from_title/2" translate="no">html_from_title(title, attrs)</a>
+        <a href="#html_and_entities_from_title/1" translate="no">html_and_entities_from_title(attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to sanitize html from <code class="inline">Thread</code> or <code class="inline">Post</code> title</p></div>
+        <div class="summary-synopsis"><p>Used to sanitize html and entities from <code class="inline">Thread</code> or <code class="inline">Post</code> title</p></div>
 
     </div>
 
@@ -165,14 +165,14 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="html_from_body/2">
+<section class="detail" id="html_and_entities_from_body/1">
 
   <div class="detail-header">
-    <a href="#html_from_body/2" class="detail-link" title="Link to this function">
+    <a href="#html_and_entities_from_body/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">html_from_body(body, attrs)</h1>
+    <h1 class="signature" translate="no">html_and_entities_from_body(attrs)</h1>
 
 
   </div>
@@ -181,25 +181,25 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> html_from_body(body :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> html_and_entities_from_body(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
 
       </div>
 
-<p>Used to sanitize all html except basic formatting html from <code class="inline">Thread</code> or <code class="inline">Post</code> body
+<p>Used to sanitize html and entities from <code class="inline">Thread</code> or <code class="inline">Post</code> body, store sanitized body in <code class="inline">body_html</code>
   ## Example</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">EpochtalkServerWeb.Helpers.Sanitize</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8644447346-1">%{</span><span class="s">&quot;body&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&lt;i&gt;Hey &lt;b&gt;this&lt;/b&gt; is&lt;/i&gt;&lt;br /&gt; &lt;h1&gt;&lt;script&gt;a&lt;/script&gt;&lt;/h1&gt; &lt;a href=&#39;google.com&#39;&gt;post&lt;/a&gt;&quot;</span><span class="p" data-group-id="8644447346-1">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Sanitize</span><span class="o">.</span><span class="n">html_from_body</span><span class="p" data-group-id="8644447346-2">(</span><span class="n">attrs</span><span class="p" data-group-id="8644447346-3">[</span><span class="s">&quot;body&quot;</span><span class="p" data-group-id="8644447346-3">]</span><span class="p">,</span><span class="w"> </span><span class="n">attrs</span><span class="p" data-group-id="8644447346-2">)</span><span class="w">
-</span><span class="p" data-group-id="8644447346-4">%{</span><span class="s">&quot;body&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&lt;i&gt;Hey &lt;b&gt;this&lt;/b&gt; is&lt;/i&gt;&lt;br /&gt; &lt;h1&gt;a&lt;/h1&gt; &lt;a href=</span><span class="se">\&quot;</span><span class="s">google.com</span><span class="se">\&quot;</span><span class="s">&gt;post&lt;/a&gt;&quot;</span><span class="p" data-group-id="8644447346-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4675406404-1">%{</span><span class="s">&quot;body&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&lt;i&gt;Hey &lt;b&gt;this&lt;/b&gt; is&lt;/i&gt;&lt;br /&gt; &lt;h1&gt;&lt;script&gt;a&lt;/script&gt;&lt;/h1&gt; &lt;a href=&#39;google.com&#39;&gt;post&lt;/a&gt; &amp;nbsp;&quot;</span><span class="p" data-group-id="4675406404-1">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Sanitize</span><span class="o">.</span><span class="n">html_and_entities_from_body</span><span class="p" data-group-id="4675406404-2">(</span><span class="n">attrs</span><span class="p" data-group-id="4675406404-2">)</span><span class="w">
+</span><span class="p" data-group-id="4675406404-3">%{</span><span class="s">&quot;body&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&lt;i&gt;Hey &lt;b&gt;this&lt;/b&gt; is&lt;/i&gt;&lt;br /&gt; &lt;h1&gt;&lt;script&gt;a&lt;/script&gt;&lt;/h1&gt; &lt;a href=&#39;google.com&#39;&gt;post&lt;/a&gt; &amp;nbsp;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;body_html&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&amp;lt;i&gt;Hey &amp;lt;b&gt;this&amp;lt;/b&gt; is&amp;lt;/i&gt;&amp;lt;br /&gt; &amp;lt;h1&gt;&amp;lt;script&gt;a&amp;lt;/script&gt;&amp;lt;/h1&gt; &amp;lt;a href=&#39;google.com&#39;&gt;post&amp;lt;/a&gt; &amp;#38;nbsp;&quot;</span><span class="p" data-group-id="4675406404-3">}</span></code></pre>
   </section>
 </section>
-<section class="detail" id="html_from_subject/2">
+<section class="detail" id="html_and_entities_from_subject/1">
 
   <div class="detail-header">
-    <a href="#html_from_subject/2" class="detail-link" title="Link to this function">
+    <a href="#html_and_entities_from_subject/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">html_from_subject(subject, attrs)</h1>
+    <h1 class="signature" translate="no">html_and_entities_from_subject(attrs)</h1>
 
 
   </div>
@@ -208,30 +208,30 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> html_from_subject(subject :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> html_and_entities_from_subject(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
 
       </div>
 
-<p>Used to sanitize html from <code class="inline">Message</code> subject</p><h2 id="html_from_subject/2-example" class="section-heading">
-  <a href="#html_from_subject/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+<p>Used to sanitize html and entities from <code class="inline">Message</code> subject</p><h2 id="html_and_entities_from_subject/1-example" class="section-heading">
+  <a href="#html_and_entities_from_subject/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">example</p>
   </a>
   Example
 </h2>
 <pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">EpochtalkServerWeb.Helpers.Sanitize</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8829697250-1">%{</span><span class="s">&quot;subject&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&lt;strong&gt;Hey this is&lt;/strong&gt;&lt;br /&gt; &lt;script&gt;a&lt;/script&gt; &lt;a href=&#39;google.com&#39;&gt;message&lt;/a&gt;&quot;</span><span class="p" data-group-id="8829697250-1">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Sanitize</span><span class="o">.</span><span class="n">html_from_subject</span><span class="p" data-group-id="8829697250-2">(</span><span class="n">attrs</span><span class="p" data-group-id="8829697250-3">[</span><span class="s">&quot;subject&quot;</span><span class="p" data-group-id="8829697250-3">]</span><span class="p">,</span><span class="w"> </span><span class="n">attrs</span><span class="p" data-group-id="8829697250-2">)</span><span class="w">
-</span><span class="p" data-group-id="8829697250-4">%{</span><span class="s">&quot;subject&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hey this is a message&quot;</span><span class="p" data-group-id="8829697250-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8619104543-1">%{</span><span class="s">&quot;subject&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&amp;nbsp;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;br /&gt;&lt;script&gt;&lt;/script&gt;&lt;a href=&#39;google.com&#39;&gt;&lt;/a&gt;&quot;</span><span class="p" data-group-id="8619104543-1">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Sanitize</span><span class="o">.</span><span class="n">html_and_entities_from_subject</span><span class="p" data-group-id="8619104543-2">(</span><span class="n">attrs</span><span class="p" data-group-id="8619104543-2">)</span><span class="w">
+</span><span class="p" data-group-id="8619104543-3">%{</span><span class="s">&quot;subject&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&amp;#38;nbsp;&amp;lt;strong&amp;gt;Hello World&amp;lt;/strong&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;a href=&#39;google.com&#39;&amp;gt;&amp;lt;/a&amp;gt;&quot;</span><span class="p" data-group-id="8619104543-3">}</span></code></pre>
   </section>
 </section>
-<section class="detail" id="html_from_title/2">
+<section class="detail" id="html_and_entities_from_title/1">
 
   <div class="detail-header">
-    <a href="#html_from_title/2" class="detail-link" title="Link to this function">
+    <a href="#html_and_entities_from_title/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">html_from_title(title, attrs)</h1>
+    <h1 class="signature" translate="no">html_and_entities_from_title(attrs)</h1>
 
 
   </div>
@@ -240,20 +240,20 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> html_from_title(title :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> html_and_entities_from_title(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
 
       </div>
 
-<p>Used to sanitize html from <code class="inline">Thread</code> or <code class="inline">Post</code> title</p><h2 id="html_from_title/2-example" class="section-heading">
-  <a href="#html_from_title/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+<p>Used to sanitize html and entities from <code class="inline">Thread</code> or <code class="inline">Post</code> title</p><h2 id="html_and_entities_from_title/1-example" class="section-heading">
+  <a href="#html_and_entities_from_title/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">example</p>
   </a>
   Example
 </h2>
 <pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">EpochtalkServerWeb.Helpers.Sanitize</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8011989491-1">%{</span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;br /&gt;&lt;script&gt;&lt;/script&gt;&lt;a href=&#39;google.com&#39;&gt;&lt;/a&gt;&quot;</span><span class="p" data-group-id="8011989491-1">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Sanitize</span><span class="o">.</span><span class="n">html_from_title</span><span class="p" data-group-id="8011989491-2">(</span><span class="n">attrs</span><span class="p" data-group-id="8011989491-3">[</span><span class="s">&quot;title&quot;</span><span class="p" data-group-id="8011989491-3">]</span><span class="p">,</span><span class="w"> </span><span class="n">attrs</span><span class="p" data-group-id="8011989491-2">)</span><span class="w">
-</span><span class="p" data-group-id="8011989491-4">%{</span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p" data-group-id="8011989491-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">attrs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5353740480-1">%{</span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&amp;nbsp;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;br /&gt;&lt;script&gt;&lt;/script&gt;&lt;a href=&#39;google.com&#39;&gt;&lt;/a&gt;&quot;</span><span class="p" data-group-id="5353740480-1">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Sanitize</span><span class="o">.</span><span class="n">html_and_entities_from_title</span><span class="p" data-group-id="5353740480-2">(</span><span class="n">attrs</span><span class="p" data-group-id="5353740480-2">)</span><span class="w">
+</span><span class="p" data-group-id="5353740480-3">%{</span><span class="s">&quot;title&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&amp;#38;nbsp;&amp;lt;strong&amp;gt;Hello World&amp;lt;/strong&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;a href=&#39;google.com&#39;&amp;gt;&amp;lt;/a&amp;gt;&quot;</span><span class="p" data-group-id="5353740480-3">}</span></code></pre>
   </section>
 </section>
 
