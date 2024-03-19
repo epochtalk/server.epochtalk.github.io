@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8FBE16F7.js"></script>
+    <script src="dist/sidebar_items-28D16B0F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -136,17 +136,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(board_ban, attrs \\ %{})</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Creates a generic changeset for <code class="inline">BoardBan</code> model</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#is_banned_from_board/2" translate="no">is_banned_from_board(user, opts)</a>
+        <a href="#banned_from_board?/2" translate="no">banned_from_board?(user, opts)</a>
 
       </div>
 
@@ -157,7 +147,17 @@ Accepts a <code class="inline">board_id</code>, <code class="inline">post_id</co
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#is_not_banned_from_board/2" translate="no">is_not_banned_from_board(user, opts \\ [])</a>
+        <a href="#changeset/2" translate="no">changeset(board_ban, attrs \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a generic changeset for <code class="inline">BoardBan</code> model</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#not_banned_from_board?/2" translate="no">not_banned_from_board?(user, opts \\ [])</a>
 
       </div>
 
@@ -222,6 +222,32 @@ Types
 Functions
     </h1>
     <div class="functions-list">
+<section class="detail" id="banned_from_board?/2">
+
+  <div class="detail-header">
+    <a href="#banned_from_board?/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">banned_from_board?(user, opts)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> banned_from_board?(user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(), opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
+  {:ok, banned :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}</pre>
+
+      </div>
+
+<p>Used to check if <code class="inline">User</code> is banned from board.
+Accepts a <code class="inline">board_id</code>, <code class="inline">post_id</code> or <code class="inline">thread_id</code> as an option.</p><p>Returns <code class="inline">true</code> if the user is banned from the specified <code class="inline">Board</code> or <code class="inline">false</code>
+otherwise.</p>
+  </section>
+</section>
 <section class="detail" id="changeset/2">
 
     <span id="changeset/1"></span>
@@ -240,21 +266,23 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(board_ban :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> changeset(board_ban :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
 <p>Creates a generic changeset for <code class="inline">BoardBan</code> model</p>
   </section>
 </section>
-<section class="detail" id="is_banned_from_board/2">
+<section class="detail" id="not_banned_from_board?/2">
+
+    <span id="not_banned_from_board?/1"></span>
 
   <div class="detail-header">
-    <a href="#is_banned_from_board/2" class="detail-link" title="Link to this function">
+    <a href="#not_banned_from_board?/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">is_banned_from_board(user, opts)</h1>
+    <h1 class="signature" translate="no">not_banned_from_board?(user, opts \\ [])</h1>
 
 
   </div>
@@ -263,38 +291,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> is_banned_from_board(user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(), opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
-  {:ok, banned :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}</pre>
-
-      </div>
-
-<p>Used to check if <code class="inline">User</code> is banned from board.
-Accepts a <code class="inline">board_id</code>, <code class="inline">post_id</code> or <code class="inline">thread_id</code> as an option.</p><p>Returns <code class="inline">true</code> if the user is banned from the specified <code class="inline">Board</code> or <code class="inline">false</code>
-otherwise.</p>
-  </section>
-</section>
-<section class="detail" id="is_not_banned_from_board/2">
-
-    <span id="is_not_banned_from_board/1"></span>
-
-  <div class="detail-header">
-    <a href="#is_not_banned_from_board/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">is_not_banned_from_board(user, opts \\ [])</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> is_not_banned_from_board(
-  user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(),
-  opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()
-) ::
+          <pre translate="no"><span class="attribute">@spec</span> not_banned_from_board?(user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(), opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
   {:ok, not_banned :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}</pre>
 
       </div>

@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8FBE16F7.js"></script>
+    <script src="dist/sidebar_items-28D16B0F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -241,6 +241,17 @@ the specified <code class="inline">thread_id</code></p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#is_post_edit_disabled_by_thread_id/2" translate="no">is_post_edit_disabled_by_thread_id(thread_id, post_created_at)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if <code class="inline">Board</code> has <code class="inline">Post</code> edit disabled, which is determined by
+the <code class="inline">post_edit_diabled</code> setting within the <code class="inline">meta</code> field of the <code class="inline">Board</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#movelist/1" translate="no">movelist(user_priority)</a>
 
       </div>
@@ -393,7 +404,7 @@ Functions
           <pre translate="no"><span class="attribute">@spec</span> changeset(
   board :: <a href="#t:t/0">t</a>(),
   attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
-) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+) :: <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -417,7 +428,7 @@ Functions
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> create(board_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  {:ok, board :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, board :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -440,7 +451,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> create_changeset(board :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(board :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -582,6 +593,33 @@ server. The previous naming convention was confusing as this is just checking re
 
 <p>Determines if the provided <code class="inline">user_priority</code> has write access to the board that contains the thread
 the specified <code class="inline">thread_id</code></p>
+  </section>
+</section>
+<section class="detail" id="is_post_edit_disabled_by_thread_id/2">
+
+  <div class="detail-header">
+    <a href="#is_post_edit_disabled_by_thread_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">is_post_edit_disabled_by_thread_id(thread_id, post_created_at)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> is_post_edit_disabled_by_thread_id(
+  thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  post_created_at :: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if <code class="inline">Board</code> has <code class="inline">Post</code> edit disabled, which is determined by
+the <code class="inline">post_edit_diabled</code> setting within the <code class="inline">meta</code> field of the <code class="inline">Board</code></p>
   </section>
 </section>
 <section class="detail" id="movelist/1">

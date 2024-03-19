@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8FBE16F7.js"></script>
+    <script src="dist/sidebar_items-28D16B0F.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -146,6 +146,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#create/2" translate="no">create(attrs, user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Create on <code class="inline">PollResponse</code> for specific poll. Used to vote for a <code class="inline">Poll</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#create_changeset/2" translate="no">create_changeset(poll_response, attrs \\ %{})</a>
 
       </div>
@@ -231,11 +241,34 @@ Functions
           <pre translate="no"><span class="attribute">@spec</span> changeset(
   poll_response :: <a href="#t:t/0">t</a>(),
   attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
-) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+) :: <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
 <p>Generic changeset for <code class="inline">PollResponse</code> model</p>
+  </section>
+</section>
+<section class="detail" id="create/2">
+
+  <div class="detail-header">
+    <a href="#create/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create(attrs, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: :ok</pre>
+
+      </div>
+
+<p>Create on <code class="inline">PollResponse</code> for specific poll. Used to vote for a <code class="inline">Poll</code></p>
   </section>
 </section>
 <section class="detail" id="create_changeset/2">
@@ -259,7 +292,7 @@ Functions
           <pre translate="no"><span class="attribute">@spec</span> create_changeset(
   poll_response :: <a href="#t:t/0">t</a>(),
   attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
-) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+) :: <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
