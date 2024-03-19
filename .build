@@ -25,6 +25,7 @@ EpochtalkServer.Models.Poll.html
 EpochtalkServer.Models.PollAnswer.html
 EpochtalkServer.Models.PollResponse.html
 EpochtalkServer.Models.Post.html
+EpochtalkServer.Models.PostDraft.html
 EpochtalkServer.Models.Preference.html
 EpochtalkServer.Models.Profile.html
 EpochtalkServer.Models.Rank.html
@@ -63,6 +64,8 @@ EpochtalkServerWeb.Controllers.ModerationLogJSON.html
 EpochtalkServerWeb.Controllers.Notification.html
 EpochtalkServerWeb.Controllers.NotificationJSON.html
 EpochtalkServerWeb.Controllers.Post.html
+EpochtalkServerWeb.Controllers.PostDraft.html
+EpochtalkServerWeb.Controllers.PostDraftJSON.html
 EpochtalkServerWeb.Controllers.PostJSON.html
 EpochtalkServerWeb.Controllers.Preference.html
 EpochtalkServerWeb.Controllers.PreferenceJSON.html
@@ -127,7 +130,7 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_items-45D2B571.js
-dist/sidebar_items-28D16B0F.js
+dist/search_items-8866F659.js
+dist/sidebar_items-B74B2AE0.js
 index.html
 search.html
