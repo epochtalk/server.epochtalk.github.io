@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.Controllers.ModerationLog — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Controllers.Poll — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.Controllers.ModerationLog</span> 
+  <span translate="no">EpochtalkServerWeb.Controllers.Poll</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Controller For <code class="inline">ModerationLog</code> related API requests</p>
+<p>Controller For <code class="inline">Poll</code> related API requests</p>
   </section>
 
 
@@ -122,11 +122,51 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#page/2" translate="no">page(conn, attrs)</a>
+        <a href="#create/2" translate="no">create(conn, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to page <code class="inline">ModerationLog</code> models for moderation log view`</p></div>
+        <div class="summary-synopsis"><p>Used to create <code class="inline">Poll</code> in existing <code class="inline">Thread</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete_vote/2" translate="no">delete_vote(conn, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Used to delete vote on <code class="inline">Poll</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#lock/2" translate="no">lock(conn, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Used to lock <code class="inline">Poll</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update/2" translate="no">update(conn, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Used to update <code class="inline">Poll</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#vote/2" translate="no">vote(conn, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Used to vote on <code class="inline">Poll</code></p></div>
 
     </div>
 
@@ -144,21 +184,89 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="page/2">
+<section class="detail" id="create/2">
 
   <div class="detail-header">
-    <a href="#page/2" class="detail-link" title="Link to this function">
+    <a href="#create/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">page(conn, attrs)</h1>
+    <h1 class="signature" translate="no">create(conn, attrs)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Used to page <code class="inline">ModerationLog</code> models for moderation log view`</p>
+<p>Used to create <code class="inline">Poll</code> in existing <code class="inline">Thread</code></p>
+  </section>
+</section>
+<section class="detail" id="delete_vote/2">
+
+  <div class="detail-header">
+    <a href="#delete_vote/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_vote(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Used to delete vote on <code class="inline">Poll</code></p>
+  </section>
+</section>
+<section class="detail" id="lock/2">
+
+  <div class="detail-header">
+    <a href="#lock/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">lock(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Used to lock <code class="inline">Poll</code></p>
+  </section>
+</section>
+<section class="detail" id="update/2">
+
+  <div class="detail-header">
+    <a href="#update/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Used to update <code class="inline">Poll</code></p>
+  </section>
+</section>
+<section class="detail" id="vote/2">
+
+  <div class="detail-header">
+    <a href="#vote/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">vote(conn, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Used to vote on <code class="inline">Poll</code></p>
   </section>
 </section>
 

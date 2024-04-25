@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.29.4">
+    <meta name="project" content="epochtalk_server v0.1.0">
+
+    <title>EpochtalkServerWeb.Controllers.PollJSON — epochtalk_server v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
+    <script src="dist/sidebar_items-10D64535.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-JDI3AVDD.js"></script>
+
+
+  </head>
+  <body data-type="modules" class="page-module">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+epochtalk_server
+      </a>
+      <div class="sidebar-projectVersion" translate="no">
+        v0.1.0
+      </div>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list"></ul>
+</section>
+
+<section class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="icon-action display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">EpochtalkServerWeb.Controllers.PollJSON</span> 
+  <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Renders and formats <code class="inline">Poll</code> data, in JSON format for frontend</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#lock/1" translate="no">lock(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders locked <code class="inline">Poll</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#poll/1" translate="no">poll(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders <code class="inline">Poll</code> data for vote, delete and create.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update/1" translate="no">update(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders updated <code class="inline">Poll</code>.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="lock/1">
+
+  <div class="detail-header">
+    <a href="#lock/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">lock(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders locked <code class="inline">Poll</code>.</p><p>  iex&gt; poll = %{
+  iex&gt;   thread_id: 2,
+  iex&gt;   locked: false
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.PollJSON.lock(%{poll: poll})
+  poll</p>
+  </section>
+</section>
+<section class="detail" id="poll/1">
+
+  <div class="detail-header">
+    <a href="#poll/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">poll(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders <code class="inline">Poll</code> data for vote, delete and create.</p><p>  ## Example
+  iex&gt; poll = %{
+  iex&gt;   thread_id: 99,
+  iex&gt;   id: 1,
+  iex&gt;   question: &quot;Is this a test?&quot;,
+  iex&gt;   poll_answers: [%{id: 3, answer: &quot;yes&quot;, poll_responses: [%{}, %{}]}, %{id: 4, answer: &quot;no&quot;, poll_responses: [%{}]}],
+  iex&gt;   display_mode: :voted
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.PollJSON.poll(%{poll: poll, has_voted: true})
+  %{</p><pre><code class="makeup elixir" translate="no"><span class="w"> </span><span class="ss">thread_id</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+ </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="ss">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Is this a test?&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="ss">answers</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2750565503-1">[</span><span class="p" data-group-id="2750565503-2">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="ss">answer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">votes</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="2750565503-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2750565503-3">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">answer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">votes</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2750565503-3">}</span><span class="p" data-group-id="2750565503-1">]</span><span class="p">,</span><span class="w">
+ </span><span class="ss">display_mode</span><span class="p">:</span><span class="w"> </span><span class="ss">:voted</span><span class="p">,</span><span class="w">
+ </span><span class="ss">has_voted</span><span class="p">:</span><span class="w"> </span><span class="no">true</span></code></pre><p>   }
+  iex&gt; EpochtalkServerWeb.Controllers.PollJSON.poll(%{poll: poll, has_voted: false})
+  %{</p><pre><code class="makeup elixir" translate="no"><span class="w"> </span><span class="ss">thread_id</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+ </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="ss">question</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Is this a test?&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="ss">answers</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1565111877-1">[</span><span class="p" data-group-id="1565111877-2">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="ss">answer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">votes</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="1565111877-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1565111877-3">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">answer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">votes</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="1565111877-3">}</span><span class="p" data-group-id="1565111877-1">]</span><span class="p">,</span><span class="w">
+ </span><span class="ss">display_mode</span><span class="p">:</span><span class="w"> </span><span class="ss">:voted</span><span class="p">,</span><span class="w">
+ </span><span class="ss">has_voted</span><span class="p">:</span><span class="w"> </span><span class="no">false</span></code></pre><p>   }</p>
+  </section>
+</section>
+<section class="detail" id="update/1">
+
+  <div class="detail-header">
+    <a href="#update/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders updated <code class="inline">Poll</code>.</p><p>  iex&gt; poll = %{
+  iex&gt;   max_answers: 2,
+  iex&gt;   id: 1,
+  iex&gt;   change_vote: true,
+  iex&gt;   expiration: nil,
+  iex&gt;   display_mode: :voted
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.PollJSON.update(%{poll: poll})
+  poll</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="epochtalk_server.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

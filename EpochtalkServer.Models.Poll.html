@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-B74B2AE0.js"></script>
+    <script src="dist/sidebar_items-10D64535.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -136,6 +136,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#allow_change_vote/1" translate="no">allow_change_vote(thread_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if the specified <code class="inline">Poll</code> allows votes to be changed given a <code class="inline">Thread</code> id</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#by_thread/1" translate="no">by_thread(thread_id)</a>
 
       </div>
@@ -176,11 +186,101 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#exists/1" translate="no">exists(thread_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if the specified <code class="inline">Poll</code> exists given a <code class="inline">Thread</code> id</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#has_not_voted/2" translate="no">has_not_voted(thread_id, user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if the specified <code class="inline">User</code> has not voted on the specified <code class="inline">Thread</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#has_voted/2" translate="no">has_voted(thread_id, user_id)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Returns boolean indicating if the specified <code class="inline">User</code> has voted on the specified <code class="inline">Thread</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#locked/1" translate="no">locked(thread_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if the specified <code class="inline">Poll</code> is locked given a <code class="inline">Thread</code> id</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#max_answers/1" translate="no">max_answers(thread_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns integer indicating the max number of answers for the <code class="inline">Poll</code> given a <code class="inline">Thread</code> id</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#running/1" translate="no">running(thread_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if the specified <code class="inline">Poll</code> is currently running given a <code class="inline">Thread</code> id</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#set_locked/2" translate="no">set_locked(thread_id, locked)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Sets boolean indicating if the specified <code class="inline">Poll</code> is locked given a <code class="inline">Thread</code> id</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#unlocked/1" translate="no">unlocked(thread_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns boolean indicating if the specified <code class="inline">Poll</code> is unlocked given a <code class="inline">Thread</code> id</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update/1" translate="no">update(attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates an existing <code class="inline">Poll</code> in the database</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_changeset/2" translate="no">update_changeset(poll, attrs \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Update changeset for <code class="inline">Poll</code> model</p></div>
 
     </div>
 
@@ -248,6 +348,29 @@ Types
 Functions
     </h1>
     <div class="functions-list">
+<section class="detail" id="allow_change_vote/1">
+
+  <div class="detail-header">
+    <a href="#allow_change_vote/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">allow_change_vote(thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> allow_change_vote(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if the specified <code class="inline">Poll</code> allows votes to be changed given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
 <section class="detail" id="by_thread/1">
 
   <div class="detail-header">
@@ -315,7 +438,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> create(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create(poll_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, poll :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -350,6 +473,52 @@ Functions
 <p>Create changeset for <code class="inline">Poll</code> model</p>
   </section>
 </section>
+<section class="detail" id="exists/1">
+
+  <div class="detail-header">
+    <a href="#exists/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">exists(thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> exists(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if the specified <code class="inline">Poll</code> exists given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
+<section class="detail" id="has_not_voted/2">
+
+  <div class="detail-header">
+    <a href="#has_not_voted/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">has_not_voted(thread_id, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> has_not_voted(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if the specified <code class="inline">User</code> has not voted on the specified <code class="inline">Thread</code></p>
+  </section>
+</section>
 <section class="detail" id="has_voted/2">
 
   <div class="detail-header">
@@ -371,6 +540,173 @@ Functions
       </div>
 
 <p>Returns boolean indicating if the specified <code class="inline">User</code> has voted on the specified <code class="inline">Thread</code></p>
+  </section>
+</section>
+<section class="detail" id="locked/1">
+
+  <div class="detail-header">
+    <a href="#locked/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">locked(thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> locked(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if the specified <code class="inline">Poll</code> is locked given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
+<section class="detail" id="max_answers/1">
+
+  <div class="detail-header">
+    <a href="#max_answers/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">max_answers(thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> max_answers(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()</pre>
+
+      </div>
+
+<p>Returns integer indicating the max number of answers for the <code class="inline">Poll</code> given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
+<section class="detail" id="running/1">
+
+  <div class="detail-header">
+    <a href="#running/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">running(thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> running(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if the specified <code class="inline">Poll</code> is currently running given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
+<section class="detail" id="set_locked/2">
+
+  <div class="detail-header">
+    <a href="#set_locked/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">set_locked(thread_id, locked)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> set_locked(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), locked :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()]}</pre>
+
+      </div>
+
+<p>Sets boolean indicating if the specified <code class="inline">Poll</code> is locked given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
+<section class="detail" id="unlocked/1">
+
+  <div class="detail-header">
+    <a href="#unlocked/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">unlocked(thread_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> unlocked(thread_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Returns boolean indicating if the specified <code class="inline">Poll</code> is unlocked given a <code class="inline">Thread</code> id</p>
+  </section>
+</section>
+<section class="detail" id="update/1">
+
+  <div class="detail-header">
+    <a href="#update/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update(attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update(poll_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, poll :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Updates an existing <code class="inline">Poll</code> in the database</p>
+  </section>
+</section>
+<section class="detail" id="update_changeset/2">
+
+    <span id="update_changeset/1"></span>
+
+  <div class="detail-header">
+    <a href="#update_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_changeset(poll, attrs \\ %{})</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_changeset(
+  poll :: <a href="#t:t/0">t</a>(),
+  attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
+) :: <a href="https://hexdocs.pm/ecto/3.11.1/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Update changeset for <code class="inline">Poll</code> model</p>
   </section>
 </section>
 

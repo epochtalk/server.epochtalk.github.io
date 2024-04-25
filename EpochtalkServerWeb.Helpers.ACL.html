@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-B74B2AE0.js"></script>
+    <script src="dist/sidebar_items-10D64535.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -143,6 +143,20 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#bypass_post_owner/7" translate="no">bypass_post_owner(user, post, permission, bypass_type, custom_condition, check_priority_bypass \\ false, compare_mod_priorities \\ false)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Used to check route authorization when modifying a <code class="inline">Post</code> or related models (e.g. <code class="inline">Thread</code> or <code class="inline">Poll</code>).
+This function returns a boolean indicating if the authenticated <code class="inline">User</code> can bypass the <code class="inline">Post</code> owner, given
+a <code class="inline">User</code> map, <code class="inline">Post</code> map, <code class="inline">Permission</code> string, <code class="inline">bypass_type</code> string, a <code class="inline">custom_condition</code> boolean, and optionally a boolean
+indicating whether or not to compare moderator priorities if both users are moderators and lastly another optional boolean
+to indicating if priority based bypasses should be checked.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#get_user_priority/1" translate="no">get_user_priority(user)</a>
 
       </div>
@@ -159,6 +173,19 @@ epochtalk_server
 
         <div class="summary-synopsis"><p>Returns boolean indicating if supplied <code class="inline">User</code> or authenticated <code class="inline">Plug.Conn.t()</code> has the
 a role with the supplied <code class="inline">Permission</code> path.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#has_priority_bypass_or_is_owner/4" translate="no">has_priority_bypass_or_is_owner(user, permission, post, self_mod \\ false)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function returns a boolean indicating if the auth <code class="inline">User</code> has the permission and priority to
+modify the <code class="inline">Post</code> given an authed<code class="inline">User</code>, a <code class="inline">Permission</code> string, the <code class="inline">Post</code> attempting to be
+modified and a boolean indicating if self moderation should be taken into consideration, this
+function will return a boolean indicating if the auth <code class="inline">User</code> has priority to modify the <code class="inline">Post</code></p></div>
 
     </div>
 
@@ -244,6 +271,45 @@ the proper permissions.</p>
 <code class="inline">User</code> does not have the proper permissions.</p>
   </section>
 </section>
+<section class="detail" id="bypass_post_owner/7">
+
+    <span id="bypass_post_owner/5"></span>
+
+    <span id="bypass_post_owner/6"></span>
+
+  <div class="detail-header">
+    <a href="#bypass_post_owner/7" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">bypass_post_owner(user, post, permission, bypass_type, custom_condition, check_priority_bypass \\ false, compare_mod_priorities \\ false)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> bypass_post_owner(
+  user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
+  post :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
+  permission :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  bypass_type :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  custom_condition :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>(),
+  check_priority_bypass :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
+  compare_mod_priorities :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Used to check route authorization when modifying a <code class="inline">Post</code> or related models (e.g. <code class="inline">Thread</code> or <code class="inline">Poll</code>).
+This function returns a boolean indicating if the authenticated <code class="inline">User</code> can bypass the <code class="inline">Post</code> owner, given
+a <code class="inline">User</code> map, <code class="inline">Post</code> map, <code class="inline">Permission</code> string, <code class="inline">bypass_type</code> string, a <code class="inline">custom_condition</code> boolean, and optionally a boolean
+indicating whether or not to compare moderator priorities if both users are moderators and lastly another optional boolean
+to indicating if priority based bypasses should be checked.</p>
+  </section>
+</section>
 <section class="detail" id="get_user_priority/1">
 
   <div class="detail-header">
@@ -265,7 +331,7 @@ the proper permissions.</p>
 
       </div>
 
-<p>Helper which returns the active User's priority.</p><p>Will return priorty of role with highest permissions if the user is authenticated, otherwise anonymous priority
+<p>Helper which returns the active User's priority.</p><p>Will return priority of role with highest permissions if the user is authenticated, otherwise anonymous priority
 is returned if <code class="inline">frontend_config.login_required</code> is false otherwise private role priority is returned. If
 user is banned the Banned role priority is returned.</p>
   </section>
@@ -295,6 +361,39 @@ user is banned the Banned role priority is returned.</p>
 
 <p>Returns boolean indicating if supplied <code class="inline">User</code> or authenticated <code class="inline">Plug.Conn.t()</code> has the
 a role with the supplied <code class="inline">Permission</code> path.</p>
+  </section>
+</section>
+<section class="detail" id="has_priority_bypass_or_is_owner/4">
+
+    <span id="has_priority_bypass_or_is_owner/3"></span>
+
+  <div class="detail-header">
+    <a href="#has_priority_bypass_or_is_owner/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">has_priority_bypass_or_is_owner(user, permission, post, self_mod \\ false)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> has_priority_bypass_or_is_owner(
+  user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
+  permission :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  post :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
+  self_mod :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>This function returns a boolean indicating if the auth <code class="inline">User</code> has the permission and priority to
+modify the <code class="inline">Post</code> given an authed<code class="inline">User</code>, a <code class="inline">Permission</code> string, the <code class="inline">Post</code> attempting to be
+modified and a boolean indicating if self moderation should be taken into consideration, this
+function will return a boolean indicating if the auth <code class="inline">User</code> has priority to modify the <code class="inline">Post</code></p>
   </section>
 </section>
 <section class="detail" id="has_role/2">

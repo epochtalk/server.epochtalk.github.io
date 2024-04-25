@@ -63,6 +63,8 @@ EpochtalkServerWeb.Controllers.ModerationLog.html
 EpochtalkServerWeb.Controllers.ModerationLogJSON.html
 EpochtalkServerWeb.Controllers.Notification.html
 EpochtalkServerWeb.Controllers.NotificationJSON.html
+EpochtalkServerWeb.Controllers.Poll.html
+EpochtalkServerWeb.Controllers.PollJSON.html
 EpochtalkServerWeb.Controllers.Post.html
 EpochtalkServerWeb.Controllers.PostDraft.html
 EpochtalkServerWeb.Controllers.PostDraftJSON.html
@@ -130,7 +132,7 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_items-8866F659.js
-dist/sidebar_items-B74B2AE0.js
+dist/search_items-4E437A09.js
+dist/sidebar_items-10D64535.js
 index.html
 search.html
