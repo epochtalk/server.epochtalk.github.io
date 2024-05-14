@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-10D64535.js"></script>
+    <script src="dist/sidebar_items-83B69DB5.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -142,6 +142,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#preview/1" translate="no">preview(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders <code class="inline">Post</code> data for preview purposes</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#update/1" translate="no">update(map)</a>
 
       </div>
@@ -196,6 +206,26 @@ Functions
   <section class="docstring">
 
 <p>Renders <code class="inline">Post</code> data after creating new <code class="inline">Post</code></p>
+  </section>
+</section>
+<section class="detail" id="preview/1">
+
+  <div class="detail-header">
+    <a href="#preview/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">preview(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders <code class="inline">Post</code> data for preview purposes</p><p>  ## Example
+  iex&gt; parsed_body = %{parsed_body: &quot;&lt;p&gt;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;p&gt;&quot;}
+  iex&gt; EpochtalkServerWeb.Controllers.PostJSON.preview(parsed_body)
+  parsed_body</p>
   </section>
 </section>
 <section class="detail" id="update/1">
