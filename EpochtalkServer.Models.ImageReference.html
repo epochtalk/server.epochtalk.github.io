@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServer.Models.RolePermission — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServer.Models.ImageReference — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServer.Models.RolePermission</span> 
+  <span translate="no">EpochtalkServer.Models.ImageReference</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p><code class="inline">RolePermission</code> model, for performing actions relating to a roles permissions</p>
+<p><code class="inline">ImageReference</code> model, for tracking images uploaded locally or to CDN</p>
   </section>
 
 
@@ -136,61 +136,73 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(role_permission, attrs \\ %{})</a>
+        <a href="#changeset/2" translate="no">changeset(image_reference, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates a generic changeset for <code class="inline">RolePermission</code> model</p></div>
+        <div class="summary-synopsis"><p>Generic changeset for <code class="inline">ImageReference</code> model</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#insert/1" translate="no">insert(role_permission)</a>
+        <a href="#create/1" translate="no">create(attrs_list)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Inserts a new <code class="inline">RolePermission</code> into the database</p></div>
+        <div class="summary-synopsis"><p>Creates a new <code class="inline">ImageReference</code></p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#maybe_init!/0" translate="no">maybe_init!()</a>
+        <a href="#create_changeset/2" translate="no">create_changeset(image_reference, attrs)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets all roles permissions to value: false, modified: false</p></div>
+        <div class="summary-synopsis"><p>Changeset for creating <code class="inline">ImageReference</code> model</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#modify_by_role/1" translate="no">modify_by_role(attrs)</a>
+        <a href="#delete_expired/0" translate="no">delete_expired()</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>For admin api use.</p></div>
+        <div class="summary-synopsis"><p>Deletes expired <code class="inline">ImageReference</code>s
+Images are expired if they are past their expiration date/time and have no referencing models</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#permissions_map_by_role_id/1" translate="no">permissions_map_by_role_id(role_id)</a>
+        <a href="#find/1" translate="no">find(image_reference)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Derives a single nested map of all permissions for a role</p></div>
+        <div class="summary-synopsis"><p>Finds an <code class="inline">ImageReference</code></p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#upsert_value/1" translate="no">upsert_value(roles_permissions)</a>
+        <a href="#find_expired/0" translate="no">find_expired()</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used to update the value of a <code class="inline">RolePermission</code> in the database, if it exists or create it, if it doesnt</p></div>
+        <div class="summary-synopsis"><p>Finds expired <code class="inline">ImageReference</code>s
+Images are expired if they are past their expiration date/time and have no referencing models</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#with_uuid/1" translate="no">with_uuid(uuid)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Finds an <code class="inline">ImageReference</code> with specified uuid</p></div>
 
     </div>
 
@@ -224,14 +236,18 @@ Types
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.RolePermission{
+          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.ImageReference{
   __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  modified: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
-  permission: <a href="EpochtalkServer.Models.Permission.html#t:t/0">EpochtalkServer.Models.Permission.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  permission_path: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  role: <a href="EpochtalkServer.Models.Role.html#t:t/0">EpochtalkServer.Models.Role.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  role_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  value: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil
+  checksum: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  created_at: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | nil,
+  expiration: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | nil,
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  length: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  posts: [<a href="EpochtalkServer.Models.Post.html#t:t/0">EpochtalkServer.Models.Post.t</a>()] | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  profiles: [<a href="EpochtalkServer.Models.Profile.html#t:t/0">EpochtalkServer.Models.Profile.t</a>()] | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  type: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  url: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  uuid: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil
 }</pre>
 
       </div>
@@ -254,14 +270,12 @@ Functions
     <div class="functions-list">
 <section class="detail" id="changeset/2">
 
-    <span id="changeset/1"></span>
-
   <div class="detail-header">
     <a href="#changeset/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(role_permission, attrs \\ %{})</h1>
+    <h1 class="signature" translate="no">changeset(image_reference, attrs)</h1>
 
 
   </div>
@@ -270,21 +284,24 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(role_permission :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> changeset(
+  image_reference :: <a href="#t:t/0">t</a>(),
+  attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
+) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
-<p>Creates a generic changeset for <code class="inline">RolePermission</code> model</p>
+<p>Generic changeset for <code class="inline">ImageReference</code> model</p>
   </section>
 </section>
-<section class="detail" id="insert/1">
+<section class="detail" id="create/1">
 
   <div class="detail-header">
-    <a href="#insert/1" class="detail-link" title="Link to this function">
+    <a href="#create/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">insert(role_permission)</h1>
+    <h1 class="signature" translate="no">create(attrs_list)</h1>
 
 
   </div>
@@ -293,24 +310,23 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> insert(role_permission_or_role_permissions :: <a href="#t:t/0">t</a>() | [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()]) ::
-  {:ok, role :: <a href="#t:t/0">t</a>()}
-  | {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()]}
-  | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create(attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/ex_aws_s3/2.5.3/ExAws.S3.html#t:presigned_post_result/0">ExAws.S3.presigned_post_result</a>()}
+  | {:error, value :: <a href="#t:t/0">t</a>(), others :: <a href="#t:t/0">t</a>()}</pre>
 
       </div>
 
-<p>Inserts a new <code class="inline">RolePermission</code> into the database</p>
+<p>Creates a new <code class="inline">ImageReference</code></p>
   </section>
 </section>
-<section class="detail" id="maybe_init!/0">
+<section class="detail" id="create_changeset/2">
 
   <div class="detail-header">
-    <a href="#maybe_init!/0" class="detail-link" title="Link to this function">
+    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">maybe_init!()</h1>
+    <h1 class="signature" translate="no">create_changeset(image_reference, attrs)</h1>
 
 
   </div>
@@ -319,21 +335,22 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> maybe_init!() :: [<a href="#t:t/0">t</a>()] | nil</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(image_reference :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) ::
+  <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
-<p>Sets all roles permissions to value: false, modified: false</p><p>For server-side role-loading use, only runs if roles permissions table is currently empty</p>
+<p>Changeset for creating <code class="inline">ImageReference</code> model</p>
   </section>
 </section>
-<section class="detail" id="modify_by_role/1">
+<section class="detail" id="delete_expired/0">
 
   <div class="detail-header">
-    <a href="#modify_by_role/1" class="detail-link" title="Link to this function">
+    <a href="#delete_expired/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">modify_by_role(attrs)</h1>
+    <h1 class="signature" translate="no">delete_expired()</h1>
 
 
   </div>
@@ -342,24 +359,22 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> modify_by_role(role :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, :success}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> delete_expired() :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()]}</pre>
 
       </div>
 
-<p>For admin api use.</p><p>Updates the <code class="inline">modified</code> value of <code class="inline">RolePermission</code>s for a <code class="inline">Role</code>
-and updates the <code class="inline">Role</code>'s permissions and priority restrictions</p><p>If a permission is not included in <code class="inline">new_permissions</code>, it will be set to
-<code class="inline">false</code>.  <code class="inline">new_permissions</code> may be an empty list - in which case, all
-permissions will be set to <code class="inline">false</code>.</p><p>Any permissions in <code class="inline">new_permissions</code> which are not valid will be ignored.</p>
+<p>Deletes expired <code class="inline">ImageReference</code>s
+Images are expired if they are past their expiration date/time and have no referencing models</p>
   </section>
 </section>
-<section class="detail" id="permissions_map_by_role_id/1">
+<section class="detail" id="find/1">
 
   <div class="detail-header">
-    <a href="#permissions_map_by_role_id/1" class="detail-link" title="Link to this function">
+    <a href="#find/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">permissions_map_by_role_id(role_id)</h1>
+    <h1 class="signature" translate="no">find(image_reference)</h1>
 
 
   </div>
@@ -368,21 +383,22 @@ permissions will be set to <code class="inline">false</code>.</p><p>Any permissi
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> permissions_map_by_role_id(role_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> find(image_reference_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  {:ok, image_reference :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
-<p>Derives a single nested map of all permissions for a role</p>
+<p>Finds an <code class="inline">ImageReference</code></p>
   </section>
 </section>
-<section class="detail" id="upsert_value/1">
+<section class="detail" id="find_expired/0">
 
   <div class="detail-header">
-    <a href="#upsert_value/1" class="detail-link" title="Link to this function">
+    <a href="#find_expired/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">upsert_value(roles_permissions)</h1>
+    <h1 class="signature" translate="no">find_expired()</h1>
 
 
   </div>
@@ -391,11 +407,36 @@ permissions will be set to <code class="inline">false</code>.</p><p>Any permissi
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> upsert_value(role_permissions :: [%{}]) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()]}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> find_expired() :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
 
       </div>
 
-<p>Used to update the value of a <code class="inline">RolePermission</code> in the database, if it exists or create it, if it doesnt</p>
+<p>Finds expired <code class="inline">ImageReference</code>s
+Images are expired if they are past their expiration date/time and have no referencing models</p>
+  </section>
+</section>
+<section class="detail" id="with_uuid/1">
+
+  <div class="detail-header">
+    <a href="#with_uuid/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_uuid(uuid)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> with_uuid(uuid :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) ::
+  {:ok, <a href="#t:t/0">t</a>()} | {:error, :image_reference_does_not_exist}</pre>
+
+      </div>
+
+<p>Finds an <code class="inline">ImageReference</code> with specified uuid</p>
   </section>
 </section>
 

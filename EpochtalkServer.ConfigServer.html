@@ -7,7 +7,7 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServer.Models.MetadataBoard — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServer.ConfigServer — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServer.Models.MetadataBoard</span> 
+  <span translate="no">EpochtalkServer.ConfigServer</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p><code class="inline">MetadataBoard</code> model, for performing actions relating to <code class="inline">Board</code> metadata</p>
+<p>Config genserver, stores configs in memory for quick lookup</p>
   </section>
 
 
@@ -115,20 +115,6 @@ epochtalk_server
       </a>
       Summary
     </h1>
-<div class="summary-types summary">
-  <h2>
-    <a href="#types">Types</a>
-  </h2>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:t/0" translate="no">t()</a>
-
-      </div>
-
-    </div>
-
-</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -136,21 +122,31 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(metadata_board, attrs \\ %{})</a>
+        <a href="#by_module/1" translate="no">by_module(module)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Create changeset for inserting a new <code class="inline">MetadataBoard</code> model</p></div>
+        <div class="summary-synopsis"><p>Returns config for specified module</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#insert/1" translate="no">insert(metadata_board)</a>
+        <a href="#child_spec/1" translate="no">child_spec(init_arg)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Inserts a new <code class="inline">MetadataBoard</code> into the database</p></div>
+        <div class="summary-synopsis"><p>Returns a specification to start this module under a supervisor.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start_link/1" translate="no">start_link(opts)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Start genserver and create a reference for supervision tree</p></div>
 
     </div>
 
@@ -158,56 +154,6 @@ epochtalk_server
 
   </section>
 
-
-  <section id="types" class="details-list">
-    <h1 class="section-heading">
-      <a class="hover-link" href="#types">
-        <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
-      </a>
-Types
-    </h1>
-    <div class="types-list">
-<section class="detail" id="t:t/0">
-
-  <div class="detail-header">
-    <a href="#t:t/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">t()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> t() :: %EpochtalkServer.Models.MetadataBoard{
-  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  board: <a href="EpochtalkServer.Models.Board.html#t:t/0">EpochtalkServer.Models.Board.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  board_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  last_post_created_at: <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | nil,
-  last_post_position: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  last_post_username: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
-  last_thread_id: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  last_thread_title: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
-  post_count: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  thread_count: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  total_post: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  total_thread_count: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil
-}</pre>
-
-      </div>
-
-
-  </section>
-</section>
-
-    </div>
-  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -218,16 +164,14 @@ Types
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="changeset/2">
-
-    <span id="changeset/1"></span>
+<section class="detail" id="by_module/1">
 
   <div class="detail-header">
-    <a href="#changeset/2" class="detail-link" title="Link to this function">
+    <a href="#by_module/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(metadata_board, attrs \\ %{})</h1>
+    <h1 class="signature" translate="no">by_module(module)</h1>
 
 
   </div>
@@ -236,38 +180,45 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(
-  metadata_board :: <a href="#t:t/0">t</a>(),
-  attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
-) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> by_module(module :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil</pre>
 
       </div>
 
-<p>Create changeset for inserting a new <code class="inline">MetadataBoard</code> model</p>
+<p>Returns config for specified module</p>
   </section>
 </section>
-<section class="detail" id="insert/1">
+<section class="detail" id="child_spec/1">
 
   <div class="detail-header">
-    <a href="#insert/1" class="detail-link" title="Link to this function">
+    <a href="#child_spec/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">insert(metadata_board)</h1>
+    <h1 class="signature" translate="no">child_spec(init_arg)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-      <div class="specs">
+<p>Returns a specification to start this module under a supervisor.</p><p>See <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="start_link/1">
 
-          <pre translate="no"><span class="attribute">@spec</span> insert(metadata_board :: <a href="#t:t/0">t</a>()) ::
-  {:ok, metadata_board :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  <div class="detail-header">
+    <a href="#start_link/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">start_link(opts)</h1>
 
-      </div>
 
-<p>Inserts a new <code class="inline">MetadataBoard</code> into the database</p>
+  </div>
+
+  <section class="docstring">
+
+<p>Start genserver and create a reference for supervision tree</p>
   </section>
 </section>
 
