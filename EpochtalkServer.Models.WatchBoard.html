@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-7AF0FE40.js"></script>
+    <script src="dist/sidebar_items-8BA6EE3E.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -167,7 +167,7 @@ a particular <code class="inline">Thread</code>. Won't recreate record if it exi
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#is_watching/2" translate="no">is_watching(user, board_id)</a>
+        <a href="#user_is_watching/2" translate="no">user_is_watching(user, board_id)</a>
 
       </div>
 
@@ -246,7 +246,7 @@ Functions
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> create(user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(), board_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
-  {:ok, watch_thread :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, watch_thread :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -275,7 +275,7 @@ a particular <code class="inline">Thread</code>. Won't recreate record if it exi
           <pre translate="no"><span class="attribute">@spec</span> create_changeset(
   watch_thread :: <a href="#t:t/0">t</a>(),
   attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
-) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -306,14 +306,14 @@ a particular <code class="inline">Thread</code>. Won't recreate record if it exi
 <p>Deletes a specific <code class="inline">WatchBoard</code> record from the database. Used to stop watching a <code class="inline">Thread</code></p>
   </section>
 </section>
-<section class="detail" id="is_watching/2">
+<section class="detail" id="user_is_watching/2">
 
   <div class="detail-header">
-    <a href="#is_watching/2" class="detail-link" title="Link to this function">
+    <a href="#user_is_watching/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">is_watching(user, board_id)</h1>
+    <h1 class="signature" translate="no">user_is_watching(user, board_id)</h1>
 
 
   </div>
@@ -322,7 +322,7 @@ a particular <code class="inline">Thread</code>. Won't recreate record if it exi
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> is_watching(
+          <pre translate="no"><span class="attribute">@spec</span> user_is_watching(
   user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(),
   board_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
 ) ::
