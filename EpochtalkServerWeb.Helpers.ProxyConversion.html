@@ -7,13 +7,13 @@
     <meta name="generator" content="ExDoc v0.29.4">
     <meta name="project" content="epochtalk_server v0.1.0">
 
-    <title>EpochtalkServerWeb.Controllers.ImageReferenceJSON — epochtalk_server v0.1.0</title>
+    <title>EpochtalkServerWeb.Helpers.ProxyConversion — epochtalk_server v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8BA6EE3E.js"></script>
+    <script src="dist/sidebar_items-7AF0FE40.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -96,14 +96,14 @@ epochtalk_server
 </button>
 
 
-  <span translate="no">EpochtalkServerWeb.Controllers.ImageReferenceJSON</span> 
+  <span translate="no">EpochtalkServerWeb.Helpers.ProxyConversion</span> 
   <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Renders and formats <code class="inline">Controllers.ImageReference</code> data, in JSON format for frontend</p>
+<p>Helper for pulling and formatting data from SmfRepo</p>
   </section>
 
 
@@ -122,11 +122,57 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#s3_request_upload/1" translate="no">s3_request_upload(map)</a>
+        <a href="#build_boards/1" translate="no">build_boards(ids)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Renders S3 presigned post response</p></div>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_categories/1" translate="no">build_categories(ids)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_model/4" translate="no">build_model(model_type, ids, page, per_page)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_posts/1" translate="no">build_posts(ids)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_posts_by_thread/3" translate="no">build_posts_by_thread(id, page, per_page)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_threads/1" translate="no">build_threads(ids)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build_threads_by_board/3" translate="no">build_threads_by_board(id, page, per_page)</a>
+
+      </div>
 
     </div>
 
@@ -144,21 +190,123 @@ epochtalk_server
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="s3_request_upload/1">
+<section class="detail" id="build_boards/1">
 
   <div class="detail-header">
-    <a href="#s3_request_upload/1" class="detail-link" title="Link to this function">
+    <a href="#build_boards/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">s3_request_upload(map)</h1>
+    <h1 class="signature" translate="no">build_boards(ids)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>Renders S3 presigned post response</p>
+
+  </section>
+</section>
+<section class="detail" id="build_categories/1">
+
+  <div class="detail-header">
+    <a href="#build_categories/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_categories(ids)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="build_model/4">
+
+  <div class="detail-header">
+    <a href="#build_model/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_model(model_type, ids, page, per_page)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="build_posts/1">
+
+  <div class="detail-header">
+    <a href="#build_posts/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_posts(ids)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="build_posts_by_thread/3">
+
+  <div class="detail-header">
+    <a href="#build_posts_by_thread/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_posts_by_thread(id, page, per_page)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="build_threads/1">
+
+  <div class="detail-header">
+    <a href="#build_threads/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_threads(ids)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="build_threads_by_board/3">
+
+  <div class="detail-header">
+    <a href="#build_threads_by_board/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">build_threads_by_board(id, page, per_page)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
   </section>
 </section>
 

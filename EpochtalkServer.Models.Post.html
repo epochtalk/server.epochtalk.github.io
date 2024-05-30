@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8BA6EE3E.js"></script>
+    <script src="dist/sidebar_items-7AF0FE40.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -136,6 +136,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#changeset/2" translate="no">changeset(post, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Create generic changeset for <code class="inline">Post</code> model</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#count_by_user_id_in_range/3" translate="no">count_by_user_id_in_range(user_id, range_start, range_end)</a>
 
       </div>
@@ -176,7 +186,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#find_by_id/2" translate="no">find_by_id(id, preload_user_roles \\ false)</a>
+        <a href="#find_by_id/1" translate="no">find_by_id(id)</a>
 
       </div>
 
@@ -212,26 +222,6 @@ epochtalk_server
 
         <div class="summary-synopsis"><p>Sets the <code class="inline">post_position</code> of a new <code class="inline">Post</code>, by querying the <code class="inline">post_count</code> of the
 parent <code class="inline">Thread</code> and adding one</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#update/2" translate="no">update(post_attrs, authed_user)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Updates an existing <code class="inline">Post</code> in the database</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#update_changeset/3" translate="no">update_changeset(post, attrs, authed_user)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Create update changeset for <code class="inline">Post</code> model</p></div>
 
     </div>
 
@@ -300,6 +290,29 @@ Types
 Functions
     </h1>
     <div class="functions-list">
+<section class="detail" id="changeset/2">
+
+  <div class="detail-header">
+    <a href="#changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">changeset(post, attrs)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> changeset(post :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+
+      </div>
+
+<p>Create generic changeset for <code class="inline">Post</code> model</p>
+  </section>
+</section>
 <section class="detail" id="count_by_user_id_in_range/3">
 
   <div class="detail-header">
@@ -343,7 +356,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> create(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -367,7 +380,7 @@ Functions
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> create(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
-  {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -390,23 +403,21 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> create_changeset(post :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(post :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
 <p>Create changeset for <code class="inline">Post</code> model</p>
   </section>
 </section>
-<section class="detail" id="find_by_id/2">
-
-    <span id="find_by_id/1"></span>
+<section class="detail" id="find_by_id/1">
 
   <div class="detail-header">
-    <a href="#find_by_id/2" class="detail-link" title="Link to this function">
+    <a href="#find_by_id/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">find_by_id(id, preload_user_roles \\ false)</h1>
+    <h1 class="signature" translate="no">find_by_id(id)</h1>
 
 
   </div>
@@ -415,8 +426,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> find_by_id(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), preload_user_roles :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil) ::
-  <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> find_by_id(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: <a href="#t:t/0">t</a>()</pre>
 
       </div>
 
@@ -503,54 +513,6 @@ Functions
 
 <p>Sets the <code class="inline">post_position</code> of a new <code class="inline">Post</code>, by querying the <code class="inline">post_count</code> of the
 parent <code class="inline">Thread</code> and adding one</p>
-  </section>
-</section>
-<section class="detail" id="update/2">
-
-  <div class="detail-header">
-    <a href="#update/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">update(post_attrs, authed_user)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> update(post_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), authed_user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  {:ok, post :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
-
-      </div>
-
-<p>Updates an existing <code class="inline">Post</code> in the database</p>
-  </section>
-</section>
-<section class="detail" id="update_changeset/3">
-
-  <div class="detail-header">
-    <a href="#update_changeset/3" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">update_changeset(post, attrs, authed_user)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> update_changeset(post :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), authed_user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
-
-      </div>
-
-<p>Create update changeset for <code class="inline">Post</code> model</p>
   </section>
 </section>
 

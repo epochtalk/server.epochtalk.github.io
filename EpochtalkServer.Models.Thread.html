@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8BA6EE3E.js"></script>
+    <script src="dist/sidebar_items-7AF0FE40.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -216,11 +216,31 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#locked?/1" translate="no">locked?(id)</a>
+        <a href="#is_locked/1" translate="no">is_locked(id)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Returns boolean indicating if <code class="inline">Thread</code> is locked or nil if it does not exist</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#is_self_moderated_by_user/2" translate="no">is_self_moderated_by_user(id, user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Check if specific <code class="inline">Thread</code> is self moderated by a specific <code class="inline">User</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#is_self_moderated_by_user_with_post_id/2" translate="no">is_self_moderated_by_user_with_post_id(post_id, user_id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Check if specific <code class="inline">Thread</code>, using a <code class="inline">post_id</code>, is self moderated by a specific <code class="inline">User</code></p></div>
 
     </div>
 
@@ -241,26 +261,6 @@ epochtalk_server
       </div>
 
         <div class="summary-synopsis"><p>Returns recent threads accounting for user priority and user's ignored boards</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#self_moderated_by_user?/2" translate="no">self_moderated_by_user?(id, user_id)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Check if specific <code class="inline">Thread</code> is self moderated by a specific <code class="inline">User</code></p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#self_moderated_by_user_with_post_id?/2" translate="no">self_moderated_by_user_with_post_id?(post_id, user_id)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Check if specific <code class="inline">Thread</code>, using a <code class="inline">post_id</code>, is self moderated by a specific <code class="inline">User</code></p></div>
 
     </div>
 
@@ -388,7 +388,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(thread :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> changeset(thread :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -412,7 +412,7 @@ Functions
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> create(thread_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), user :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  {:ok, thread :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, thread :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -435,7 +435,7 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> create_changeset(thread :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(thread :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -530,14 +530,14 @@ Functions
 <p>Increments the <code class="inline">post_count</code> field given a <code class="inline">Thread</code> id</p>
   </section>
 </section>
-<section class="detail" id="locked?/1">
+<section class="detail" id="is_locked/1">
 
   <div class="detail-header">
-    <a href="#locked?/1" class="detail-link" title="Link to this function">
+    <a href="#is_locked/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">locked?(id)</h1>
+    <h1 class="signature" translate="no">is_locked(id)</h1>
 
 
   </div>
@@ -546,11 +546,61 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> locked?(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil</pre>
+          <pre translate="no"><span class="attribute">@spec</span> is_locked(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil</pre>
 
       </div>
 
 <p>Returns boolean indicating if <code class="inline">Thread</code> is locked or nil if it does not exist</p>
+  </section>
+</section>
+<section class="detail" id="is_self_moderated_by_user/2">
+
+  <div class="detail-header">
+    <a href="#is_self_moderated_by_user/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">is_self_moderated_by_user(id, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> is_self_moderated_by_user(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Check if specific <code class="inline">Thread</code> is self moderated by a specific <code class="inline">User</code></p>
+  </section>
+</section>
+<section class="detail" id="is_self_moderated_by_user_with_post_id/2">
+
+  <div class="detail-header">
+    <a href="#is_self_moderated_by_user_with_post_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">is_self_moderated_by_user_with_post_id(post_id, user_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> is_self_moderated_by_user_with_post_id(
+  post_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Check if specific <code class="inline">Thread</code>, using a <code class="inline">post_id</code>, is self moderated by a specific <code class="inline">User</code></p>
   </section>
 </section>
 <section class="detail" id="page_by_board_id/3">
@@ -611,56 +661,6 @@ Functions
       </div>
 
 <p>Returns recent threads accounting for user priority and user's ignored boards</p>
-  </section>
-</section>
-<section class="detail" id="self_moderated_by_user?/2">
-
-  <div class="detail-header">
-    <a href="#self_moderated_by_user?/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">self_moderated_by_user?(id, user_id)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> self_moderated_by_user?(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) ::
-  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
-
-      </div>
-
-<p>Check if specific <code class="inline">Thread</code> is self moderated by a specific <code class="inline">User</code></p>
-  </section>
-</section>
-<section class="detail" id="self_moderated_by_user_with_post_id?/2">
-
-  <div class="detail-header">
-    <a href="#self_moderated_by_user_with_post_id?/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">self_moderated_by_user_with_post_id?(post_id, user_id)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> self_moderated_by_user_with_post_id?(
-  post_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
-  user_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
-) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
-
-      </div>
-
-<p>Check if specific <code class="inline">Thread</code>, using a <code class="inline">post_id</code>, is self moderated by a specific <code class="inline">User</code></p>
   </section>
 </section>
 <section class="detail" id="set_timestamps/1">
