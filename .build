@@ -2,7 +2,6 @@
 EpochtalkServer.Auth.Guardian.Plug.html
 EpochtalkServer.Auth.Guardian.html
 EpochtalkServer.Cache.Role.html
-EpochtalkServer.ConfigServer.html
 EpochtalkServer.Mailer.html
 EpochtalkServer.Models.AutoModeration.html
 EpochtalkServer.Models.Ban.html
@@ -138,7 +137,7 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_items-6C42E028.js
-dist/sidebar_items-8BA6EE3E.js
+dist/search_items-C5A10D06.js
+dist/sidebar_items-DF875E83.js
 index.html
 search.html

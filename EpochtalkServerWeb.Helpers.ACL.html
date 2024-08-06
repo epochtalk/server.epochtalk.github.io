@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8BA6EE3E.js"></script>
+    <script src="dist/sidebar_items-DF875E83.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -332,7 +332,7 @@ to indicating if priority based bypasses should be checked.</p>
       </div>
 
 <p>Helper which returns the active User's priority.</p><p>Will return priority of role with highest permissions if the user is authenticated, otherwise anonymous priority
-is returned if <code class="inline">frontend_config.login_required</code> is false otherwise private role priority is returned. If
+is returned if <code class="inline">frontend_config[:login_required]</code> is false otherwise private role priority is returned. If
 user is banned the Banned role priority is returned.</p>
   </section>
 </section>

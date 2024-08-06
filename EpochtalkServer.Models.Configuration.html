@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-8BA6EE3E.js"></script>
+    <script src="dist/sidebar_items-DF875E83.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -103,7 +103,8 @@ epochtalk_server
 
 
   <section id="moduledoc">
-<p><code class="inline">Configuration</code> model, for performing actions relating to frontend <code class="inline">Configuration</code></p>
+<p><code class="inline">Configuration</code> model, for performing actions relating to frontend <code class="inline">Configuration</code></p><p>WARNING: ensure all keys are atoms when storing via Application.put_env
+use <code class="inline">atomize_keys/2</code> when necessary</p>
   </section>
 
 
@@ -161,6 +162,16 @@ epochtalk_server
       </div>
 
         <div class="summary-synopsis"><p>Create changeset for creating a new <code class="inline">Configuration</code> model</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete/0" translate="no">delete()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Deletes <code class="inline">Configuration</code> from database</p></div>
 
     </div>
 
@@ -325,6 +336,29 @@ Functions
       </div>
 
 <p>Create changeset for creating a new <code class="inline">Configuration</code> model</p>
+  </section>
+</section>
+<section class="detail" id="delete/0">
+
+  <div class="detail-header">
+    <a href="#delete/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete() :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), nil | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()]}</pre>
+
+      </div>
+
+<p>Deletes <code class="inline">Configuration</code> from database</p>
   </section>
 </section>
 <section class="detail" id="get_default/0">
