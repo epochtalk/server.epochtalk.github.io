@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-DF875E83.js"></script>
+    <script src="dist/sidebar_items-7456B6B3.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -203,6 +203,16 @@ Appends the <code class="inline">user</code> <code class="inline">Role</code> to
       </div>
 
         <div class="summary-synopsis"><p>Gets a <code class="inline">User</code> email from the database by <code class="inline">id</code></p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#email_by_id_list/1" translate="no">email_by_id_list(id_list)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Gets a <code class="inline">User</code> email from the database by <code class="inline">id</code> list</p></div>
 
     </div>
 
@@ -547,6 +557,30 @@ Appends the <code class="inline">user</code> <code class="inline">Role</code> to
       </div>
 
 <p>Gets a <code class="inline">User</code> email from the database by <code class="inline">id</code></p>
+  </section>
+</section>
+<section class="detail" id="email_by_id_list/1">
+
+  <div class="detail-header">
+    <a href="#email_by_id_list/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">email_by_id_list(id_list)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> email_by_id_list(id :: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()]) ::
+  [user_data :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()] | {:error, :user_not_found}</pre>
+
+      </div>
+
+<p>Gets a <code class="inline">User</code> email from the database by <code class="inline">id</code> list</p>
   </section>
 </section>
 <section class="detail" id="get_default_trust_user_id/0">

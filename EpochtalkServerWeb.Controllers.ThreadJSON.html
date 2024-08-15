@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-DF875E83.js"></script>
+    <script src="dist/sidebar_items-7456B6B3.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -152,6 +152,26 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#lock/1" translate="no">lock(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders locked <code class="inline">Thread</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#purge/1" translate="no">purge(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders purge <code class="inline">Thread</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#recent/1" translate="no">recent(map)</a>
 
       </div>
@@ -167,6 +187,26 @@ epochtalk_server
       </div>
 
         <div class="summary-synopsis"><p>Renders <code class="inline">Thread</code> id for slug to id route.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#sticky/1" translate="no">sticky(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders sticky <code class="inline">Thread</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#watch/1" translate="no">watch(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders watched <code class="inline">Thread</code>.</p></div>
 
     </div>
 
@@ -235,6 +275,49 @@ Functions
 <p>Used to format <code class="inline">Thread</code> user data from db into the format the frontend expects</p>
   </section>
 </section>
+<section class="detail" id="lock/1">
+
+  <div class="detail-header">
+    <a href="#lock/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">lock(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders locked <code class="inline">Thread</code>.</p><p>  iex&gt; thread = %{
+  iex&gt;   thread_id: 2,
+  iex&gt;   locked: false
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.ThreadJSON.lock(%{thread: thread})
+  thread</p>
+  </section>
+</section>
+<section class="detail" id="purge/1">
+
+  <div class="detail-header">
+    <a href="#purge/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">purge(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders purge <code class="inline">Thread</code>.</p><p>  iex&gt; thread = %{
+  iex&gt;   thread_id: 2
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.ThreadJSON.purge(%{thread: thread})
+  thread</p>
+  </section>
+</section>
 <section class="detail" id="recent/1">
 
   <div class="detail-header">
@@ -267,6 +350,50 @@ Functions
   <section class="docstring">
 
 <p>Renders <code class="inline">Thread</code> id for slug to id route.</p>
+  </section>
+</section>
+<section class="detail" id="sticky/1">
+
+  <div class="detail-header">
+    <a href="#sticky/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sticky(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders sticky <code class="inline">Thread</code>.</p><p>  iex&gt; thread = %{
+  iex&gt;   thread_id: 2,
+  iex&gt;   sticky: true
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.ThreadJSON.sticky(%{thread: thread})
+  thread</p>
+  </section>
+</section>
+<section class="detail" id="watch/1">
+
+  <div class="detail-header">
+    <a href="#watch/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">watch(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders watched <code class="inline">Thread</code>.</p><p>  iex&gt; thread = %{
+  iex&gt;   thread_id: 2,
+  iex&gt;   user_id: 1
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.ThreadJSON.watch(%{thread: thread})
+  thread</p>
   </section>
 </section>
 
