@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-7456B6B3.js"></script>
+    <script src="dist/sidebar_items-2F1FE000.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -162,6 +162,16 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#move/1" translate="no">move(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders move <code class="inline">Thread</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#purge/1" translate="no">purge(map)</a>
 
       </div>
@@ -295,6 +305,28 @@ Functions
   iex&gt; }
   iex&gt; EpochtalkServerWeb.Controllers.ThreadJSON.lock(%{thread: thread})
   thread</p>
+  </section>
+</section>
+<section class="detail" id="move/1">
+
+  <div class="detail-header">
+    <a href="#move/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">move(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders move <code class="inline">Thread</code>.</p><p>  iex&gt; old_board_data = %{
+  iex&gt;   old_board_id: 2,
+  iex&gt;   old_board_name: &quot;General Discussion&quot;
+  iex&gt; }
+  iex&gt; EpochtalkServerWeb.Controllers.ThreadJSON.move(%{old_board_data: old_board_data})
+  old_board_data</p>
   </section>
 </section>
 <section class="detail" id="purge/1">
