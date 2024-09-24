@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-2F1FE000.js"></script>
+    <script src="dist/sidebar_items-5DC5F364.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -256,7 +256,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#recent/3" translate="no">recent(user, user_priority, opts \\ [])</a>
+        <a href="#recent/2" translate="no">recent(user \\ nil, user_priority)</a>
 
       </div>
 
@@ -677,16 +677,16 @@ post_count accordingly. It also updates the metadata.boards' last post
 information.</p>
   </section>
 </section>
-<section class="detail" id="recent/3">
+<section class="detail" id="recent/2">
 
-    <span id="recent/2"></span>
+    <span id="recent/1"></span>
 
   <div class="detail-header">
-    <a href="#recent/3" class="detail-link" title="Link to this function">
+    <a href="#recent/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">recent(user, user_priority, opts \\ [])</h1>
+    <h1 class="signature" translate="no">recent(user \\ nil, user_priority)</h1>
 
 
   </div>
@@ -696,9 +696,8 @@ information.</p>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> recent(
-  user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>(),
-  user_priority :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
-  opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | nil
+  user :: <a href="EpochtalkServer.Models.User.html#t:t/0">EpochtalkServer.Models.User.t</a>() | nil,
+  user_priority :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()
 ) :: [<a href="#t:t/0">t</a>()]</pre>
 
       </div>
