@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-5DC5F364.js"></script>
+    <script src="dist/sidebar_items-F59AA3AC.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -133,6 +133,16 @@ for rendering misc responses (ex: {found: true} or {success: true})</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#find/1" translate="no">find(map)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Renders formatted user JSON for find</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#register_with_verify/1" translate="no">register_with_verify(map)</a>
 
       </div>
@@ -188,10 +198,27 @@ for rendering misc responses (ex: {found: true} or {success: true})</p><h2 id="d
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.Controllers.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="8121546874-1">(</span><span class="p" data-group-id="8121546874-2">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8121546874-3">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8121546874-3">}</span><span class="p" data-group-id="8121546874-2">}</span><span class="p" data-group-id="8121546874-1">)</span><span class="w">
-</span><span class="p" data-group-id="8121546874-4">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8121546874-4">}</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.Controllers.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="8121546874-5">(</span><span class="p" data-group-id="8121546874-6">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8121546874-7">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8121546874-7">}</span><span class="p" data-group-id="8121546874-6">}</span><span class="p" data-group-id="8121546874-5">)</span><span class="w">
-</span><span class="p" data-group-id="8121546874-8">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8121546874-8">}</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.Controllers.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="1199012453-1">(</span><span class="p" data-group-id="1199012453-2">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1199012453-3">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="1199012453-3">}</span><span class="p" data-group-id="1199012453-2">}</span><span class="p" data-group-id="1199012453-1">)</span><span class="w">
+</span><span class="p" data-group-id="1199012453-4">%{</span><span class="ss">found</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="1199012453-4">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">EpochtalkServerWeb.Controllers.UserJSON</span><span class="o">.</span><span class="n">data</span><span class="p" data-group-id="1199012453-5">(</span><span class="p" data-group-id="1199012453-6">%{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1199012453-7">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="1199012453-7">}</span><span class="p" data-group-id="1199012453-6">}</span><span class="p" data-group-id="1199012453-5">)</span><span class="w">
+</span><span class="p" data-group-id="1199012453-8">%{</span><span class="ss">success</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="1199012453-8">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="find/1">
+
+  <div class="detail-header">
+    <a href="#find/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">find(map)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Renders formatted user JSON for find</p>
   </section>
 </section>
 <section class="detail" id="register_with_verify/1">
