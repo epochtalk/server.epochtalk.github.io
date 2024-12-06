@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-F59AA3AC.js"></script>
+    <script src="dist/sidebar_items-EA60E5D0.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -126,6 +126,8 @@ epochtalk_server
 
       </div>
 
+        <div class="summary-synopsis"><p>Delivers an email.</p></div>
+
     </div>
 
     <div class="summary-row">
@@ -134,6 +136,8 @@ epochtalk_server
 
       </div>
 
+        <div class="summary-synopsis"><p>Delivers an email, raises on error.</p></div>
+
     </div>
 
     <div class="summary-row">
@@ -141,6 +145,8 @@ epochtalk_server
         <a href="#deliver_many/2" translate="no">deliver_many(emails, config \\ [])</a>
 
       </div>
+
+        <div class="summary-synopsis"><p>Delivers a list of emails.</p></div>
 
     </div>
 
@@ -216,11 +222,12 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> deliver(<a href="https://hexdocs.pm/swoosh/1.16.7/Swoosh.Email.html#t:t/0">Swoosh.Email.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) :: {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> deliver(<a href="https://hexdocs.pm/swoosh/1.17.3/Swoosh.Email.html#t:t/0">Swoosh.Email.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) :: {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
 
       </div>
 
-
+<p>Delivers an email.</p><p>If the email is delivered it returns an <code class="inline">{:ok, result}</code> tuple. If it fails,
+returns an <code class="inline">{:error, error}</code> tuple.</p>
   </section>
 </section>
 <section class="detail" id="deliver!/2">
@@ -241,11 +248,12 @@ Functions
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> deliver!(<a href="https://hexdocs.pm/swoosh/1.16.7/Swoosh.Email.html#t:t/0">Swoosh.Email.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> deliver!(<a href="https://hexdocs.pm/swoosh/1.17.3/Swoosh.Email.html#t:t/0">Swoosh.Email.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
 
       </div>
 
-
+<p>Delivers an email, raises on error.</p><p>If the email is delivered, it returns the result. If it fails, it raises
+a <code class="inline">DeliveryError</code>.</p>
   </section>
 </section>
 <section class="detail" id="deliver_many/2">
@@ -289,7 +297,7 @@ Functions
 
       </div>
 
-
+<p>Delivers a list of emails.</p><p>It accepts a list of <code class="inline">%Swoosh.Email{}</code> as its first parameter.</p>
   </section>
 </section>
 <section class="detail" id="send_confirm_account/1">
