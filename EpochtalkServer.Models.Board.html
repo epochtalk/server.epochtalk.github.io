@@ -4,116 +4,97 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.29.4">
+    <meta name="generator" content="ExDoc v0.37.2">
     <meta name="project" content="epochtalk_server v0.1.0">
 
+
     <title>EpochtalkServer.Models.Board — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
+    <link rel="stylesheet" href="dist/html-elixir-6X3L5KMG.css" />
 
-    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-EE353B62.js"></script>
-
-      <script src="docs_config.js"></script>
-
-    <script async src="dist/html-JDI3AVDD.js"></script>
-
+    <script defer src="dist/sidebar_items-C8922E45.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-6XHBGSGW.js"></script>
 
   </head>
-  <body data-type="modules" class="page-module">
-    <script>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
 
-      try {
-        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+<div class="body-wrapper">
 
-        if (settings.theme === 'dark' ||
-           ((settings.theme === 'system' || settings.theme == null) &&
-             window.matchMedia('(prefers-color-scheme: dark)').matches)
-           ) {
-          document.body.classList.add('dark')
-        }
-      } catch (error) { }
-    </script>
-
-<div class="main">
-
-<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
   <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
 
-<section class="sidebar">
-  <form class="sidebar-search" action="search.html">
-    <button type="submit" class="search-button" aria-label="Submit Search">
-      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
-    </button>
-    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
-      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
-    </button>
-    <label class="search-label">
-      <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-    </label>
-  </form>
-
-  <div class="autocomplete">
-    <div class="autocomplete-results">
-    </div>
-  </div>
+<nav id="sidebar" class="sidebar">
 
   <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
 
-    <div class="sidebar-projectDetails">
-      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+      <div>
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
-      </a>
-      <div class="sidebar-projectVersion" translate="no">
-        v0.1.0
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
       </div>
     </div>
-    <ul class="sidebar-listNav">
-      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
 
-        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+<output role="status" id="toast"></output>
 
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of epochtalk_server</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
 
-    </ul>
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">EpochtalkServer.Models.Board</span> 
+      <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
+
+    </h1>
+
   </div>
 
-  <div class="gradient"></div>
-  <ul id="full-list"></ul>
-</section>
 
-<section class="content">
-  <output role="status" id="toast"></output>
-  <div class="content-outer">
-    <div id="content" class="content-inner">
-
-<h1>
-<button class="icon-action display-settings">
-  <i class="ri-settings-3-line"></i>
-  <span class="sr-only">Settings</span>
-</button>
-
-
-  <span translate="no">EpochtalkServer.Models.Board</span> 
-  <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
-
-</h1>
-
-
-  <section id="moduledoc">
+    <section id="moduledoc">
 <p><code class="inline">Board</code> model, for performing actions relating to forum boards</p>
-  </section>
+    </section>
 
+</div>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#summary">
         <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
       </a>
-      Summary
+      <span class="text">Summary</span>
     </h1>
 <div class="summary-types summary">
   <h2>
@@ -122,7 +103,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#t:t/0" translate="no">t()</a>
+        <a href="#t:t/0" data-no-tooltip="" translate="no">t()</a>
 
       </div>
 
@@ -136,7 +117,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#allows_self_moderation?/2" translate="no">allows_self_moderation?(id, arg2)</a>
+        <a href="#allows_self_moderation?/2" data-no-tooltip="" translate="no">allows_self_moderation?(id, arg2)</a>
 
       </div>
 
@@ -146,7 +127,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#breadcrumb/1" translate="no">breadcrumb(slug)</a>
+        <a href="#breadcrumb/1" data-no-tooltip="" translate="no">breadcrumb(slug)</a>
 
       </div>
 
@@ -156,7 +137,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#changeset/2" translate="no">changeset(board, attrs)</a>
+        <a href="#changeset/2" data-no-tooltip="" translate="no">changeset(board, attrs)</a>
 
       </div>
 
@@ -166,7 +147,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#create/1" translate="no">create(board_attrs)</a>
+        <a href="#create/1" data-no-tooltip="" translate="no">create(board_attrs)</a>
 
       </div>
 
@@ -176,7 +157,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#create_changeset/2" translate="no">create_changeset(board, attrs)</a>
+        <a href="#create_changeset/2" data-no-tooltip="" translate="no">create_changeset(board, attrs)</a>
 
       </div>
 
@@ -186,7 +167,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#find_by_id/1" translate="no">find_by_id(id)</a>
+        <a href="#find_by_id/1" data-no-tooltip="" translate="no">find_by_id(id)</a>
 
       </div>
 
@@ -196,7 +177,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_read_access_by_id/2" translate="no">get_read_access_by_id(id, user_priority)</a>
+        <a href="#get_read_access_by_id/2" data-no-tooltip="" translate="no">get_read_access_by_id(id, user_priority)</a>
 
       </div>
 
@@ -208,7 +189,7 @@ read access to the <code class="inline">Board</code> either.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_read_access_by_thread_id/2" translate="no">get_read_access_by_thread_id(thread_id, user_priority)</a>
+        <a href="#get_read_access_by_thread_id/2" data-no-tooltip="" translate="no">get_read_access_by_thread_id(thread_id, user_priority)</a>
 
       </div>
 
@@ -220,7 +201,7 @@ with the specified <code class="inline">thread_id</code>. If the user doesn't ha
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_write_access_by_id/2" translate="no">get_write_access_by_id(id, user_priority)</a>
+        <a href="#get_write_access_by_id/2" data-no-tooltip="" translate="no">get_write_access_by_id(id, user_priority)</a>
 
       </div>
 
@@ -230,7 +211,7 @@ with the specified <code class="inline">thread_id</code>. If the user doesn't ha
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_write_access_by_thread_id/2" translate="no">get_write_access_by_thread_id(thread_id, user_priority)</a>
+        <a href="#get_write_access_by_thread_id/2" data-no-tooltip="" translate="no">get_write_access_by_thread_id(thread_id, user_priority)</a>
 
       </div>
 
@@ -241,7 +222,7 @@ the specified <code class="inline">thread_id</code></p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#is_post_edit_disabled_by_thread_id/2" translate="no">is_post_edit_disabled_by_thread_id(thread_id, post_created_at)</a>
+        <a href="#is_post_edit_disabled_by_thread_id/2" data-no-tooltip="" translate="no">is_post_edit_disabled_by_thread_id(thread_id, post_created_at)</a>
 
       </div>
 
@@ -252,7 +233,7 @@ the <code class="inline">post_edit_diabled</code> setting within the <code class
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#movelist/1" translate="no">movelist(user_priority)</a>
+        <a href="#movelist/1" data-no-tooltip="" translate="no">movelist(user_priority)</a>
 
       </div>
 
@@ -263,7 +244,7 @@ a <code class="inline">Thread</code> moderation feature.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#slug_to_id/1" translate="no">slug_to_id(slug)</a>
+        <a href="#slug_to_id/1" data-no-tooltip="" translate="no">slug_to_id(slug)</a>
 
       </div>
 
@@ -280,21 +261,21 @@ a <code class="inline">Thread</code> moderation feature.</p></div>
     <h1 class="section-heading">
       <a class="hover-link" href="#types">
         <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
       </a>
-Types
+      <span class="text">Types</span>
     </h1>
     <div class="types-list">
 <section class="detail" id="t:t/0">
 
   <div class="detail-header">
-    <a href="#t:t/0" class="detail-link" title="Link to this type">
+    <a href="#t:t/0" class="detail-link" data-no-tooltip="" aria-label="Link to this type">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature" translate="no">t()</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">t()</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -332,21 +313,21 @@ Types
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
         <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
       </a>
-Functions
+      <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
 <section class="detail" id="allows_self_moderation?/2">
 
   <div class="detail-header">
-    <a href="#allows_self_moderation?/2" class="detail-link" title="Link to this function">
+    <a href="#allows_self_moderation?/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">allows_self_moderation?(id, arg2)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">allows_self_moderation?(id, arg2)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -364,13 +345,14 @@ Functions
 <section class="detail" id="breadcrumb/1">
 
   <div class="detail-header">
-    <a href="#breadcrumb/1" class="detail-link" title="Link to this function">
+    <a href="#breadcrumb/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">breadcrumb(slug)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">breadcrumb(slug)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -388,13 +370,14 @@ Functions
 <section class="detail" id="changeset/2">
 
   <div class="detail-header">
-    <a href="#changeset/2" class="detail-link" title="Link to this function">
+    <a href="#changeset/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">changeset(board, attrs)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">changeset(board, attrs)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -404,7 +387,7 @@ Functions
           <pre translate="no"><span class="attribute">@spec</span> changeset(
   board :: <a href="#t:t/0">t</a>(),
   attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil
-) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+) :: <a href="https://hexdocs.pm/ecto/3.12.5/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -414,13 +397,14 @@ Functions
 <section class="detail" id="create/1">
 
   <div class="detail-header">
-    <a href="#create/1" class="detail-link" title="Link to this function">
+    <a href="#create/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">create(board_attrs)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create(board_attrs)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -428,7 +412,7 @@ Functions
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> create(board_attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  {:ok, board :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+  {:ok, board :: <a href="#t:t/0">t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.12.5/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
 
       </div>
 
@@ -438,20 +422,21 @@ Functions
 <section class="detail" id="create_changeset/2">
 
   <div class="detail-header">
-    <a href="#create_changeset/2" class="detail-link" title="Link to this function">
+    <a href="#create_changeset/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">create_changeset(board, attrs)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create_changeset(board, attrs)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> create_changeset(board :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> create_changeset(board :: <a href="#t:t/0">t</a>(), attrs :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>() | nil) :: <a href="https://hexdocs.pm/ecto/3.12.5/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 
@@ -461,13 +446,14 @@ Functions
 <section class="detail" id="find_by_id/1">
 
   <div class="detail-header">
-    <a href="#find_by_id/1" class="detail-link" title="Link to this function">
+    <a href="#find_by_id/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">find_by_id(id)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">find_by_id(id)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -485,13 +471,14 @@ Functions
 <section class="detail" id="get_read_access_by_id/2">
 
   <div class="detail-header">
-    <a href="#get_read_access_by_id/2" class="detail-link" title="Link to this function">
+    <a href="#get_read_access_by_id/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_read_access_by_id(id, user_priority)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_read_access_by_id(id, user_priority)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -515,13 +502,14 @@ server. The previous naming convention was confusing as this is just checking re
 <section class="detail" id="get_read_access_by_thread_id/2">
 
   <div class="detail-header">
-    <a href="#get_read_access_by_thread_id/2" class="detail-link" title="Link to this function">
+    <a href="#get_read_access_by_thread_id/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_read_access_by_thread_id(thread_id, user_priority)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_read_access_by_thread_id(thread_id, user_priority)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -544,13 +532,14 @@ server. The previous naming convention was confusing as this is just checking re
 <section class="detail" id="get_write_access_by_id/2">
 
   <div class="detail-header">
-    <a href="#get_write_access_by_id/2" class="detail-link" title="Link to this function">
+    <a href="#get_write_access_by_id/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_write_access_by_id(id, user_priority)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_write_access_by_id(id, user_priority)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -571,13 +560,14 @@ server. The previous naming convention was confusing as this is just checking re
 <section class="detail" id="get_write_access_by_thread_id/2">
 
   <div class="detail-header">
-    <a href="#get_write_access_by_thread_id/2" class="detail-link" title="Link to this function">
+    <a href="#get_write_access_by_thread_id/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_write_access_by_thread_id(thread_id, user_priority)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_write_access_by_thread_id(thread_id, user_priority)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -598,13 +588,14 @@ the specified <code class="inline">thread_id</code></p>
 <section class="detail" id="is_post_edit_disabled_by_thread_id/2">
 
   <div class="detail-header">
-    <a href="#is_post_edit_disabled_by_thread_id/2" class="detail-link" title="Link to this function">
+    <a href="#is_post_edit_disabled_by_thread_id/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">is_post_edit_disabled_by_thread_id(thread_id, post_created_at)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">is_post_edit_disabled_by_thread_id(thread_id, post_created_at)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -625,13 +616,14 @@ the <code class="inline">post_edit_diabled</code> setting within the <code class
 <section class="detail" id="movelist/1">
 
   <div class="detail-header">
-    <a href="#movelist/1" class="detail-link" title="Link to this function">
+    <a href="#movelist/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">movelist(user_priority)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">movelist(user_priority)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -649,13 +641,14 @@ a <code class="inline">Thread</code> moderation feature.</p>
 <section class="detail" id="slug_to_id/1">
 
   <div class="detail-header">
-    <a href="#slug_to_id/1" class="detail-link" title="Link to this function">
+    <a href="#slug_to_id/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">slug_to_id(slug)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">slug_to_id(slug)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -674,34 +667,33 @@ a <code class="inline">Thread</code> moderation feature.</p>
     </div>
   </section>
 
-      <footer class="footer">
-        <p>
+    <footer class="footer">
+      <p>
 
-          <span class="line">
-            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-              Search HexDocs
-            </button>
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
 
-              <a href="epochtalk_server.epub" title="ePub version">
-                Download ePub version
-              </a>
+            <a href="epochtalk_server.epub" title="ePub version">
+              Download ePub version
+            </a>
 
-          </span>
-        </p>
+        </span>
+      </p>
 
-        <p class="built-using">
-          Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.37.2) for the
 
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-        </p>
-      </footer>
-    </div>
+      </p>
+
+    </footer>
   </div>
-</section>
+</main>
 </div>
-
 
   </body>
 </html>

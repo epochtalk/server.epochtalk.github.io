@@ -4,112 +4,93 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.29.4">
+    <meta name="generator" content="ExDoc v0.37.2">
     <meta name="project" content="epochtalk_server v0.1.0">
 
+
     <title>EpochtalkServerWeb.Endpoint — epochtalk_server v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
 
+    <link rel="stylesheet" href="dist/html-elixir-6X3L5KMG.css" />
 
-    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-EE353B62.js"></script>
-
-      <script src="docs_config.js"></script>
-
-    <script async src="dist/html-JDI3AVDD.js"></script>
-
+    <script defer src="dist/sidebar_items-C8922E45.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-6XHBGSGW.js"></script>
 
   </head>
-  <body data-type="modules" class="page-module">
-    <script>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
 
-      try {
-        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+<div class="body-wrapper">
 
-        if (settings.theme === 'dark' ||
-           ((settings.theme === 'system' || settings.theme == null) &&
-             window.matchMedia('(prefers-color-scheme: dark)').matches)
-           ) {
-          document.body.classList.add('dark')
-        }
-      } catch (error) { }
-    </script>
-
-<div class="main">
-
-<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
   <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
 
-<section class="sidebar">
-  <form class="sidebar-search" action="search.html">
-    <button type="submit" class="search-button" aria-label="Submit Search">
-      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
-    </button>
-    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
-      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
-    </button>
-    <label class="search-label">
-      <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-    </label>
-  </form>
-
-  <div class="autocomplete">
-    <div class="autocomplete-results">
-    </div>
-  </div>
+<nav id="sidebar" class="sidebar">
 
   <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
 
-    <div class="sidebar-projectDetails">
-      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+      <div>
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 epochtalk_server
-      </a>
-      <div class="sidebar-projectVersion" translate="no">
-        v0.1.0
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
       </div>
     </div>
-    <ul class="sidebar-listNav">
-      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
 
-        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+<output role="status" id="toast"></output>
 
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of epochtalk_server</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
 
-    </ul>
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">EpochtalkServerWeb.Endpoint</span> 
+      <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
+
+    </h1>
+
   </div>
 
-  <div class="gradient"></div>
-  <ul id="full-list"></ul>
-</section>
 
-<section class="content">
-  <output role="status" id="toast"></output>
-  <div class="content-outer">
-    <div id="content" class="content-inner">
-
-<h1>
-<button class="icon-action display-settings">
-  <i class="ri-settings-3-line"></i>
-  <span class="sr-only">Settings</span>
-</button>
-
-
-  <span translate="no">EpochtalkServerWeb.Endpoint</span> 
-  <small class="app-vsn" translate="no">(epochtalk_server v0.1.0)</small>
-
-</h1>
-
-
+</div>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#summary">
         <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
       </a>
-      Summary
+      <span class="text">Summary</span>
     </h1>
 <div class="summary-functions summary">
   <h2>
@@ -118,47 +99,47 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#broadcast/3" translate="no">broadcast(topic, event, msg)</a>
+        <a href="#broadcast/3" data-no-tooltip="" translate="no">broadcast(topic, event, msg)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast/3"><code class="inline">Phoenix.Endpoint.broadcast/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast/3"><code class="inline">Phoenix.Endpoint.broadcast/3</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#broadcast!/3" translate="no">broadcast!(topic, event, msg)</a>
+        <a href="#broadcast!/3" data-no-tooltip="" translate="no">broadcast!(topic, event, msg)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast!/3"><code class="inline">Phoenix.Endpoint.broadcast!/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast!/3"><code class="inline">Phoenix.Endpoint.broadcast!/3</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#broadcast_from/4" translate="no">broadcast_from(from, topic, event, msg)</a>
+        <a href="#broadcast_from/4" data-no-tooltip="" translate="no">broadcast_from(from, topic, event, msg)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast_from/4"><code class="inline">Phoenix.Endpoint.broadcast_from/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast_from/4"><code class="inline">Phoenix.Endpoint.broadcast_from/4</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#broadcast_from!/4" translate="no">broadcast_from!(from, topic, event, msg)</a>
+        <a href="#broadcast_from!/4" data-no-tooltip="" translate="no">broadcast_from!(from, topic, event, msg)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast_from!/4"><code class="inline">Phoenix.Endpoint.broadcast_from!/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast_from!/4"><code class="inline">Phoenix.Endpoint.broadcast_from!/4</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#call/2" translate="no">call(conn, opts)</a>
+        <a href="#call/2" data-no-tooltip="" translate="no">call(conn, opts)</a>
 
       </div>
 
@@ -168,7 +149,7 @@ epochtalk_server
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#child_spec/1" translate="no">child_spec(opts)</a>
+        <a href="#child_spec/1" data-no-tooltip="" translate="no">child_spec(opts)</a>
 
       </div>
 
@@ -179,7 +160,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#config/2" translate="no">config(key, default \\ nil)</a>
+        <a href="#config/2" data-no-tooltip="" translate="no">config(key, default \\ nil)</a>
 
       </div>
 
@@ -189,7 +170,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#config_change/2" translate="no">config_change(changed, removed)</a>
+        <a href="#config_change/2" data-no-tooltip="" translate="no">config_change(changed, removed)</a>
 
       </div>
 
@@ -199,7 +180,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#host/0" translate="no">host()</a>
+        <a href="#host/0" data-no-tooltip="" translate="no">host()</a>
 
       </div>
 
@@ -209,7 +190,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#init/1" translate="no">init(opts)</a>
+        <a href="#init/1" data-no-tooltip="" translate="no">init(opts)</a>
 
       </div>
 
@@ -219,27 +200,27 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#local_broadcast/3" translate="no">local_broadcast(topic, event, msg)</a>
+        <a href="#local_broadcast/3" data-no-tooltip="" translate="no">local_broadcast(topic, event, msg)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:local_broadcast/3"><code class="inline">Phoenix.Endpoint.local_broadcast/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:local_broadcast/3"><code class="inline">Phoenix.Endpoint.local_broadcast/3</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#local_broadcast_from/4" translate="no">local_broadcast_from(from, topic, event, msg)</a>
+        <a href="#local_broadcast_from/4" data-no-tooltip="" translate="no">local_broadcast_from(from, topic, event, msg)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:local_broadcast_from/4"><code class="inline">Phoenix.Endpoint.local_broadcast_from/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:local_broadcast_from/4"><code class="inline">Phoenix.Endpoint.local_broadcast_from/4</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#path/1" translate="no">path(path)</a>
+        <a href="#path/1" data-no-tooltip="" translate="no">path(path)</a>
 
       </div>
 
@@ -249,7 +230,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#script_name/0" translate="no">script_name()</a>
+        <a href="#script_name/0" data-no-tooltip="" translate="no">script_name()</a>
 
       </div>
 
@@ -259,7 +240,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#server_info/1" translate="no">server_info(scheme)</a>
+        <a href="#server_info/1" data-no-tooltip="" translate="no">server_info(scheme)</a>
 
       </div>
 
@@ -269,7 +250,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#start_link/1" translate="no">start_link(opts \\ [])</a>
+        <a href="#start_link/1" data-no-tooltip="" translate="no">start_link(opts \\ [])</a>
 
       </div>
 
@@ -279,7 +260,7 @@ under a supervision tree.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#static_integrity/1" translate="no">static_integrity(path)</a>
+        <a href="#static_integrity/1" data-no-tooltip="" translate="no">static_integrity(path)</a>
 
       </div>
 
@@ -290,7 +271,7 @@ in <code class="inline">priv/static</code>. Meant to be used for Subresource Int
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#static_lookup/1" translate="no">static_lookup(path)</a>
+        <a href="#static_lookup/1" data-no-tooltip="" translate="no">static_lookup(path)</a>
 
       </div>
 
@@ -301,7 +282,7 @@ and the second item being the <code class="inline">static_integrity</code>.</p><
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#static_path/1" translate="no">static_path(path)</a>
+        <a href="#static_path/1" data-no-tooltip="" translate="no">static_path(path)</a>
 
       </div>
 
@@ -311,7 +292,7 @@ and the second item being the <code class="inline">static_integrity</code>.</p><
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#static_url/0" translate="no">static_url()</a>
+        <a href="#static_url/0" data-no-tooltip="" translate="no">static_url()</a>
 
       </div>
 
@@ -321,7 +302,7 @@ and the second item being the <code class="inline">static_integrity</code>.</p><
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#struct_url/0" translate="no">struct_url()</a>
+        <a href="#struct_url/0" data-no-tooltip="" translate="no">struct_url()</a>
 
       </div>
 
@@ -331,27 +312,27 @@ and the second item being the <code class="inline">static_integrity</code>.</p><
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#subscribe/2" translate="no">subscribe(topic, opts \\ [])</a>
+        <a href="#subscribe/2" data-no-tooltip="" translate="no">subscribe(topic, opts \\ [])</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:subscribe/2"><code class="inline">Phoenix.Endpoint.subscribe/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:subscribe/2"><code class="inline">Phoenix.Endpoint.subscribe/2</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#unsubscribe/1" translate="no">unsubscribe(topic)</a>
+        <a href="#unsubscribe/1" data-no-tooltip="" translate="no">unsubscribe(topic)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:unsubscribe/1"><code class="inline">Phoenix.Endpoint.unsubscribe/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:unsubscribe/1"><code class="inline">Phoenix.Endpoint.unsubscribe/1</code></a>.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#url/0" translate="no">url()</a>
+        <a href="#url/0" data-no-tooltip="" translate="no">url()</a>
 
       </div>
 
@@ -361,7 +342,7 @@ and the second item being the <code class="inline">static_integrity</code>.</p><
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#valid_origin?/2" translate="no">valid_origin?(conn, origin)</a>
+        <a href="#valid_origin?/2" data-no-tooltip="" translate="no">valid_origin?(conn, origin)</a>
 
       </div>
 
@@ -376,89 +357,93 @@ and the second item being the <code class="inline">static_integrity</code>.</p><
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
         <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
       </a>
-Functions
+      <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
 <section class="detail" id="broadcast/3">
 
   <div class="detail-header">
-    <a href="#broadcast/3" class="detail-link" title="Link to this function">
+    <a href="#broadcast/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">broadcast(topic, event, msg)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">broadcast(topic, event, msg)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast/3"><code class="inline">Phoenix.Endpoint.broadcast/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast/3"><code class="inline">Phoenix.Endpoint.broadcast/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="broadcast!/3">
 
   <div class="detail-header">
-    <a href="#broadcast!/3" class="detail-link" title="Link to this function">
+    <a href="#broadcast!/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">broadcast!(topic, event, msg)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">broadcast!(topic, event, msg)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast!/3"><code class="inline">Phoenix.Endpoint.broadcast!/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast!/3"><code class="inline">Phoenix.Endpoint.broadcast!/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="broadcast_from/4">
 
   <div class="detail-header">
-    <a href="#broadcast_from/4" class="detail-link" title="Link to this function">
+    <a href="#broadcast_from/4" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">broadcast_from(from, topic, event, msg)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">broadcast_from(from, topic, event, msg)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast_from/4"><code class="inline">Phoenix.Endpoint.broadcast_from/4</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast_from/4"><code class="inline">Phoenix.Endpoint.broadcast_from/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="broadcast_from!/4">
 
   <div class="detail-header">
-    <a href="#broadcast_from!/4" class="detail-link" title="Link to this function">
+    <a href="#broadcast_from!/4" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">broadcast_from!(from, topic, event, msg)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">broadcast_from!(from, topic, event, msg)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:broadcast_from!/4"><code class="inline">Phoenix.Endpoint.broadcast_from!/4</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:broadcast_from!/4"><code class="inline">Phoenix.Endpoint.broadcast_from!/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="call/2">
 
   <div class="detail-header">
-    <a href="#call/2" class="detail-link" title="Link to this function">
+    <a href="#call/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">call(conn, opts)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">call(conn, opts)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -469,13 +454,14 @@ Functions
 <section class="detail" id="child_spec/1">
 
   <div class="detail-header">
-    <a href="#child_spec/1" class="detail-link" title="Link to this function">
+    <a href="#child_spec/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">child_spec(opts)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">child_spec(opts)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -489,13 +475,14 @@ under a supervision tree.</p>
     <span id="config/1"></span>
 
   <div class="detail-header">
-    <a href="#config/2" class="detail-link" title="Link to this function">
+    <a href="#config/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">config(key, default \\ nil)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">config(key, default \\ nil)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -506,13 +493,14 @@ under a supervision tree.</p>
 <section class="detail" id="config_change/2">
 
   <div class="detail-header">
-    <a href="#config_change/2" class="detail-link" title="Link to this function">
+    <a href="#config_change/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">config_change(changed, removed)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">config_change(changed, removed)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -523,13 +511,14 @@ under a supervision tree.</p>
 <section class="detail" id="host/0">
 
   <div class="detail-header">
-    <a href="#host/0" class="detail-link" title="Link to this function">
+    <a href="#host/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">host()</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">host()</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -540,13 +529,14 @@ under a supervision tree.</p>
 <section class="detail" id="init/1">
 
   <div class="detail-header">
-    <a href="#init/1" class="detail-link" title="Link to this function">
+    <a href="#init/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">init(opts)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">init(opts)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -557,47 +547,50 @@ under a supervision tree.</p>
 <section class="detail" id="local_broadcast/3">
 
   <div class="detail-header">
-    <a href="#local_broadcast/3" class="detail-link" title="Link to this function">
+    <a href="#local_broadcast/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">local_broadcast(topic, event, msg)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">local_broadcast(topic, event, msg)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:local_broadcast/3"><code class="inline">Phoenix.Endpoint.local_broadcast/3</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:local_broadcast/3"><code class="inline">Phoenix.Endpoint.local_broadcast/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="local_broadcast_from/4">
 
   <div class="detail-header">
-    <a href="#local_broadcast_from/4" class="detail-link" title="Link to this function">
+    <a href="#local_broadcast_from/4" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">local_broadcast_from(from, topic, event, msg)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">local_broadcast_from(from, topic, event, msg)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:local_broadcast_from/4"><code class="inline">Phoenix.Endpoint.local_broadcast_from/4</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:local_broadcast_from/4"><code class="inline">Phoenix.Endpoint.local_broadcast_from/4</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="path/1">
 
   <div class="detail-header">
-    <a href="#path/1" class="detail-link" title="Link to this function">
+    <a href="#path/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">path(path)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">path(path)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -608,13 +601,14 @@ under a supervision tree.</p>
 <section class="detail" id="script_name/0">
 
   <div class="detail-header">
-    <a href="#script_name/0" class="detail-link" title="Link to this function">
+    <a href="#script_name/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">script_name()</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">script_name()</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -625,13 +619,14 @@ under a supervision tree.</p>
 <section class="detail" id="server_info/1">
 
   <div class="detail-header">
-    <a href="#server_info/1" class="detail-link" title="Link to this function">
+    <a href="#server_info/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">server_info(scheme)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">server_info(scheme)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -644,13 +639,14 @@ under a supervision tree.</p>
     <span id="start_link/0"></span>
 
   <div class="detail-header">
-    <a href="#start_link/1" class="detail-link" title="Link to this function">
+    <a href="#start_link/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">start_link(opts \\ [])</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">start_link(opts \\ [])</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -661,13 +657,14 @@ under a supervision tree.</p>
 <section class="detail" id="static_integrity/1">
 
   <div class="detail-header">
-    <a href="#static_integrity/1" class="detail-link" title="Link to this function">
+    <a href="#static_integrity/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">static_integrity(path)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">static_integrity(path)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -679,13 +676,14 @@ in <code class="inline">priv/static</code>. Meant to be used for Subresource Int
 <section class="detail" id="static_lookup/1">
 
   <div class="detail-header">
-    <a href="#static_lookup/1" class="detail-link" title="Link to this function">
+    <a href="#static_lookup/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">static_lookup(path)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">static_lookup(path)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -697,13 +695,14 @@ and the second item being the <code class="inline">static_integrity</code>.</p>
 <section class="detail" id="static_path/1">
 
   <div class="detail-header">
-    <a href="#static_path/1" class="detail-link" title="Link to this function">
+    <a href="#static_path/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">static_path(path)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">static_path(path)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -714,13 +713,14 @@ and the second item being the <code class="inline">static_integrity</code>.</p>
 <section class="detail" id="static_url/0">
 
   <div class="detail-header">
-    <a href="#static_url/0" class="detail-link" title="Link to this function">
+    <a href="#static_url/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">static_url()</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">static_url()</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -732,13 +732,14 @@ such. It falls back to <code class="inline">:url</code> if <code class="inline">
 <section class="detail" id="struct_url/0">
 
   <div class="detail-header">
-    <a href="#struct_url/0" class="detail-link" title="Link to this function">
+    <a href="#struct_url/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">struct_url()</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">struct_url()</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -753,47 +754,50 @@ URL helpers.</p>
     <span id="subscribe/1"></span>
 
   <div class="detail-header">
-    <a href="#subscribe/2" class="detail-link" title="Link to this function">
+    <a href="#subscribe/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">subscribe(topic, opts \\ [])</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">subscribe(topic, opts \\ [])</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:subscribe/2"><code class="inline">Phoenix.Endpoint.subscribe/2</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:subscribe/2"><code class="inline">Phoenix.Endpoint.subscribe/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="unsubscribe/1">
 
   <div class="detail-header">
-    <a href="#unsubscribe/1" class="detail-link" title="Link to this function">
+    <a href="#unsubscribe/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">unsubscribe(topic)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">unsubscribe(topic)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.15/Phoenix.Endpoint.html#c:unsubscribe/1"><code class="inline">Phoenix.Endpoint.unsubscribe/1</code></a>.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix/1.7.20/Phoenix.Endpoint.html#c:unsubscribe/1"><code class="inline">Phoenix.Endpoint.unsubscribe/1</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="url/0">
 
   <div class="detail-header">
-    <a href="#url/0" class="detail-link" title="Link to this function">
+    <a href="#url/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">url()</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">url()</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -804,13 +808,14 @@ URL helpers.</p>
 <section class="detail" id="valid_origin?/2">
 
   <div class="detail-header">
-    <a href="#valid_origin?/2" class="detail-link" title="Link to this function">
+    <a href="#valid_origin?/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">valid_origin?(conn, origin)</h1>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">valid_origin?(conn, origin)</h1>
 
 
+    </div>
   </div>
 
   <section class="docstring">
@@ -822,34 +827,33 @@ URL helpers.</p>
     </div>
   </section>
 
-      <footer class="footer">
-        <p>
+    <footer class="footer">
+      <p>
 
-          <span class="line">
-            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-              Search HexDocs
-            </button>
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
 
-              <a href="epochtalk_server.epub" title="ePub version">
-                Download ePub version
-              </a>
+            <a href="epochtalk_server.epub" title="ePub version">
+              Download ePub version
+            </a>
 
-          </span>
-        </p>
+        </span>
+      </p>
 
-        <p class="built-using">
-          Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.37.2) for the
 
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-        </p>
-      </footer>
-    </div>
+      </p>
+
+    </footer>
   </div>
-</section>
+</main>
 </div>
-
 
   </body>
 </html>
